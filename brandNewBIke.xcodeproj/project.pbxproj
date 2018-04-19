@@ -7,21 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		61EA864F9071234854CCD92A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EA8D9661CE0FC8760E7355 /* LoginViewController.swift */; };
+		61EA8D1D1A72D5EB4355E9E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61EA89A8EA8C704A6F19A58B /* LaunchScreen.storyboard */; };
+		C494C8BE2AC4192A9E9384EE /* Pods_brandNewBIke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DAD5F4DD9B16ABB116F4438 /* Pods_brandNewBIke.framework */; };
+		E9550EC620866AFA009A7A5B /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9550EC520866AFA009A7A5B /* ServiceFactory.swift */; };
+		E9550ECD20867937009A7A5B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9550ECC20867937009A7A5B /* User.swift */; };
+		E9550ED12087B8A3009A7A5B /* NetworkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9550ED02087B8A3009A7A5B /* NetworkUtils.swift */; };
+		E9550ED32088B69F009A7A5B /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9550ED22088B69F009A7A5B /* SessionStore.swift */; };
 		E9B9D791208662F7002AFE3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B9D790208662F7002AFE3A /* AppDelegate.swift */; };
-		E9B9D793208662F7002AFE3A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B9D792208662F7002AFE3A /* ViewController.swift */; };
 		E9B9D796208662F7002AFE3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9B9D794208662F7002AFE3A /* Main.storyboard */; };
 		E9B9D798208662F7002AFE3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9B9D797208662F7002AFE3A /* Assets.xcassets */; };
-		E9B9D79B208662F7002AFE3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9B9D799208662F7002AFE3A /* LaunchScreen.storyboard */; };
+		E9B9D7AA20866458002AFE3A /* LoginForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B9D7A920866458002AFE3A /* LoginForm.swift */; };
+		E9B9D7AC208664B1002AFE3A /* MockFactoroy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B9D7AB208664B1002AFE3A /* MockFactoroy.swift */; };
+		E9B9D7AE20866625002AFE3A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B9D7AD20866625002AFE3A /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5DAD5F4DD9B16ABB116F4438 /* Pods_brandNewBIke.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_brandNewBIke.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		61EA89A8EA8C704A6F19A58B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		61EA8D9661CE0FC8760E7355 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		7F6BE9B0A5D5FA177EBDD7D1 /* Pods-brandNewBIke.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-brandNewBIke.debug.xcconfig"; path = "Pods/Target Support Files/Pods-brandNewBIke/Pods-brandNewBIke.debug.xcconfig"; sourceTree = "<group>"; };
+		B177B7A56E412A0C32A99C0C /* Pods-brandNewBIke.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-brandNewBIke.release.xcconfig"; path = "Pods/Target Support Files/Pods-brandNewBIke/Pods-brandNewBIke.release.xcconfig"; sourceTree = "<group>"; };
+		E9550EC520866AFA009A7A5B /* ServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
+		E9550ECC20867937009A7A5B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E9550ED02087B8A3009A7A5B /* NetworkUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtils.swift; sourceTree = "<group>"; };
+		E9550ED22088B69F009A7A5B /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
 		E9B9D78D208662F7002AFE3A /* brandNewBIke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = brandNewBIke.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9B9D790208662F7002AFE3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E9B9D792208662F7002AFE3A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E9B9D795208662F7002AFE3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E9B9D797208662F7002AFE3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E9B9D79A208662F7002AFE3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E9B9D79C208662F7002AFE3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9B9D7A920866458002AFE3A /* LoginForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginForm.swift; sourceTree = "<group>"; };
+		E9B9D7AB208664B1002AFE3A /* MockFactoroy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFactoroy.swift; sourceTree = "<group>"; };
+		E9B9D7AD20866625002AFE3A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +47,46 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C494C8BE2AC4192A9E9384EE /* Pods_brandNewBIke.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F98165A522F6A83CF3A1F4D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5DAD5F4DD9B16ABB116F4438 /* Pods_brandNewBIke.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BB7A9594245B317191C26659 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7F6BE9B0A5D5FA177EBDD7D1 /* Pods-brandNewBIke.debug.xcconfig */,
+				B177B7A56E412A0C32A99C0C /* Pods-brandNewBIke.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E9550EC420866AE8009A7A5B /* network */ = {
+			isa = PBXGroup;
+			children = (
+				E9550EC520866AFA009A7A5B /* ServiceFactory.swift */,
+				E9550ED02087B8A3009A7A5B /* NetworkUtils.swift */,
+			);
+			path = network;
+			sourceTree = "<group>";
+		};
 		E9B9D784208662F7002AFE3A = {
 			isa = PBXGroup;
 			children = (
 				E9B9D78F208662F7002AFE3A /* brandNewBIke */,
 				E9B9D78E208662F7002AFE3A /* Products */,
+				BB7A9594245B317191C26659 /* Pods */,
+				7F98165A522F6A83CF3A1F4D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +101,68 @@
 		E9B9D78F208662F7002AFE3A /* brandNewBIke */ = {
 			isa = PBXGroup;
 			children = (
+				E9550EC420866AE8009A7A5B /* network */,
+				E9B9D7A8208663BC002AFE3A /* viewmodels */,
+				E9B9D7A7208663B8002AFE3A /* view */,
+				E9B9D7A6208663AD002AFE3A /* models */,
+				E9B9D7A52086639F002AFE3A /* utils */,
+				E9B9D7A420866395002AFE3A /* layout */,
+				E9B9D7A320866388002AFE3A /* resources */,
 				E9B9D790208662F7002AFE3A /* AppDelegate.swift */,
-				E9B9D792208662F7002AFE3A /* ViewController.swift */,
-				E9B9D794208662F7002AFE3A /* Main.storyboard */,
-				E9B9D797208662F7002AFE3A /* Assets.xcassets */,
-				E9B9D799208662F7002AFE3A /* LaunchScreen.storyboard */,
 				E9B9D79C208662F7002AFE3A /* Info.plist */,
 			);
 			path = brandNewBIke;
+			sourceTree = "<group>";
+		};
+		E9B9D7A320866388002AFE3A /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				E9B9D797208662F7002AFE3A /* Assets.xcassets */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		E9B9D7A420866395002AFE3A /* layout */ = {
+			isa = PBXGroup;
+			children = (
+				E9B9D794208662F7002AFE3A /* Main.storyboard */,
+				61EA89A8EA8C704A6F19A58B /* LaunchScreen.storyboard */,
+			);
+			path = layout;
+			sourceTree = "<group>";
+		};
+		E9B9D7A52086639F002AFE3A /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				E9B9D7AB208664B1002AFE3A /* MockFactoroy.swift */,
+				E9550ED22088B69F009A7A5B /* SessionStore.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		E9B9D7A6208663AD002AFE3A /* models */ = {
+			isa = PBXGroup;
+			children = (
+				E9B9D7A920866458002AFE3A /* LoginForm.swift */,
+				E9550ECC20867937009A7A5B /* User.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		E9B9D7A7208663B8002AFE3A /* view */ = {
+			isa = PBXGroup;
+			children = (
+				61EA8D9661CE0FC8760E7355 /* LoginViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		E9B9D7A8208663BC002AFE3A /* viewmodels */ = {
+			isa = PBXGroup;
+			children = (
+				E9B9D7AD20866625002AFE3A /* LoginViewModel.swift */,
+			);
+			path = viewmodels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +172,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E9B9D79F208662F7002AFE3A /* Build configuration list for PBXNativeTarget "brandNewBIke" */;
 			buildPhases = (
+				9E37AB420926EB5E7A5A1FCD /* [CP] Check Pods Manifest.lock */,
 				E9B9D789208662F7002AFE3A /* Sources */,
 				E9B9D78A208662F7002AFE3A /* Frameworks */,
 				E9B9D78B208662F7002AFE3A /* Resources */,
+				05A24B2D9DEA9FB2C4EA3955 /* [CP] Embed Pods Frameworks */,
+				24A2FB0E390FE592F581E3B9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -123,21 +227,96 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9B9D79B208662F7002AFE3A /* LaunchScreen.storyboard in Resources */,
 				E9B9D798208662F7002AFE3A /* Assets.xcassets in Resources */,
 				E9B9D796208662F7002AFE3A /* Main.storyboard in Resources */,
+				61EA8D1D1A72D5EB4355E9E2 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		05A24B2D9DEA9FB2C4EA3955 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-brandNewBIke/Pods-brandNewBIke-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ModelMapper/Mapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya-ModelMapper/Moya_ModelMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCodable/RxCodable.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya_ModelMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCodable.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-brandNewBIke/Pods-brandNewBIke-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		24A2FB0E390FE592F581E3B9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-brandNewBIke/Pods-brandNewBIke-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E37AB420926EB5E7A5A1FCD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-brandNewBIke-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E9B9D789208662F7002AFE3A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9B9D793208662F7002AFE3A /* ViewController.swift in Sources */,
+				E9550ED12087B8A3009A7A5B /* NetworkUtils.swift in Sources */,
+				E9550EC620866AFA009A7A5B /* ServiceFactory.swift in Sources */,
+				E9B9D7AA20866458002AFE3A /* LoginForm.swift in Sources */,
+				E9B9D7AC208664B1002AFE3A /* MockFactoroy.swift in Sources */,
+				E9B9D7AE20866625002AFE3A /* LoginViewModel.swift in Sources */,
+				E9550ED32088B69F009A7A5B /* SessionStore.swift in Sources */,
+				E9550ECD20867937009A7A5B /* User.swift in Sources */,
 				E9B9D791208662F7002AFE3A /* AppDelegate.swift in Sources */,
+				61EA864F9071234854CCD92A /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,14 +329,6 @@
 				E9B9D795208662F7002AFE3A /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		E9B9D799208662F7002AFE3A /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E9B9D79A208662F7002AFE3A /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -272,6 +443,7 @@
 		};
 		E9B9D7A0208662F7002AFE3A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F6BE9B0A5D5FA177EBDD7D1 /* Pods-brandNewBIke.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +459,7 @@
 		};
 		E9B9D7A1208662F7002AFE3A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B177B7A56E412A0C32A99C0C /* Pods-brandNewBIke.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
