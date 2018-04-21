@@ -19,6 +19,7 @@ private extension String {
 
 enum KMITLBike {
     case login(username: String, password: String)
+    case token(token: String)
 }
 
 extension KMITLBike: TargetType {
@@ -30,12 +31,14 @@ extension KMITLBike: TargetType {
         switch self {
         case .login(_,_):
             return "/api/v1/accounts/login"
+        case .token(_):
+            return "/api/v1/accounts/access_token"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .login(_,_):
+        case .login(_,_), .token(_):
             return .post
         default:
             return .get
@@ -44,7 +47,7 @@ extension KMITLBike: TargetType {
     
     var sampleData: Data {
         switch self {
-        case .login(_,_):
+        default:
             return "".data(using: .utf8)!
         }
     }
@@ -53,6 +56,8 @@ extension KMITLBike: TargetType {
         switch self {
         case .login(let username, let password):
             return .requestJSONEncodable(LoginForm(username: username, password: password))
+        case .token(let token):
+            return .requestJSONEncodable(TokenForm(token: token))
         }
     }
     

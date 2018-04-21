@@ -25,38 +25,25 @@ class LoginViewController: UIViewController {
         bindRx()
         // Do any additional setup after loading the view, typically from a nib.
     }
-    
-    
-    @IBAction func onTap(_ sender: Any) {
-        print("HEHE")
-    }
+
     private func bindRx(){
         usernameField.becomeFirstResponder()
         self.usernameField.rx.text.bind(to: self.viewModel.inputs.username).disposed(by: self.disposeBag)
         self.passwordField.rx.text.bind(to: self.viewModel.inputs.password).disposed(by: self.disposeBag)
         self.loginButton.rx.tap.bind(to:self.viewModel.inputs.loginPress).disposed(by: self.disposeBag)
-        
-        self.viewModel.outputs.signin.drive( onNext: { signedin in
-            print("test")
-            if signedin == true {
-                print("p")
-            }
-        }).disposed(by: self.disposeBag)
-        
-        //self.viewModel.test()
-        
-        
-        //print(self.viewModel.inputs.loginPress)
-        //self.viewModel.login(user: "57090016", pass: "EEI0S2wO")
-        //usernameField.rx.text.bind(to: self.viewModel.inputs.username).disposed(by: disposeBag)
-        //passwordField.rx.text.bind(to: self.viewModel.inputs.password).disposed(by: disposeBag)
-        //loginButton.rx.tap.bind(to: self.viewModel.inputs.loginPress).disposed(by: disposeBag)
+        self.disposeBag.insert(
+            self.viewModel.signin.subscribeOn(MainScheduler.instance).subscribe { user in
+                print(user)
+                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let homeViewController = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+                self.present(homeViewController, animated: true, completion: nil)
+                
+        })
         
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 }

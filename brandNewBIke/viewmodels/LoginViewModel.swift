@@ -17,7 +17,7 @@ protocol LoginViewModelInputs {
 }
 
 protocol LoginViewModelOutputs {
-    var signin : Driver<Bool> { get }
+    var signin : PublishSubject<User?> { get }
 }
 
 protocol LoginViewModelTypes {
@@ -27,45 +27,61 @@ protocol LoginViewModelTypes {
 
 class LoginViewModel: LoginViewModelInputs, LoginViewModelTypes, LoginViewModelOutputs {
     
-    var signin: Driver<Bool>
-    
     var disposedBag: DisposeBag = DisposeBag()
     
     var inputs: LoginViewModelInputs { return self }
     
     var outputs: LoginViewModelOutputs { return self }
+    
+    var signin: PublishSubject<User?>
 
-    let username: PublishSubject<String?> = PublishSubject<String?>()
+    let username: PublishSubject<String?>
     
-    var password: PublishSubject<String?> = PublishSubject<String?>()
+    var password: PublishSubject<String?>
     
-    var loginPress: PublishSubject<Void>  = PublishSubject<Void>()
+    var loginPress: PublishSubject<Void>
+    
+    let localStorage = UserDefaults.standard
     
     
     init() {
+        username = PublishSubject<String?>()
+        password = PublishSubject<String?>()
+        loginPress = PublishSubject<Void>()
+        signin = PublishSubject<User?>()
+
+        if let token = localStorage.string(forKey: StorageKey.TOKEN_KEY) {
+            
+            self.disposedBag.insert(
+                Api.getUserFromToken(token: token).subscribe(
+                    onSuccess: { (user) in
+                        self.onLogin(user: user)
+                    },
+                    onError: { (error) in print(error)}) )
+        }
         
         let userAndPassword = Driver.combineLatest(self.username.asDriver(onErrorJustReturn: nil),
-                                                    self.password.asDriver(onErrorJustReturn: nil)) { ($0,$1) }
-        self.signin = self.loginPress
-            .asDriver(onErrorJustReturn:(print("ERROR")))
-            .withLatestFrom(userAndPassword)
-            .flatMapLatest{ (user, pass) in
-                print("check~~~")
-                return Api.login(username: user!, password: pass!).asDriver(onErrorJustReturn: false)
+                                                   self.password.asDriver(onErrorJustReturn: nil)) { ($0,$1)  }
+        self.disposedBag.insert(self.loginPress.withLatestFrom(userAndPassword).flatMapLatest { (arg) -> Single<User> in
+            let (user, password) = arg
+            return Api.login(username: user!, password: password!)
             }
-        print("init")
+            .subscribe(
+                onNext: { (user) in
+                    self.onLogin(user: user)
+            }, onError: { (error) in
+                print(error)
+            })
+        )
+        
         
     }
-        
-        
     
+    private func onLogin(user: User){
+        localStorage.set(user.token, forKey: StorageKey.TOKEN_KEY)
     
-    public func initSubscription(){
-        self.disposedBag.insert(self.loginPress.subscribe { (_) in
-            print("hehe")
-        })
+        self.signin.onNext(user)
     }
-    
     
     
 }

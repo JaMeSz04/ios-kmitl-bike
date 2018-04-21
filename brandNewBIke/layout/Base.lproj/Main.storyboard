@@ -13,7 +13,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="brandNewBIke" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="LoginViewController" customModule="brandNewBIke" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,7 +34,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ju-5I-vwP">
                                 <rect key="frame" x="32" y="352" width="311" height="50"/>
@@ -66,7 +66,107 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="130" y="167"/>
+            <point key="canvasLocation" x="180" y="146"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="3D1-cq-1Ne">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VGo-Hf-AYw" customClass="HomeViewController" customModule="brandNewBIke" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Udf-eI-TeO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kHy-qb-Sh5">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <outlet property="delegate" destination="VGo-Hf-AYw" id="LdV-Hq-xnW"/>
+                                </connections>
+                            </mapView>
+                            <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="g1w-eo-awr">
+                                <rect key="frame" x="0.0" y="587" width="375" height="80"/>
+                                <subviews>
+                                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vWT-SS-yS7">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="atZ-oh-Jh0">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1q-u0-omQ">
+                                                    <rect key="frame" x="16" y="25" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="Kyf-BW-HtB"/>
+                                                        <constraint firstAttribute="height" constant="30" id="fEM-0k-K5P"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button" image="reloadIcon"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x6W-Fl-kfg">
+                                                    <rect key="frame" x="329" y="25" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="TRE-Pd-PKS"/>
+                                                        <constraint firstAttribute="width" constant="30" id="cK0-XF-d9v"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button" image="userLocationIcon"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Chw-e6-MaX">
+                                                    <rect key="frame" x="116" y="0.0" width="142" height="80"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <state key="normal" title=" RIDE" image="scannerIcon">
+                                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="x6W-Fl-kfg" secondAttribute="trailing" constant="16" id="8O3-QK-uis"/>
+                                                <constraint firstItem="Chw-e6-MaX" firstAttribute="top" secondItem="atZ-oh-Jh0" secondAttribute="top" id="G2g-6M-adb"/>
+                                                <constraint firstItem="d1q-u0-omQ" firstAttribute="leading" secondItem="atZ-oh-Jh0" secondAttribute="leading" constant="16" id="Mhr-mh-FaW"/>
+                                                <constraint firstAttribute="trailing" secondItem="Chw-e6-MaX" secondAttribute="trailing" constant="117" id="XT2-p7-4c2"/>
+                                                <constraint firstItem="d1q-u0-omQ" firstAttribute="top" secondItem="atZ-oh-Jh0" secondAttribute="top" constant="25" id="aoB-MO-fTf"/>
+                                                <constraint firstAttribute="bottom" secondItem="Chw-e6-MaX" secondAttribute="bottom" id="o3g-ub-Wcj"/>
+                                                <constraint firstItem="Chw-e6-MaX" firstAttribute="leading" secondItem="atZ-oh-Jh0" secondAttribute="leading" constant="116" id="qEi-f0-Eqz"/>
+                                            </constraints>
+                                        </view>
+                                        <blurEffect style="light"/>
+                                    </visualEffectView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="vWT-SS-yS7" secondAttribute="trailing" id="MBM-Oh-OGg"/>
+                                    <constraint firstItem="vWT-SS-yS7" firstAttribute="top" secondItem="g1w-eo-awr" secondAttribute="top" id="Mi4-c1-f6e"/>
+                                    <constraint firstItem="vWT-SS-yS7" firstAttribute="leading" secondItem="g1w-eo-awr" secondAttribute="leading" id="Z0y-uJ-lc3"/>
+                                    <constraint firstAttribute="height" constant="80" id="i88-we-80M"/>
+                                    <constraint firstAttribute="bottom" secondItem="vWT-SS-yS7" secondAttribute="bottom" id="rk1-ug-gEf"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="g1w-eo-awr" firstAttribute="bottom" secondItem="TbD-qM-IvY" secondAttribute="bottom" id="0GP-Cz-M7M"/>
+                            <constraint firstItem="x6W-Fl-kfg" firstAttribute="top" secondItem="kHy-qb-Sh5" secondAttribute="bottom" constant="-55" id="HNe-L2-GgF"/>
+                            <constraint firstItem="kHy-qb-Sh5" firstAttribute="leading" secondItem="TbD-qM-IvY" secondAttribute="leading" id="VOl-By-fvr"/>
+                            <constraint firstItem="TbD-qM-IvY" firstAttribute="bottom" secondItem="kHy-qb-Sh5" secondAttribute="bottom" id="oSQ-BY-7Zm"/>
+                            <constraint firstItem="g1w-eo-awr" firstAttribute="trailing" secondItem="TbD-qM-IvY" secondAttribute="trailing" id="qJv-qh-4hL"/>
+                            <constraint firstItem="g1w-eo-awr" firstAttribute="leading" secondItem="TbD-qM-IvY" secondAttribute="leading" id="qY0-0U-TfU"/>
+                            <constraint firstItem="kHy-qb-Sh5" firstAttribute="trailing" secondItem="TbD-qM-IvY" secondAttribute="trailing" id="xTl-Hi-ntK"/>
+                            <constraint firstItem="kHy-qb-Sh5" firstAttribute="top" secondItem="Udf-eI-TeO" secondAttribute="top" id="xt3-WQ-13Z"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TbD-qM-IvY"/>
+                    </view>
+                    <connections>
+                        <outlet property="bottomsheetView" destination="g1w-eo-awr" id="rwF-2g-qOs"/>
+                        <outlet property="mapView" destination="kHy-qb-Sh5" id="D40-BL-d0e"/>
+                        <outlet property="refreshButton" destination="d1q-u0-omQ" id="1cJ-4i-ihP"/>
+                        <outlet property="refreshLocationButton" destination="x6W-Fl-kfg" id="ibj-PM-Tg6"/>
+                        <outlet property="rideButton" destination="Chw-e6-MaX" id="oAv-Hi-Btg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JlP-LY-36F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1197.5999999999999" y="144.3778110944528"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="reloadIcon" width="25" height="25"/>
+        <image name="scannerIcon" width="25" height="25"/>
+        <image name="userLocationIcon" width="25" height="25"/>
+    </resources>
 </document>
