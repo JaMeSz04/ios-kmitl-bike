@@ -1,0 +1,6 @@
+framework module Pods_brandNewBIke {
+  umbrella header "Pods-brandNewBIke-umbrella.h"
+
+  export *
+  module * { export * }
+}

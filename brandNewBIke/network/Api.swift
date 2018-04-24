@@ -20,4 +20,13 @@ public class Api {
     public static func getUserFromToken(token: String) -> Single<User> {
         return bikeProvider.rx.request(.token(token: token)).observeOn(MainScheduler.instance).map(User.self)
     }
+    
+    public static func getBikeList() -> Single<[Bike]> {
+        return bikeProvider.rx.request(.bikeList()).observeOn(MainScheduler.instance).map([Bike].self)
+    }
+    
+    public static func borrowBike(id: String) -> Single<BikeOperation>{
+        return bikeProvider.rx.request(.borrow(bikeId: id)).observeOn(MainScheduler.instance).map(BikeOperation.self)
+    }
 }
+

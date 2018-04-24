@@ -33,11 +33,9 @@ class LoginViewController: UIViewController {
         self.loginButton.rx.tap.bind(to:self.viewModel.inputs.loginPress).disposed(by: self.disposeBag)
         self.disposeBag.insert(
             self.viewModel.signin.subscribeOn(MainScheduler.instance).subscribe { user in
-                print(user)
                 let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let homeViewController = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
                 self.present(homeViewController, animated: true, completion: nil)
-                
         })
         
     }

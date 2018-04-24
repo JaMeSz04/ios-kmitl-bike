@@ -20,6 +20,8 @@ private extension String {
 enum KMITLBike {
     case login(username: String, password: String)
     case token(token: String)
+    case bikeList()
+    case borrow(bikeId: String)
 }
 
 extension KMITLBike: TargetType {
@@ -33,6 +35,10 @@ extension KMITLBike: TargetType {
             return "/api/v1/accounts/login"
         case .token(_):
             return "/api/v1/accounts/access_token"
+        case .bikeList():
+            return "/api/v1/bikes/list"
+        case .borrow(let bikeId):
+            return "/api/v1/bikes/\(bikeId.URLEscapedString)/borrow"
         }
     }
     
@@ -58,6 +64,10 @@ extension KMITLBike: TargetType {
             return .requestJSONEncodable(LoginForm(username: username, password: password))
         case .token(let token):
             return .requestJSONEncodable(TokenForm(token: token))
+        case .bikeList():
+            return .requestPlain
+        case .borrow(_):
+            return .requestPlain
         }
     }
     

@@ -1,0 +1,63 @@
+PODS:
+  - Alamofire (4.7.0)
+  - BulletinBoard (1.3.0)
+  - ModelMapper (7.4.1)
+  - Moya (11.0.1):
+    - Moya/Core (= 11.0.1)
+  - Moya-ModelMapper/Core (7.0.0):
+    - ModelMapper
+    - Moya (~> 11.0)
+  - Moya-ModelMapper/RxSwift (7.0.0):
+    - Moya-ModelMapper/Core
+    - Moya/RxSwift (~> 11.0)
+    - RxSwift
+  - Moya/Core (11.0.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 3.0)
+  - Moya/RxSwift (11.0.1):
+    - Moya/Core
+    - RxSwift (~> 4.0)
+  - QRCodeReader.swift (8.1.1)
+  - Result (3.2.4)
+  - RxBluetoothKit (5.0.0):
+    - RxSwift (~> 4.0)
+  - RxCocoa (4.1.2):
+    - RxSwift (~> 4.0)
+  - RxCodable (0.3.0):
+    - RxCodable/Core (= 0.3.0)
+  - RxCodable/Core (0.3.0):
+    - RxSwift (>= 4.0.0-beta.0)
+  - RxSwift (4.1.2)
+  - SwiftLocation (3.2.1):
+    - SwiftyJSON (~> 4.0.0-alpha.1)
+  - SwiftyJSON (4.0.0)
+
+DEPENDENCIES:
+  - BulletinBoard
+  - Moya-ModelMapper/RxSwift (= 7.0.0)
+  - Moya/RxSwift (~> 11.0)
+  - QRCodeReader.swift (~> 8.1.1)
+  - RxBluetoothKit
+  - RxCocoa
+  - RxCodable
+  - RxSwift
+  - SwiftLocation
+
+SPEC CHECKSUMS:
+  Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
+  BulletinBoard: 23c9d98cac654fd484d76f2a0655669974e9bd9c
+  ModelMapper: e576b4e32007bf574d0f9e4f533d29c46d29f146
+  Moya: 3d594ada51a21cc02b18739ab578a1984f900c8a
+  Moya-ModelMapper: 9aa8a99cb664a083b376869d6091c1f20d9f171e
+  QRCodeReader.swift: b164a681887de276d405ff02bce854d82cd6360b
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  RxBluetoothKit: 29fe5032554aac71c9eeec1f249f4f44205cf988
+  RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
+  RxCodable: 12d41ab0ba58f455cfc83965fcc927ac4bad3e7f
+  RxSwift: e49536837d9901277638493ea537394d4b55f570
+  SwiftLocation: 603153e718a5b4a1e1f114346c2d5e13c16b69da
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+
+PODFILE CHECKSUM: f4a038a47ed3ed1003c6a078f58933f1274ca434
+
+COCOAPODS: 1.4.0

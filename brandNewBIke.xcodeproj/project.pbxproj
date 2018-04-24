@@ -21,6 +21,16 @@
 		E9550EE32089E62D009A7A5B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9550EE22089E62D009A7A5B /* Location.swift */; };
 		E9550EE5208A41E8009A7A5B /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9550EE4208A41E8009A7A5B /* BottomSheetView.swift */; };
 		E9550EE7208AD47E009A7A5B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9550EE6208AD47E009A7A5B /* Constants.swift */; };
+		E9550EE9208AFF36009A7A5B /* BulletinFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9550EE8208AFF36009A7A5B /* BulletinFactory.swift */; };
+		E9550EEB208BA353009A7A5B /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9550EEA208BA353009A7A5B /* ScannerViewController.swift */; };
+		E987534A208F118000C30DAD /* BorrowProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9875349208F118000C30DAD /* BorrowProtocol.swift */; };
+		E987534C208F204300C30DAD /* ManualUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E987534B208F204300C30DAD /* ManualUtil.swift */; };
+		E987534E208F243500C30DAD /* BikeOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E987534D208F243500C30DAD /* BikeOperation.swift */; };
+		E9875350208F248900C30DAD /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = E987534F208F248900C30DAD /* Session.swift */; };
+		E9875352208F253400C30DAD /* UsagePlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9875351208F253400C30DAD /* UsagePlan.swift */; };
+		E9ABB062208C7F9100370501 /* BluetoothUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9ABB061208C7F9100370501 /* BluetoothUtil.swift */; };
+		E9ABB064208C80EC00370501 /* Bike.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9ABB063208C80EC00370501 /* Bike.swift */; };
+		E9ABB066208C820500370501 /* BikeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9ABB065208C820500370501 /* BikeList.swift */; };
 		E9B9D791208662F7002AFE3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B9D790208662F7002AFE3A /* AppDelegate.swift */; };
 		E9B9D796208662F7002AFE3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9B9D794208662F7002AFE3A /* Main.storyboard */; };
 		E9B9D798208662F7002AFE3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9B9D797208662F7002AFE3A /* Assets.xcassets */; };
@@ -46,6 +56,16 @@
 		E9550EE22089E62D009A7A5B /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		E9550EE4208A41E8009A7A5B /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
 		E9550EE6208AD47E009A7A5B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E9550EE8208AFF36009A7A5B /* BulletinFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletinFactory.swift; sourceTree = "<group>"; };
+		E9550EEA208BA353009A7A5B /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
+		E9875349208F118000C30DAD /* BorrowProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorrowProtocol.swift; sourceTree = "<group>"; };
+		E987534B208F204300C30DAD /* ManualUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualUtil.swift; sourceTree = "<group>"; };
+		E987534D208F243500C30DAD /* BikeOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeOperation.swift; sourceTree = "<group>"; };
+		E987534F208F248900C30DAD /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		E9875351208F253400C30DAD /* UsagePlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsagePlan.swift; sourceTree = "<group>"; };
+		E9ABB061208C7F9100370501 /* BluetoothUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothUtil.swift; sourceTree = "<group>"; };
+		E9ABB063208C80EC00370501 /* Bike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bike.swift; sourceTree = "<group>"; };
+		E9ABB065208C820500370501 /* BikeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeList.swift; sourceTree = "<group>"; };
 		E9B9D78D208662F7002AFE3A /* brandNewBIke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = brandNewBIke.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9B9D790208662F7002AFE3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9B9D795208662F7002AFE3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -104,6 +124,16 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
+		E9875348208F116900C30DAD /* borrow */ = {
+			isa = PBXGroup;
+			children = (
+				E9875349208F118000C30DAD /* BorrowProtocol.swift */,
+				E9ABB061208C7F9100370501 /* BluetoothUtil.swift */,
+				E987534B208F204300C30DAD /* ManualUtil.swift */,
+			);
+			path = borrow;
+			sourceTree = "<group>";
+		};
 		E9B9D784208662F7002AFE3A = {
 			isa = PBXGroup;
 			children = (
@@ -159,8 +189,10 @@
 		E9B9D7A52086639F002AFE3A /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				E9875348208F116900C30DAD /* borrow */,
 				E9B9D7AB208664B1002AFE3A /* MockFactoroy.swift */,
 				E9550ED22088B69F009A7A5B /* SessionStore.swift */,
+				E9550EE8208AFF36009A7A5B /* BulletinFactory.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -172,6 +204,11 @@
 				E9550ECC20867937009A7A5B /* User.swift */,
 				E9550EDE2089D11D009A7A5B /* TokenForm.swift */,
 				E9550EE22089E62D009A7A5B /* Location.swift */,
+				E9ABB063208C80EC00370501 /* Bike.swift */,
+				E9ABB065208C820500370501 /* BikeList.swift */,
+				E987534D208F243500C30DAD /* BikeOperation.swift */,
+				E987534F208F248900C30DAD /* Session.swift */,
+				E9875351208F253400C30DAD /* UsagePlan.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -182,6 +219,7 @@
 				61EA8D9661CE0FC8760E7355 /* LoginViewController.swift */,
 				E9550EDC2089B094009A7A5B /* HomeViewController.swift */,
 				E9550EE4208A41E8009A7A5B /* BottomSheetView.swift */,
+				E9550EEA208BA353009A7A5B /* ScannerViewController.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -278,7 +316,9 @@
 				"${BUILT_PRODUCTS_DIR}/ModelMapper/Mapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya-ModelMapper/Moya_ModelMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/QRCodeReader.swift/QRCodeReader.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/RxBluetoothKit/RxBluetoothKit.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCodable/RxCodable.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -292,7 +332,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya_ModelMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCodeReader.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBluetoothKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCodable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -347,21 +389,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E987534C208F204300C30DAD /* ManualUtil.swift in Sources */,
 				E9550ED8208998EA009A7A5B /* Api.swift in Sources */,
 				E9550EC620866AFA009A7A5B /* ServiceFactory.swift in Sources */,
+				E9550EE9208AFF36009A7A5B /* BulletinFactory.swift in Sources */,
 				E9B9D7AA20866458002AFE3A /* LoginForm.swift in Sources */,
 				E9B9D7AC208664B1002AFE3A /* MockFactoroy.swift in Sources */,
 				E9B9D7AE20866625002AFE3A /* LoginViewModel.swift in Sources */,
 				E9550EDB2089A22F009A7A5B /* StorageKey.swift in Sources */,
+				E9ABB062208C7F9100370501 /* BluetoothUtil.swift in Sources */,
 				E9550EE32089E62D009A7A5B /* Location.swift in Sources */,
+				E9875350208F248900C30DAD /* Session.swift in Sources */,
+				E987534E208F243500C30DAD /* BikeOperation.swift in Sources */,
 				E9550EE7208AD47E009A7A5B /* Constants.swift in Sources */,
 				E9550ED32088B69F009A7A5B /* SessionStore.swift in Sources */,
 				E9550EDD2089B094009A7A5B /* HomeViewController.swift in Sources */,
+				E9ABB066208C820500370501 /* BikeList.swift in Sources */,
+				E9ABB064208C80EC00370501 /* Bike.swift in Sources */,
 				E9550EE12089E16A009A7A5B /* HomeViewModel.swift in Sources */,
 				E9550ECD20867937009A7A5B /* User.swift in Sources */,
+				E9550EEB208BA353009A7A5B /* ScannerViewController.swift in Sources */,
 				E9550EE5208A41E8009A7A5B /* BottomSheetView.swift in Sources */,
+				E9875352208F253400C30DAD /* UsagePlan.swift in Sources */,
 				E9B9D791208662F7002AFE3A /* AppDelegate.swift in Sources */,
 				61EA864F9071234854CCD92A /* LoginViewController.swift in Sources */,
+				E987534A208F118000C30DAD /* BorrowProtocol.swift in Sources */,
 				E9550EDF2089D11D009A7A5B /* TokenForm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

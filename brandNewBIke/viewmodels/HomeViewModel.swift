@@ -21,6 +21,8 @@ protocol HomeViewModelInputs {
 protocol HomeViewModelOutputs {
     var location: PublishSubject<Location> { get }
     var bottomSheetItem: PublishSubject<PageBulletinItem> { get }
+    var instructionAction: PublishSubject<PageBulletinItem> { get }
+    var bikeList: PublishSubject<[Bike]> { get }
 }
 
 protocol HomeViewModelType {
@@ -37,6 +39,9 @@ class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutput
     var locationRequest: PublishSubject<Bool>
     var bottomSheetPageRequest: PublishSubject<Void>
     var bottomSheetItem: PublishSubject<PageBulletinItem>
+    var instructionAction: PublishSubject<PageBulletinItem>
+    var bikeList: PublishSubject<[Bike]>
+    let bulletinFactory: BulletinFactory = BulletinFactory()
     
     init() {
         Locator.requestAuthorizationIfNeeded()
@@ -44,24 +49,35 @@ class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutput
         locationRequest = PublishSubject<Bool>()
         bottomSheetPageRequest = PublishSubject<Void>()
         bottomSheetItem = PublishSubject<PageBulletinItem>()
+        instructionAction = PublishSubject<PageBulletinItem>()
+        bikeList = PublishSubject<[Bike]>()
         
         locationRequest.observeOn(MainScheduler.instance).subscribe { isContinue in
             self.getLatestLocation()
         }.disposed(by: self.disposeBag)
         
-        bottomSheetPageRequest.observeOn(MainScheduler.instance).subscribe{ () in
+        bottomSheetPageRequest.observeOn(MainScheduler.instance).subscribe(onNext: { () in
+            self.bottomSheetItem.onNext(self.getBottomSheet())
+        }, onError: { (error) in
+            print(error)
+        }, onCompleted: {
             
-        }.disposed(by: self.disposeBag)
+        }).disposed(by: self.disposeBag)
+        
+        self.initializeBulletinBoard()
       
     }
     
-    public static func getRootButtomSheet() -> PageBulletinItem {
-        let rootItem : PageBulletinItem = PageBulletinItem(title: "Get ready to scan")
-        rootItem.image = UIImage(named: "qrIcon")
-        rootItem.descriptionText = "Improper used of the system may result as crime"
-        rootItem.actionButtonTitle = "Subscribe"
-        rootItem.isDismissable = true
-        return rootItem
+    private func initializeBulletinBoard(){
+        self.bulletinFactory.addPage(title: "Get ready to scan", subtitle: "Please return the bike within 1 hour", image: UIImage(named: "qrIcon")!, buttonText: "Got it", action: self.instructionAction)
+    }
+    
+    public func getBottomSheet() -> PageBulletinItem {
+        return self.bulletinFactory.getPageItem()
+    }
+    
+    public func getRootBottomSheet() -> PageBulletinItem {
+        return self.bulletinFactory.getRoot()
     }
     
     public func getLatestLocation() {
