@@ -9,8 +9,9 @@
 import Foundation
 
 public struct BikeOperation: Codable {
-    var message: String
-    var point: Int
-    var session: Session
-    
+    let message : String
+    let session : Session
+    let point : Int
 }
+
+

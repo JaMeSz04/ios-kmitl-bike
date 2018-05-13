@@ -9,6 +9,6 @@
 import Foundation
 
 
-struct BikeList: Codable {
-    
+public struct BikeList: Codable {
+    var bikes : [Bike]
 }

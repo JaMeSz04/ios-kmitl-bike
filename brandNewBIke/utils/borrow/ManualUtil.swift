@@ -9,9 +9,24 @@
 import Foundation
 import RxSwift
 
-public class ManualUtil: BorrowProtocol {
-    
-    public func borrow(bike: Bike) -> Single<Bool> {
-        return Single.just(false)
+public class ManualClient: BorrowProtocol {
+    func performConnection() {
+        
     }
+    
+    required public init() {
+        self.subject = PublishSubject<BikeStatus>()
+        self.subject.dispose()
+    }
+    
+    var subject: PublishSubject<BikeStatus>
+
+    public func performBorrow(operation: BikeOperation) {
+        print("Perform borrowwww!!!ed")
+        self.subject.onNext(BikeStatus.BORROW_COMPLETED)
+       
+    }
+    
+    
+
 }

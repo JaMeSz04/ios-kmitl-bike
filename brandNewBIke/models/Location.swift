@@ -9,11 +9,11 @@
 import Foundation
 
 
-struct Location: Codable {
+public struct Location: Codable {
     var latitude : Double
     var longitude : Double
     
-    init(lat: Double, long: Double){
+    public init(lat: Double, long: Double){
         self.latitude = lat
         self.longitude = long
     }

@@ -22,6 +22,7 @@ public class BulletinFactory {
         page.actionHandler = { (item: PageBulletinItem) in
             action.onNext(item)
         }
+        page.interfaceFactory.tintColor = .black
         page.isDismissable = true
         self.pageItemList.append(page)
     }

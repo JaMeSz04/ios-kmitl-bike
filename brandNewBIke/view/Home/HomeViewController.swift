@@ -1,0 +1,124 @@
+//
+//  HomeViewController.swift
+//  brandNewBIke
+//
+//  Created by Patipon Riebpradit on 4/20/18.
+//  Copyright © 2018 Patipon Riebpradit. All rights reserved.
+//
+
+import BulletinBoard
+import UIKit
+import RxSwift
+import RxCocoa
+import MapKit
+import QRCodeReader
+import SideMenu
+
+class HomeViewController: UIViewController {
+
+    @IBOutlet weak var navigationView: UIView!
+    @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var refreshLocationButton: UIButton!
+    @IBOutlet weak var refreshButton: UIButton!
+    @IBOutlet weak var rideButton: UIButton!
+    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var bottomsheetView: UIView!
+    var viewModel: HomeViewModel = HomeViewModel()
+    let regionRadius: CLLocationDistance = 500
+    let locationManager: CLLocationManager = CLLocationManager()
+    private let disposeBag = DisposeBag()
+    lazy var bulletinManager : BulletinManager = {
+        return BulletinManager(rootItem : viewModel.getCurrentPage())
+    }()
+    lazy var readerVC: QRCodeReaderViewController = {
+        let builder = QRCodeReaderViewControllerBuilder {
+            $0.reader = QRCodeReader(metadataObjectTypes: [.qr], captureDevicePosition: .back)
+        }
+        return QRCodeReaderViewController(builder: builder)
+    }()
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        //self.bulletinManager.backgroundViewStyle = .blurredDark
+        SideMenuManager.default.menuPresentMode = .viewSlideInOut
+        SideMenuManager.default.menuWidth = UIScreen.main.bounds.width * 0.8
+        bottomsheetView.layer.cornerRadius = 10.0
+        bottomsheetView.layer.borderColor = UIColor.lightGray.cgColor
+        bottomsheetView.layer.borderWidth = 0.5
+        self.bindRx()
+        self.initLocationService()
+        //bottomsheetView.clipsToBounds = true
+        // Do any additional setup after loading the view.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    private func bindRx(){
+        self.rideButton.rx.tap.subscribe{ event in
+            self.bulletinManager.prepare()
+            self.bulletinManager.presentBulletin(above: self)
+        }.disposed(by: self.disposeBag)
+       
+        self.refreshLocationButton.rx.tap.subscribe{ event in
+            
+        }.disposed(by: self.disposeBag)
+        
+        self.viewModel.outputs.bottomSheetItem.subscribeOn(MainScheduler.instance)
+            .subscribe(onNext: { (item) in
+                self.bulletinManager.prepare()
+                self.bulletinManager.push(item: item)
+                self.bulletinManager.presentBulletin(above: self)
+                print("Presented")
+                
+            }, onError: { (error) in
+                print(error)
+            }, onCompleted: {}, onDisposed: {}).disposed(by: self.disposeBag)
+        
+        self.viewModel.outputs.instructionAction.subscribe{ item in
+            print("tap")
+            self.openScanner()
+        }.disposed(by: self.disposeBag)
+        
+        self.viewModel.outputs.bikeList.subscribe(onNext: { (bikeList) in
+            print("incoming bikeList")
+            self.addMarker(bikeList: bikeList)
+        }).disposed(by: self.disposeBag)
+        
+        self.viewModel.outputs.resetBulletin.subscribe { () in
+            self.bulletinManager.popToRootItem()
+        }.disposed(by: self.disposeBag)
+
+        self.viewModel.outputs.bikeOperationStatus.subscribe(onNext: { (bikeStatus) in
+            switch bikeStatus {
+            case .BORROW_COMPLETED:
+                self.rideButton.setTitle("RETURN", for: UIControlState.normal)
+            case .RETURN_COMPLETED:
+                self.rideButton.setTitle("RIDE", for: UIControlState.normal)
+                self.stopTracking()
+            case .TRACKING:
+                print("tracking start!!!")
+                self.bulletinManager.dismissBulletin(animated: true)
+                self.bulletinManager.popToRootItem()
+                self.startTracking()
+            case .CONNECTED_SERVER:
+                self.bulletinManager.displayActivityIndicator()
+                break
+            default:
+                break
+            }
+        }).disposed(by: self.disposeBag)
+        
+    }
+}
+
+extension HomeViewController {
+    func showBulletin(){
+        bulletinManager.prepare()
+        bulletinManager.presentBulletin(above: self)
+    }
+}
+

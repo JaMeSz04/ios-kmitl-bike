@@ -12,7 +12,12 @@ import CoreBluetooth
 import RxSwift
 
 public class BluetoothClient: BorrowProtocol {
-
+    func performConnection() {
+        
+    }
+    
+    
+    var subject: PublishSubject<BikeStatus>
     let manager = CentralManager(queue: .main)
     private let serviceUUID = CBUUID(string: "FFE0")
     private let characteristicUUID = CBUUID(string: "FFE1")
@@ -20,8 +25,13 @@ public class BluetoothClient: BorrowProtocol {
     private let disposeBag: DisposeBag = DisposeBag()
     
     
-    public func borrow(bike: Bike) -> Single<Bool> {
-        return Single.just(false)
+    required public init() {
+        self.subject = PublishSubject<BikeStatus>()
+        self.subject.dispose()
+    }
+    
+    public func performBorrow(operation: BikeOperation){
+        print("Perform borrowwww")
     }
     
     public func scanFor(bikeName : String) -> Observable<ScannedPeripheral> {
@@ -38,12 +48,7 @@ public class BluetoothClient: BorrowProtocol {
             .subscribe(onNext: { characteristic in self.characteristic = characteristic }).disposed(by: self.disposeBag)
     }
     
-    public func initNotification(){
-        self.characteristic?.observeValueUpdateAndSetNotification()
-            .subscribe(onNext: {
-                print( $0.value )
-            }).disposed(by: self.disposeBag)
-    }
+    
     
     
     

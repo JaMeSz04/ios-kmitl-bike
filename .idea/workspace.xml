@@ -2,18 +2,83 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36a0bee8-18fe-47f9-97d1-b5231e3b5a9e" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/brandNewBIke/models/LoginForm.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/brandNewBIke/models/User.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/brandNewBIke/network/API.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/brandNewBIke/network/Protocols.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/brandNewBIke/network/ServiceFactory.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/brandNewBIke/utils/MockFactoroy.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/brandNewBIke/viewmodels/LoginViewModel.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/brandNewBIke/models/BikeResponse.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/brandNewBIke/models/BikeStatus.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/brandNewBIke/models/BorrowForm.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/brandNewBIke/resources/Assets.xcassets/LABikeGreen.imageset/32231600_10211338370283718_4575380191722864640_n-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/brandNewBIke/resources/Assets.xcassets/LABikeGreen.imageset/32231600_10211338370283718_4575380191722864640_n-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/brandNewBIke/resources/Assets.xcassets/LABikeGreen.imageset/32231600_10211338370283718_4575380191722864640_n.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/brandNewBIke/resources/Assets.xcassets/LABikeGreen.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/brandNewBIke/resources/Assets.xcassets/bikeLocationIcon.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/brandNewBIke/resources/Assets.xcassets/bikeLocationIcon.imageset/ic_bike_location-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/brandNewBIke/resources/Assets.xcassets/bikeLocationIcon.imageset/ic_bike_location-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/brandNewBIke/resources/Assets.xcassets/bikeLocationIcon.imageset/ic_bike_location.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/brandNewBIke/resources/Assets.xcassets/giantEscape.imageset/32187202_10211338370323719_8101156791045324800_n-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/brandNewBIke/resources/Assets.xcassets/giantEscape.imageset/32187202_10211338370323719_8101156791045324800_n-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/brandNewBIke/resources/Assets.xcassets/giantEscape.imageset/32187202_10211338370323719_8101156791045324800_n.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/brandNewBIke/resources/Assets.xcassets/giantEscape.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/brandNewBIke/resources/Assets.xcassets/hamburgerMenuIcon.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/brandNewBIke/resources/Assets.xcassets/hamburgerMenuIcon.imageset/icons8-menu-filled-50.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/brandNewBIke/resources/Assets.xcassets/hamburgerMenuIcon.imageset/icons8-menu-filled-51.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/brandNewBIke/resources/Assets.xcassets/hamburgerMenuIcon.imageset/icons8-menu-filled-52.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/brandNewBIke/utils/NetworkLogger.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/brandNewBIke/view/Home/HomeLocationExtension.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/brandNewBIke/view/Home/HomeMapExtension.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/brandNewBIke/view/Home/HomeScannerExtension.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/brandNewBIke/view/common/NavigationMenuItem.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/brandNewBIke/view/common/NavigationMenuItem.xib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/Podfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Podfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Manifest.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Manifest.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/patiponriebpradit.xcuserdatad/xcschemes/Pods-brandNewBIke.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/patiponriebpradit.xcuserdatad/xcschemes/Pods-brandNewBIke.xcscheme" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/patiponriebpradit.xcuserdatad/xcschemes/QRCodeReader.swift.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/patiponriebpradit.xcuserdatad/xcschemes/QRCodeReader.swift.xcscheme" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/patiponriebpradit.xcuserdatad/xcschemes/RxBluetoothKit.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/patiponriebpradit.xcuserdatad/xcschemes/RxBluetoothKit.xcscheme" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/patiponriebpradit.xcuserdatad/xcschemes/RxCocoa.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/patiponriebpradit.xcuserdatad/xcschemes/RxCocoa.xcscheme" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/patiponriebpradit.xcuserdatad/xcschemes/RxCodable.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/patiponriebpradit.xcuserdatad/xcschemes/RxCodable.xcscheme" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/patiponriebpradit.xcuserdatad/xcschemes/SwiftLocation.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/patiponriebpradit.xcuserdatad/xcschemes/SwiftLocation.xcscheme" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/patiponriebpradit.xcuserdatad/xcschemes/SwiftyJSON.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/patiponriebpradit.xcuserdatad/xcschemes/SwiftyJSON.xcscheme" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/patiponriebpradit.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/patiponriebpradit.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Alamofire/Alamofire.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Alamofire/Alamofire.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/BulletinBoard/BulletinBoard.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/BulletinBoard/BulletinBoard.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/ModelMapper/ModelMapper.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/ModelMapper/ModelMapper.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Moya-ModelMapper/Moya-ModelMapper.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Moya-ModelMapper/Moya-ModelMapper.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Moya/Moya.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Moya/Moya.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-brandNewBIke/Pods-brandNewBIke-acknowledgements.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-brandNewBIke/Pods-brandNewBIke-acknowledgements.markdown" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-brandNewBIke/Pods-brandNewBIke-acknowledgements.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-brandNewBIke/Pods-brandNewBIke-acknowledgements.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-brandNewBIke/Pods-brandNewBIke-frameworks.sh" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-brandNewBIke/Pods-brandNewBIke-frameworks.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-brandNewBIke/Pods-brandNewBIke-resources.sh" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-brandNewBIke/Pods-brandNewBIke-resources.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-brandNewBIke/Pods-brandNewBIke.debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-brandNewBIke/Pods-brandNewBIke.debug.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-brandNewBIke/Pods-brandNewBIke.release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-brandNewBIke/Pods-brandNewBIke.release.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/QRCodeReader.swift/QRCodeReader.swift.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/QRCodeReader.swift/QRCodeReader.swift.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Result/Result.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Result/Result.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/RxBluetoothKit/RxBluetoothKit.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/RxBluetoothKit/RxBluetoothKit.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/RxCocoa/RxCocoa.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/RxCocoa/RxCocoa.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/RxCodable/RxCodable.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/RxCodable/RxCodable.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/RxSwift/RxSwift.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/RxSwift/RxSwift.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/SwiftLocation/SwiftLocation.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/SwiftLocation/SwiftLocation.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/SwiftyJSON/SwiftyJSON.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/SwiftyJSON/SwiftyJSON.xcconfig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/brandNewBIke.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/brandNewBIke.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/brandNewBIke/Assets.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/brandNewBIke/resources/Assets.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/brandNewBIke/Base.lproj/LaunchScreen.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/brandNewBIke/layout/LaunchScreen.storyboard" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/brandNewBIke/Base.lproj/Main.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/brandNewBIke/layout/Base.lproj/Main.storyboard" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/brandNewBIke/ViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/brandNewBIke/view/LoginViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/brandNewBIke.xcworkspace/xcuserdata/patiponriebpradit.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" beforeDir="false" afterPath="$PROJECT_DIR$/brandNewBIke.xcworkspace/xcuserdata/patiponriebpradit.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/brandNewBIke/New Group/Constants.swift" beforeDir="false" afterPath="$PROJECT_DIR$/brandNewBIke/New Group/Constants.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/brandNewBIke/layout/Base.lproj/Main.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/brandNewBIke/layout/Base.lproj/Main.storyboard" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/brandNewBIke/models/Bike.swift" beforeDir="false" afterPath="$PROJECT_DIR$/brandNewBIke/models/Bike.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/brandNewBIke/models/BikeList.swift" beforeDir="false" afterPath="$PROJECT_DIR$/brandNewBIke/models/BikeList.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/brandNewBIke/models/BikeOperation.swift" beforeDir="false" afterPath="$PROJECT_DIR$/brandNewBIke/models/BikeOperation.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/brandNewBIke/models/Location.swift" beforeDir="false" afterPath="$PROJECT_DIR$/brandNewBIke/models/Location.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/brandNewBIke/models/Session.swift" beforeDir="false" afterPath="$PROJECT_DIR$/brandNewBIke/models/Session.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/brandNewBIke/models/UsagePlan.swift" beforeDir="false" afterPath="$PROJECT_DIR$/brandNewBIke/models/UsagePlan.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/brandNewBIke/network/Api.swift" beforeDir="false" afterPath="$PROJECT_DIR$/brandNewBIke/network/Api.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/brandNewBIke/network/ServiceFactory.swift" beforeDir="false" afterPath="$PROJECT_DIR$/brandNewBIke/network/ServiceFactory.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/brandNewBIke/utils/BulletinFactory.swift" beforeDir="false" afterPath="$PROJECT_DIR$/brandNewBIke/utils/BulletinFactory.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/brandNewBIke/utils/borrow/BluetoothUtil.swift" beforeDir="false" afterPath="$PROJECT_DIR$/brandNewBIke/utils/borrow/BluetoothUtil.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/brandNewBIke/utils/borrow/BorrowProtocol.swift" beforeDir="false" afterPath="$PROJECT_DIR$/brandNewBIke/utils/borrow/BorrowProtocol.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/brandNewBIke/utils/borrow/ManualUtil.swift" beforeDir="false" afterPath="$PROJECT_DIR$/brandNewBIke/utils/borrow/ManualUtil.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/brandNewBIke/view/BottomSheetView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/brandNewBIke/utils/ImageResizer.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/brandNewBIke/view/HomeViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/brandNewBIke/view/Home/HomeViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/brandNewBIke/view/ScannerViewController.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/brandNewBIke/viewmodels/HomeViewModel.swift" beforeDir="false" afterPath="$PROJECT_DIR$/brandNewBIke/viewmodels/HomeViewModel.swift" afterDir="false" />
     </list>
     <ignored path="$USER_HOME$/Library/Developer/Xcode/DerivedData/brandNewBIke-anpwtykijxmsuqhctjaytxfcgkng/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,17 +88,14 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulator_E1736502-AC19-492D-BFDB-A106D6354EC5" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_b3a706bb5104688d23b1085a374324d78ebffc26" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="API.swift" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/brandNewBIke/network/API.swift">
+      <file leaf-file-name="HomeViewController.swift" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/brandNewBIke/view/Home/HomeViewController.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-              <folding>
-                <element signature="e#154#171#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="359">
+              <caret line="83" column="30" lean-forward="true" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -48,6 +110,7 @@
       <list>
         <option value="$PROJECT_DIR$/brandNewBIke/view/LoginViewController.swift" />
         <option value="$PROJECT_DIR$/brandNewBIke/network/API.swift" />
+        <option value="$PROJECT_DIR$/brandNewBIke/view/Home/HomeViewController.swift" />
       </list>
     </option>
   </component>
@@ -108,6 +171,13 @@
               <item name="" type="efc3779f:XcodeRootNode" />
               <item name="brandNewBIke" type="1d218c8b:XcodeProjectNode" />
               <item name="brandNewBIke" type="fcab9f18:XcodeViewNode" />
+              <item name="view" type="fcab9f18:XcodeViewNode" />
+              <item name="Home" type="fcab9f18:XcodeViewNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="brandNewBIke" type="1d218c8b:XcodeProjectNode" />
+              <item name="brandNewBIke" type="fcab9f18:XcodeViewNode" />
               <item name="layout" type="fcab9f18:XcodeViewNode" />
             </path>
           </expand>
@@ -155,11 +225,12 @@
       <workItem from="1523986175048" duration="92000" />
       <workItem from="1523986299415" duration="558000" />
       <workItem from="1523991658122" duration="169000" />
+      <workItem from="1526186102669" duration="581000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="819000" />
+    <option name="totallyTimeSpent" value="1400000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="824" extended-state="0" />
@@ -179,10 +250,10 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32933334" />
-      <window_info anchor="bottom" id="Messages" order="7" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,6 +263,13 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/brandNewBIke/network/Api.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/brandNewBIke/view/LoginViewController.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -220,13 +298,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/brandNewBIke/network/API.swift">
+    <entry file="file://$PROJECT_DIR$/brandNewBIke/network/Api.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
+        <state relative-caret-position="315">
           <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-          <folding>
-            <element signature="e#154#171#0" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/brandNewBIke/view/Home/HomeViewController.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="83" column="30" lean-forward="true" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="30" />
         </state>
       </provider>
     </entry>

@@ -28,8 +28,10 @@ PODS:
   - RxCodable/Core (0.3.0):
     - RxSwift (>= 4.0.0-beta.0)
   - RxSwift (4.1.2)
+  - SideMenu (3.1.5)
   - SwiftLocation (3.2.1):
     - SwiftyJSON (~> 4.0.0-alpha.1)
+  - SwiftyBeaver (1.5.1)
   - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
@@ -41,7 +43,27 @@ DEPENDENCIES:
   - RxCocoa
   - RxCodable
   - RxSwift
+  - SideMenu
   - SwiftLocation
+  - SwiftyBeaver
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - BulletinBoard
+    - ModelMapper
+    - Moya
+    - Moya-ModelMapper
+    - QRCodeReader.swift
+    - Result
+    - RxBluetoothKit
+    - RxCocoa
+    - RxCodable
+    - RxSwift
+    - SideMenu
+    - SwiftLocation
+    - SwiftyBeaver
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
@@ -55,9 +77,11 @@ SPEC CHECKSUMS:
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
   RxCodable: 12d41ab0ba58f455cfc83965fcc927ac4bad3e7f
   RxSwift: e49536837d9901277638493ea537394d4b55f570
+  SideMenu: 47dbf9e4d878062d8994aed43f6e4bf6c1fea30b
   SwiftLocation: 603153e718a5b4a1e1f114346c2d5e13c16b69da
+  SwiftyBeaver: 4f74563624b2c1e821c522c54142b5dd5ebb0f30
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: f4a038a47ed3ed1003c6a078f58933f1274ca434
+PODFILE CHECKSUM: 083415508a77c1f43566e3d0c07f2d2585de71f0
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.0

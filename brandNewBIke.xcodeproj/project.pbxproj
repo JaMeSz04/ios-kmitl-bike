@@ -10,6 +10,8 @@
 		61EA864F9071234854CCD92A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EA8D9661CE0FC8760E7355 /* LoginViewController.swift */; };
 		61EA8D1D1A72D5EB4355E9E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61EA89A8EA8C704A6F19A58B /* LaunchScreen.storyboard */; };
 		C494C8BE2AC4192A9E9384EE /* Pods_brandNewBIke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DAD5F4DD9B16ABB116F4438 /* Pods_brandNewBIke.framework */; };
+		E91D441E20A17F6700928C5F /* NavigationMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91D441C20A17F6700928C5F /* NavigationMenuItem.swift */; };
+		E91D441F20A17F6700928C5F /* NavigationMenuItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = E91D441D20A17F6700928C5F /* NavigationMenuItem.xib */; };
 		E9550EC620866AFA009A7A5B /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9550EC520866AFA009A7A5B /* ServiceFactory.swift */; };
 		E9550ECD20867937009A7A5B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9550ECC20867937009A7A5B /* User.swift */; };
 		E9550ED32088B69F009A7A5B /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9550ED22088B69F009A7A5B /* SessionStore.swift */; };
@@ -19,10 +21,8 @@
 		E9550EDF2089D11D009A7A5B /* TokenForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9550EDE2089D11D009A7A5B /* TokenForm.swift */; };
 		E9550EE12089E16A009A7A5B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9550EE02089E16A009A7A5B /* HomeViewModel.swift */; };
 		E9550EE32089E62D009A7A5B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9550EE22089E62D009A7A5B /* Location.swift */; };
-		E9550EE5208A41E8009A7A5B /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9550EE4208A41E8009A7A5B /* BottomSheetView.swift */; };
 		E9550EE7208AD47E009A7A5B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9550EE6208AD47E009A7A5B /* Constants.swift */; };
 		E9550EE9208AFF36009A7A5B /* BulletinFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9550EE8208AFF36009A7A5B /* BulletinFactory.swift */; };
-		E9550EEB208BA353009A7A5B /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9550EEA208BA353009A7A5B /* ScannerViewController.swift */; };
 		E987534A208F118000C30DAD /* BorrowProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9875349208F118000C30DAD /* BorrowProtocol.swift */; };
 		E987534C208F204300C30DAD /* ManualUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E987534B208F204300C30DAD /* ManualUtil.swift */; };
 		E987534E208F243500C30DAD /* BikeOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E987534D208F243500C30DAD /* BikeOperation.swift */; };
@@ -37,6 +37,15 @@
 		E9B9D7AA20866458002AFE3A /* LoginForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B9D7A920866458002AFE3A /* LoginForm.swift */; };
 		E9B9D7AC208664B1002AFE3A /* MockFactoroy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B9D7AB208664B1002AFE3A /* MockFactoroy.swift */; };
 		E9B9D7AE20866625002AFE3A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B9D7AD20866625002AFE3A /* LoginViewModel.swift */; };
+		E9C0BA3E20A76883002F628F /* Timestamps.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C0BA3D20A76883002F628F /* Timestamps.swift */; };
+		E9C0BA4020A76ED4002F628F /* BikeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C0BA3F20A76ED4002F628F /* BikeResponse.swift */; };
+		E9C80A8E20A4B25A0086B200 /* ImageResizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C80A8D20A4B25A0086B200 /* ImageResizer.swift */; };
+		E9C80A9020A5E7D20086B200 /* BikeStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C80A8F20A5E7D20086B200 /* BikeStatus.swift */; };
+		E9C80A9220A723000086B200 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C80A9120A723000086B200 /* NetworkLogger.swift */; };
+		E9C80A9420A72B810086B200 /* BorrowForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C80A9320A72B810086B200 /* BorrowForm.swift */; };
+		E9C80A9A20A759BE0086B200 /* HomeMapExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C80A9920A759BE0086B200 /* HomeMapExtension.swift */; };
+		E9C80A9C20A75A460086B200 /* HomeScannerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C80A9B20A75A460086B200 /* HomeScannerExtension.swift */; };
+		E9C80A9E20A75AA60086B200 /* HomeLocationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C80A9D20A75AA60086B200 /* HomeLocationExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +54,8 @@
 		61EA8D9661CE0FC8760E7355 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7F6BE9B0A5D5FA177EBDD7D1 /* Pods-brandNewBIke.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-brandNewBIke.debug.xcconfig"; path = "Pods/Target Support Files/Pods-brandNewBIke/Pods-brandNewBIke.debug.xcconfig"; sourceTree = "<group>"; };
 		B177B7A56E412A0C32A99C0C /* Pods-brandNewBIke.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-brandNewBIke.release.xcconfig"; path = "Pods/Target Support Files/Pods-brandNewBIke/Pods-brandNewBIke.release.xcconfig"; sourceTree = "<group>"; };
+		E91D441C20A17F6700928C5F /* NavigationMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationMenuItem.swift; sourceTree = "<group>"; };
+		E91D441D20A17F6700928C5F /* NavigationMenuItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationMenuItem.xib; sourceTree = "<group>"; };
 		E9550EC520866AFA009A7A5B /* ServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
 		E9550ECC20867937009A7A5B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E9550ED22088B69F009A7A5B /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
@@ -54,10 +65,8 @@
 		E9550EDE2089D11D009A7A5B /* TokenForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenForm.swift; sourceTree = "<group>"; };
 		E9550EE02089E16A009A7A5B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E9550EE22089E62D009A7A5B /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		E9550EE4208A41E8009A7A5B /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
 		E9550EE6208AD47E009A7A5B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E9550EE8208AFF36009A7A5B /* BulletinFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletinFactory.swift; sourceTree = "<group>"; };
-		E9550EEA208BA353009A7A5B /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		E9875349208F118000C30DAD /* BorrowProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorrowProtocol.swift; sourceTree = "<group>"; };
 		E987534B208F204300C30DAD /* ManualUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualUtil.swift; sourceTree = "<group>"; };
 		E987534D208F243500C30DAD /* BikeOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeOperation.swift; sourceTree = "<group>"; };
@@ -74,6 +83,15 @@
 		E9B9D7A920866458002AFE3A /* LoginForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginForm.swift; sourceTree = "<group>"; };
 		E9B9D7AB208664B1002AFE3A /* MockFactoroy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFactoroy.swift; sourceTree = "<group>"; };
 		E9B9D7AD20866625002AFE3A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		E9C0BA3D20A76883002F628F /* Timestamps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timestamps.swift; sourceTree = "<group>"; };
+		E9C0BA3F20A76ED4002F628F /* BikeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeResponse.swift; sourceTree = "<group>"; };
+		E9C80A8D20A4B25A0086B200 /* ImageResizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResizer.swift; sourceTree = "<group>"; };
+		E9C80A8F20A5E7D20086B200 /* BikeStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeStatus.swift; sourceTree = "<group>"; };
+		E9C80A9120A723000086B200 /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
+		E9C80A9320A72B810086B200 /* BorrowForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorrowForm.swift; sourceTree = "<group>"; };
+		E9C80A9920A759BE0086B200 /* HomeMapExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMapExtension.swift; sourceTree = "<group>"; };
+		E9C80A9B20A75A460086B200 /* HomeScannerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScannerExtension.swift; sourceTree = "<group>"; };
+		E9C80A9D20A75AA60086B200 /* HomeLocationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLocationExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +121,15 @@
 				B177B7A56E412A0C32A99C0C /* Pods-brandNewBIke.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		E91D441B20A17F3A00928C5F /* common */ = {
+			isa = PBXGroup;
+			children = (
+				E91D441C20A17F6700928C5F /* NavigationMenuItem.swift */,
+				E91D441D20A17F6700928C5F /* NavigationMenuItem.xib */,
+			);
+			path = common;
 			sourceTree = "<group>";
 		};
 		E9550EC420866AE8009A7A5B /* network */ = {
@@ -193,6 +220,8 @@
 				E9B9D7AB208664B1002AFE3A /* MockFactoroy.swift */,
 				E9550ED22088B69F009A7A5B /* SessionStore.swift */,
 				E9550EE8208AFF36009A7A5B /* BulletinFactory.swift */,
+				E9C80A8D20A4B25A0086B200 /* ImageResizer.swift */,
+				E9C80A9120A723000086B200 /* NetworkLogger.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -209,6 +238,10 @@
 				E987534D208F243500C30DAD /* BikeOperation.swift */,
 				E987534F208F248900C30DAD /* Session.swift */,
 				E9875351208F253400C30DAD /* UsagePlan.swift */,
+				E9C80A8F20A5E7D20086B200 /* BikeStatus.swift */,
+				E9C80A9320A72B810086B200 /* BorrowForm.swift */,
+				E9C0BA3D20A76883002F628F /* Timestamps.swift */,
+				E9C0BA3F20A76ED4002F628F /* BikeResponse.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -216,10 +249,9 @@
 		E9B9D7A7208663B8002AFE3A /* view */ = {
 			isa = PBXGroup;
 			children = (
+				E9C80A9820A759420086B200 /* Home */,
+				E91D441B20A17F3A00928C5F /* common */,
 				61EA8D9661CE0FC8760E7355 /* LoginViewController.swift */,
-				E9550EDC2089B094009A7A5B /* HomeViewController.swift */,
-				E9550EE4208A41E8009A7A5B /* BottomSheetView.swift */,
-				E9550EEA208BA353009A7A5B /* ScannerViewController.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -231,6 +263,17 @@
 				E9550EE02089E16A009A7A5B /* HomeViewModel.swift */,
 			);
 			path = viewmodels;
+			sourceTree = "<group>";
+		};
+		E9C80A9820A759420086B200 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E9550EDC2089B094009A7A5B /* HomeViewController.swift */,
+				E9C80A9920A759BE0086B200 /* HomeMapExtension.swift */,
+				E9C80A9B20A75A460086B200 /* HomeScannerExtension.swift */,
+				E9C80A9D20A75AA60086B200 /* HomeLocationExtension.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,7 +288,6 @@
 				E9B9D78A208662F7002AFE3A /* Frameworks */,
 				E9B9D78B208662F7002AFE3A /* Resources */,
 				05A24B2D9DEA9FB2C4EA3955 /* [CP] Embed Pods Frameworks */,
-				24A2FB0E390FE592F581E3B9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -298,6 +340,7 @@
 				E9B9D798208662F7002AFE3A /* Assets.xcassets in Resources */,
 				E9B9D796208662F7002AFE3A /* Main.storyboard in Resources */,
 				61EA8D1D1A72D5EB4355E9E2 /* LaunchScreen.storyboard in Resources */,
+				E91D441F20A17F6700928C5F /* NavigationMenuItem.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,7 +365,9 @@
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCodable/RxCodable.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftLocation/SwiftLocation.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -338,30 +383,14 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCodable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftLocation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-brandNewBIke/Pods-brandNewBIke-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		24A2FB0E390FE592F581E3B9 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-brandNewBIke/Pods-brandNewBIke-resources.sh",
-				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-brandNewBIke/Pods-brandNewBIke-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9E37AB420926EB5E7A5A1FCD /* [CP] Check Pods Manifest.lock */ = {
@@ -396,22 +425,30 @@
 				E9B9D7AA20866458002AFE3A /* LoginForm.swift in Sources */,
 				E9B9D7AC208664B1002AFE3A /* MockFactoroy.swift in Sources */,
 				E9B9D7AE20866625002AFE3A /* LoginViewModel.swift in Sources */,
+				E9C0BA4020A76ED4002F628F /* BikeResponse.swift in Sources */,
 				E9550EDB2089A22F009A7A5B /* StorageKey.swift in Sources */,
 				E9ABB062208C7F9100370501 /* BluetoothUtil.swift in Sources */,
+				E9C0BA3E20A76883002F628F /* Timestamps.swift in Sources */,
 				E9550EE32089E62D009A7A5B /* Location.swift in Sources */,
+				E9C80A9A20A759BE0086B200 /* HomeMapExtension.swift in Sources */,
 				E9875350208F248900C30DAD /* Session.swift in Sources */,
+				E91D441E20A17F6700928C5F /* NavigationMenuItem.swift in Sources */,
 				E987534E208F243500C30DAD /* BikeOperation.swift in Sources */,
 				E9550EE7208AD47E009A7A5B /* Constants.swift in Sources */,
 				E9550ED32088B69F009A7A5B /* SessionStore.swift in Sources */,
 				E9550EDD2089B094009A7A5B /* HomeViewController.swift in Sources */,
 				E9ABB066208C820500370501 /* BikeList.swift in Sources */,
+				E9C80A9C20A75A460086B200 /* HomeScannerExtension.swift in Sources */,
 				E9ABB064208C80EC00370501 /* Bike.swift in Sources */,
+				E9C80A8E20A4B25A0086B200 /* ImageResizer.swift in Sources */,
 				E9550EE12089E16A009A7A5B /* HomeViewModel.swift in Sources */,
+				E9C80A9E20A75AA60086B200 /* HomeLocationExtension.swift in Sources */,
 				E9550ECD20867937009A7A5B /* User.swift in Sources */,
-				E9550EEB208BA353009A7A5B /* ScannerViewController.swift in Sources */,
-				E9550EE5208A41E8009A7A5B /* BottomSheetView.swift in Sources */,
+				E9C80A9220A723000086B200 /* NetworkLogger.swift in Sources */,
 				E9875352208F253400C30DAD /* UsagePlan.swift in Sources */,
+				E9C80A9420A72B810086B200 /* BorrowForm.swift in Sources */,
 				E9B9D791208662F7002AFE3A /* AppDelegate.swift in Sources */,
+				E9C80A9020A5E7D20086B200 /* BikeStatus.swift in Sources */,
 				61EA864F9071234854CCD92A /* LoginViewController.swift in Sources */,
 				E987534A208F118000C30DAD /* BorrowProtocol.swift in Sources */,
 				E9550EDF2089D11D009A7A5B /* TokenForm.swift in Sources */,

@@ -10,8 +10,8 @@ import Foundation
 
 
 public struct UsagePlan: Codable {
-    var period: Int
-    var price: Int
-    var id: Int
-    var planName: String
+    let id : Int
+    let plan_name : String
+    let price : Int
+    let period : Int
 }

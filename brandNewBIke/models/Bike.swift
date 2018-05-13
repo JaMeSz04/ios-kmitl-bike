@@ -17,6 +17,7 @@ public struct Bike: Codable {
     var latitude: Double
     var longitude: Double
     var bike_model: String
+    
 }
 
 //

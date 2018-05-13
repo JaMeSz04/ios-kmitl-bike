@@ -21,7 +21,8 @@ enum KMITLBike {
     case login(username: String, password: String)
     case token(token: String)
     case bikeList()
-    case borrow(bikeId: String)
+    case borrow(bikeId: String, nonce: Int, location: Location, plan: Int)
+    case updateTrackingLocation(location: Location)
 }
 
 extension KMITLBike: TargetType {
@@ -37,14 +38,16 @@ extension KMITLBike: TargetType {
             return "/api/v1/accounts/access_token"
         case .bikeList():
             return "/api/v1/bikes/list"
-        case .borrow(let bikeId):
+        case .borrow(let bikeId,_,_,_):
             return "/api/v1/bikes/\(bikeId.URLEscapedString)/borrow"
+        case .updateTrackingLocation(_):
+            return "/api/v1/bikes/update"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .login(_,_), .token(_):
+        case .login(_,_), .token(_), .borrow(_), .updateTrackingLocation(_):
             return .post
         default:
             return .get
@@ -66,13 +69,24 @@ extension KMITLBike: TargetType {
             return .requestJSONEncodable(TokenForm(token: token))
         case .bikeList():
             return .requestPlain
-        case .borrow(_):
-            return .requestPlain
+        case .borrow(_, let nonce, let location, let plan):
+            let form = BorrowForm(nonce: nonce, location: location, selectedPlan: plan)
+            print(form)
+            return .requestJSONEncodable(form)
+        case .updateTrackingLocation(let location):
+            return .requestJSONEncodable(location)
         }
     }
     
     var headers: [String : String]? {
-        return ["Content-Type": "application/json"]
+        switch self {
+        case .bikeList(), .borrow(bikeId: _):
+            return ["Content-Type": "application/json",
+                    "Authorization": UserDefaults.standard.string(forKey: StorageKey.TOKEN_KEY)!]
+        default:
+            return ["Content-Type": "application/json"]
+        }
+        
     }
     
     

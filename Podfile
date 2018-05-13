@@ -14,6 +14,8 @@ target 'brandNewBIke' do
     pod 'BulletinBoard'
     pod 'QRCodeReader.swift', '~> 8.1.1'
     pod 'RxBluetoothKit'
+    pod 'SideMenu'
+    pod 'SwiftyBeaver'
   # Pods for brandNewBIke
 
 end

@@ -25,8 +25,15 @@ public class Api {
         return bikeProvider.rx.request(.bikeList()).observeOn(MainScheduler.instance).map([Bike].self)
     }
     
-    public static func borrowBike(id: String) -> Single<BikeOperation>{
-        return bikeProvider.rx.request(.borrow(bikeId: id)).observeOn(MainScheduler.instance).map(BikeOperation.self)
+    static func borrowBike(id: String, nonce: Int, location: Location, planId: Int) -> Single<BikeOperation>{
+        return bikeProvider.rx.request(.borrow(bikeId: id, nonce: nonce, location:location, plan: planId)).observeOn(MainScheduler.instance).do(onSuccess: { (response) in
+            print( String(data: response.data, encoding: .utf8) ?? "")
+        }).map(BikeOperation.self)
     }
+    
+    static func updateLocation(location: Location) -> Single<Response>{
+        return bikeProvider.rx.request(.updateTrackingLocation(location: location))
+    }
+    
 }
 
