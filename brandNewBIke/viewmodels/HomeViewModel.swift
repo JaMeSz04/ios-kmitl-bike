@@ -55,6 +55,8 @@ class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutput
     
     private var internalBikeList:[Bike]
     private var currentPage: PageBulletinItem!
+    private var bluetoothUtil: BluetoothClient!
+    private var manualUtil: ManualClient!
     public var latestLocation: Location!
     public var isTracking: Bool = false
     public var currentSession: Session!
@@ -89,9 +91,7 @@ class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutput
         }).disposed(by: self.disposeBag)
         
         scannerBikeUpdate.observeOn(MainScheduler.instance).subscribe { (scannerCode) in
-            let bike = self.getBikeFromCode(code: scannerCode.element!)
-            print("found bike: " + bike.bike_name)
-            self.bottomSheetItem.onNext(self.loadBikeInfoPage(bike: bike))
+            self.onScannerCompleted(code: scannerCode.element!)
         }.disposed(by: self.disposeBag)
         
         onLocationUpdate.subscribe(onNext: { (location) in
@@ -103,12 +103,33 @@ class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutput
             
         }).disposed(by: self.disposeBag)
         
+        self.bluetoothUtil = BluetoothClient(subject: self.bikeOperationStatus)
+        self.manualUtil = ManualClient(subject: self.bikeOperationStatus)
         self.getBikeLocation()
     }
     
     
     public func getCurrentPage() -> PageBulletinItem {
         return self.currentPage
+    }
+    
+    private func onScannerCompleted(code: String) {
+        if self.isTracking {
+            self.validateReturn(code: code)
+        } else {
+            let bike = self.getBikeFromCode(code: code)
+            print("found bike: " + bike.bike_name)
+            self.bottomSheetItem.onNext(self.loadBikeInfoPage(bike: bike))
+        }
+    }
+    
+    private func validateReturn(code: String){
+        if self.currentSession.bike.barcode == code {
+            let util: ReturnProtocol = self.createUtil(model: self.currentSession.bike.bike_model) as! ReturnProtocol
+            util.returnBike(bike: self.currentSession.bike, location: self.latestLocation)
+        } else {
+            print("qrcode mismatch!!!!")
+        }
     }
     
     private func loadBikeInfoPage(bike: Bike) -> PageBulletinItem {
@@ -118,7 +139,8 @@ class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutput
         page.image = resizeImage(image: UIImage(named: img)!, targetSize: CGSize(width: 600.0, height: 400.0))
         page.descriptionText = bike.bike_model
         page.actionButtonTitle = "Borrow"
-        page.actionHandler = { (_:PageBulletinItem) in
+        page.actionHandler = { (item:PageBulletinItem) in
+            item.manager?.displayActivityIndicator()
             self.borrowBike(bike: bike)
         }
         page.alternativeButtonTitle = "Re scan"
@@ -132,7 +154,7 @@ class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutput
         } else {
             page.nextItem = self.loadBorrowSuccessPage(password: bike.mac_address)
         }
-        
+        page.isDismissable = true
         self.currentPage = page
         return page
     }
@@ -143,10 +165,14 @@ class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutput
             page.descriptionText = "The password is " + password!
         }
         page.actionButtonTitle = "Start using the bike"
-        page.actionHandler = { (_:PageBulletinItem) in
+        page.actionHandler = { (item:PageBulletinItem) in
+            item.manager?.dismissBulletin()
+            //self.resetBulletin.onNext(())
             self.isTracking = true
             self.bikeOperationStatus.onNext(BikeStatus.TRACKING)
+      
         }
+        page.isDismissable = true
         page.interfaceFactory.tintColor = .black
         self.currentPage = page
         return page
@@ -165,12 +191,11 @@ class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutput
     
     private func borrowBike(bike: Bike) {
         print("borrow " + bike.bike_name)
-        let borrowUtil = self.createUtil(model: bike.bike_model)
+        let borrowUtil = self.createUtil(model: bike.bike_model) as! BorrowProtocol
         let nonce = Int(Double(NSDate.timeIntervalSinceReferenceDate) / 1000)
         self.bikeOperationStatus.subscribe(onNext: { bikeStatus in
             switch bikeStatus {
             case .BORROW_COMPLETED:
-                
                 self.currentPage.displayNextItem()
                 print("COMPLETED")
                 break
@@ -185,12 +210,12 @@ class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutput
             }).disposed(by: self.disposeBag)
     }
     
-    private func createUtil(model: String) -> BorrowProtocol {
+    private func createUtil(model: String) -> BikeOperationProtocol {
         switch model {
         case Constants.GIANT_ESCAPE:
-            return BluetoothClient(subject: self.bikeOperationStatus)
+            return self.bluetoothUtil
         default:
-            return ManualClient(subject: self.bikeOperationStatus)
+            return self.manualUtil
         }
     }
     

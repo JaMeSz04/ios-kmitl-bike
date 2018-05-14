@@ -9,20 +9,13 @@
 import Foundation
 import RxSwift
 
-protocol BorrowProtocol {
-    var subject: PublishSubject<BikeStatus> { get set }
-    init()
+protocol BorrowProtocol: BikeOperationProtocol {
     func performBorrow(operation: BikeOperation)
     func performConnection()
 }
 
 
 extension BorrowProtocol {
-    
-    init(subject: PublishSubject<BikeStatus>){
-        self.init()
-        self.subject = subject
-    }
 
     func borrow(bike: Bike, planId: Int, location: Location, nonce: Int) -> Single<Session> {
         self.subject.onNext(.CONNECTED_SERVER)

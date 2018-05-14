@@ -35,5 +35,9 @@ public class Api {
         return bikeProvider.rx.request(.updateTrackingLocation(location: location))
     }
     
+    static func returnBike(bikeId: String, location: Location, isCancel: Bool) -> Single<ReturnResponse> {
+        return bikeProvider.rx.request(.returnBike(bikeId: bikeId, location: location, isCancel: isCancel)).observeOn(MainScheduler.instance).map(ReturnResponse.self)
+    }
+    
 }
 

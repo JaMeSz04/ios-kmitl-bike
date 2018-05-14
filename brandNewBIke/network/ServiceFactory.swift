@@ -23,6 +23,7 @@ enum KMITLBike {
     case bikeList()
     case borrow(bikeId: String, nonce: Int, location: Location, plan: Int)
     case updateTrackingLocation(location: Location)
+    case returnBike(bikeId: String, location: Location, isCancel: Bool)
 }
 
 extension KMITLBike: TargetType {
@@ -42,12 +43,14 @@ extension KMITLBike: TargetType {
             return "/api/v1/bikes/\(bikeId.URLEscapedString)/borrow"
         case .updateTrackingLocation(_):
             return "/api/v1/bikes/update"
+        case .returnBike(let bikeId,_,_):
+            return "/api/v1/bikes/\(bikeId.URLEscapedString)/return"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .login(_,_), .token(_), .borrow(_), .updateTrackingLocation(_):
+        case .login(_,_), .token(_), .borrow(_), .updateTrackingLocation(_), .returnBike(_,_,_):
             return .post
         default:
             return .get
@@ -75,6 +78,8 @@ extension KMITLBike: TargetType {
             return .requestJSONEncodable(form)
         case .updateTrackingLocation(let location):
             return .requestJSONEncodable(location)
+        case .returnBike(_, let location, let isCancel):
+            return .requestJSONEncodable(ReturnForm(location: location, cancel: isCancel))
         }
     }
     

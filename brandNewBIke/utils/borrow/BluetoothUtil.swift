@@ -11,12 +11,13 @@ import RxBluetoothKit
 import CoreBluetooth
 import RxSwift
 
-public class BluetoothClient: BorrowProtocol {
+public class BluetoothClient: BorrowProtocol, ReturnProtocol {
+    
+    func performReturn(bike: BikeResponse) {}
+    
     func performConnection() {
         
     }
-    
-    
     var subject: PublishSubject<BikeStatus>
     let manager = CentralManager(queue: .main)
     private let serviceUUID = CBUUID(string: "FFE0")

@@ -88,24 +88,20 @@ class HomeViewController: UIViewController {
             self.addMarker(bikeList: bikeList)
         }).disposed(by: self.disposeBag)
         
-        self.viewModel.outputs.resetBulletin.subscribe { () in
-            self.bulletinManager.popToRootItem()
-        }.disposed(by: self.disposeBag)
+    
 
-        self.viewModel.outputs.bikeOperationStatus.subscribe(onNext: { (bikeStatus) in
+        self.viewModel.outputs.bikeOperationStatus.observeOn(MainScheduler.instance).subscribe(onNext: { (bikeStatus) in
             switch bikeStatus {
             case .BORROW_COMPLETED:
                 self.rideButton.setTitle("RETURN", for: UIControlState.normal)
+                break
             case .RETURN_COMPLETED:
                 self.rideButton.setTitle("RIDE", for: UIControlState.normal)
                 self.stopTracking()
+                break
             case .TRACKING:
                 print("tracking start!!!")
-                self.bulletinManager.dismissBulletin(animated: true)
-                self.bulletinManager.popToRootItem()
                 self.startTracking()
-            case .CONNECTED_SERVER:
-                self.bulletinManager.displayActivityIndicator()
                 break
             default:
                 break
@@ -115,10 +111,4 @@ class HomeViewController: UIViewController {
     }
 }
 
-extension HomeViewController {
-    func showBulletin(){
-        bulletinManager.prepare()
-        bulletinManager.presentBulletin(above: self)
-    }
-}
 

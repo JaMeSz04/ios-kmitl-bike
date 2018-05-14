@@ -20,11 +20,12 @@ extension HomeViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print("new location")
-        self.addPolyLine(begin: CLLocation(latitude: self.viewModel.latestLocation.latitude, longitude: self.viewModel.latestLocation.longitude), end: locations[0])
+        
         let newLocation = Location(lat: locations[0].coordinate.latitude, long: locations[0].coordinate.longitude)
         if !self.viewModel.isTracking {
             self.viewModel.inputs.refreshBikeLocation.onNext(newLocation)
         } else {
+            self.addPolyLine(begin: CLLocation(latitude: self.viewModel.latestLocation.latitude, longitude: self.viewModel.latestLocation.longitude), end: locations[0])
             self.viewModel.inputs.onLocationUpdate.onNext(newLocation)
         }
         self.centerMapOnLocation(location: locations[0])
@@ -36,6 +37,10 @@ extension HomeViewController: CLLocationManagerDelegate {
     }
     
     func startTracking(){
+        print("dismiss!!!")
+        self.bulletinManager.prepare()
+        self.bulletinManager.dismissBulletin()
+        
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.startUpdatingLocation()
     }

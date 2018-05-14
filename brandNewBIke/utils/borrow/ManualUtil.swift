@@ -9,10 +9,11 @@
 import Foundation
 import RxSwift
 
-public class ManualClient: BorrowProtocol {
-    func performConnection() {
-        
-    }
+public class ManualClient: BorrowProtocol, ReturnProtocol {
+    
+    func performReturn(bike: BikeResponse) {}
+    
+    func performConnection() {}
     
     required public init() {
         self.subject = PublishSubject<BikeStatus>()

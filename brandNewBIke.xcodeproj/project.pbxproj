@@ -12,6 +12,10 @@
 		C494C8BE2AC4192A9E9384EE /* Pods_brandNewBIke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DAD5F4DD9B16ABB116F4438 /* Pods_brandNewBIke.framework */; };
 		E91D441E20A17F6700928C5F /* NavigationMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91D441C20A17F6700928C5F /* NavigationMenuItem.swift */; };
 		E91D441F20A17F6700928C5F /* NavigationMenuItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = E91D441D20A17F6700928C5F /* NavigationMenuItem.xib */; };
+		E929B40320A8AB1300C7D8E4 /* ReturnForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E929B40220A8AB1300C7D8E4 /* ReturnForm.swift */; };
+		E929B40520A8AC6A00C7D8E4 /* ReturnResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E929B40420A8AC6A00C7D8E4 /* ReturnResponse.swift */; };
+		E929B40820A8AD2200C7D8E4 /* ReturnProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E929B40720A8AD2200C7D8E4 /* ReturnProtocol.swift */; };
+		E929B40A20A8B2AB00C7D8E4 /* BikeOperationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E929B40920A8B2AB00C7D8E4 /* BikeOperationProtocol.swift */; };
 		E9550EC620866AFA009A7A5B /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9550EC520866AFA009A7A5B /* ServiceFactory.swift */; };
 		E9550ECD20867937009A7A5B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9550ECC20867937009A7A5B /* User.swift */; };
 		E9550ED32088B69F009A7A5B /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9550ED22088B69F009A7A5B /* SessionStore.swift */; };
@@ -56,6 +60,10 @@
 		B177B7A56E412A0C32A99C0C /* Pods-brandNewBIke.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-brandNewBIke.release.xcconfig"; path = "Pods/Target Support Files/Pods-brandNewBIke/Pods-brandNewBIke.release.xcconfig"; sourceTree = "<group>"; };
 		E91D441C20A17F6700928C5F /* NavigationMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationMenuItem.swift; sourceTree = "<group>"; };
 		E91D441D20A17F6700928C5F /* NavigationMenuItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationMenuItem.xib; sourceTree = "<group>"; };
+		E929B40220A8AB1300C7D8E4 /* ReturnForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnForm.swift; sourceTree = "<group>"; };
+		E929B40420A8AC6A00C7D8E4 /* ReturnResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnResponse.swift; sourceTree = "<group>"; };
+		E929B40720A8AD2200C7D8E4 /* ReturnProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnProtocol.swift; sourceTree = "<group>"; };
+		E929B40920A8B2AB00C7D8E4 /* BikeOperationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeOperationProtocol.swift; sourceTree = "<group>"; };
 		E9550EC520866AFA009A7A5B /* ServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
 		E9550ECC20867937009A7A5B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E9550ED22088B69F009A7A5B /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
@@ -130,6 +138,14 @@
 				E91D441D20A17F6700928C5F /* NavigationMenuItem.xib */,
 			);
 			path = common;
+			sourceTree = "<group>";
+		};
+		E929B40620A8AD0A00C7D8E4 /* return */ = {
+			isa = PBXGroup;
+			children = (
+				E929B40720A8AD2200C7D8E4 /* ReturnProtocol.swift */,
+			);
+			path = return;
 			sourceTree = "<group>";
 		};
 		E9550EC420866AE8009A7A5B /* network */ = {
@@ -216,12 +232,14 @@
 		E9B9D7A52086639F002AFE3A /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				E929B40620A8AD0A00C7D8E4 /* return */,
 				E9875348208F116900C30DAD /* borrow */,
 				E9B9D7AB208664B1002AFE3A /* MockFactoroy.swift */,
 				E9550ED22088B69F009A7A5B /* SessionStore.swift */,
 				E9550EE8208AFF36009A7A5B /* BulletinFactory.swift */,
 				E9C80A8D20A4B25A0086B200 /* ImageResizer.swift */,
 				E9C80A9120A723000086B200 /* NetworkLogger.swift */,
+				E929B40920A8B2AB00C7D8E4 /* BikeOperationProtocol.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -242,6 +260,8 @@
 				E9C80A9320A72B810086B200 /* BorrowForm.swift */,
 				E9C0BA3D20A76883002F628F /* Timestamps.swift */,
 				E9C0BA3F20A76ED4002F628F /* BikeResponse.swift */,
+				E929B40220A8AB1300C7D8E4 /* ReturnForm.swift */,
+				E929B40420A8AC6A00C7D8E4 /* ReturnResponse.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -419,6 +439,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E987534C208F204300C30DAD /* ManualUtil.swift in Sources */,
+				E929B40820A8AD2200C7D8E4 /* ReturnProtocol.swift in Sources */,
 				E9550ED8208998EA009A7A5B /* Api.swift in Sources */,
 				E9550EC620866AFA009A7A5B /* ServiceFactory.swift in Sources */,
 				E9550EE9208AFF36009A7A5B /* BulletinFactory.swift in Sources */,
@@ -436,14 +457,17 @@
 				E987534E208F243500C30DAD /* BikeOperation.swift in Sources */,
 				E9550EE7208AD47E009A7A5B /* Constants.swift in Sources */,
 				E9550ED32088B69F009A7A5B /* SessionStore.swift in Sources */,
+				E929B40520A8AC6A00C7D8E4 /* ReturnResponse.swift in Sources */,
 				E9550EDD2089B094009A7A5B /* HomeViewController.swift in Sources */,
 				E9ABB066208C820500370501 /* BikeList.swift in Sources */,
 				E9C80A9C20A75A460086B200 /* HomeScannerExtension.swift in Sources */,
 				E9ABB064208C80EC00370501 /* Bike.swift in Sources */,
 				E9C80A8E20A4B25A0086B200 /* ImageResizer.swift in Sources */,
 				E9550EE12089E16A009A7A5B /* HomeViewModel.swift in Sources */,
+				E929B40A20A8B2AB00C7D8E4 /* BikeOperationProtocol.swift in Sources */,
 				E9C80A9E20A75AA60086B200 /* HomeLocationExtension.swift in Sources */,
 				E9550ECD20867937009A7A5B /* User.swift in Sources */,
+				E929B40320A8AB1300C7D8E4 /* ReturnForm.swift in Sources */,
 				E9C80A9220A723000086B200 /* NetworkLogger.swift in Sources */,
 				E9875352208F253400C30DAD /* UsagePlan.swift in Sources */,
 				E9C80A9420A72B810086B200 /* BorrowForm.swift in Sources */,
