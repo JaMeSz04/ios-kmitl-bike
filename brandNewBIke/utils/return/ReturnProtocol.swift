@@ -10,13 +10,13 @@ import Foundation
 import RxSwift
 
 protocol ReturnProtocol: BikeOperationProtocol {
-    func performReturn(bike: BikeResponse)
+    func performReturn(bike: Bike)
     func performConnection()
 }
 
 extension ReturnProtocol {
 
-    func returnBike(bike: BikeResponse, location: Location) -> Single<ReturnResponse> {
+    func returnBike(bike: Bike, location: Location) -> Single<ReturnResponse> {
         self.subject.onNext(.CONNECTING_SERVER)
         return Api.returnBike(bikeId: String(bike.id), location: location, isCancel: false).observeOn(MainScheduler.instance)
             

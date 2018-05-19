@@ -34,16 +34,6 @@ class LoginViewModel: LoginViewModelInputs, LoginViewModelTypes, LoginViewModelO
         password = PublishSubject<String?>()
         loginPress = PublishSubject<Void>()
         signin = PublishSubject<User?>()
-
-        if let token = localStorage.string(forKey: StorageKey.TOKEN_KEY) {
-            
-            self.disposedBag.insert(
-                Api.getUserFromToken(token: token).subscribe(
-                    onSuccess: { (user) in
-                        self.onLogin(user: user)
-                    },
-                    onError: { (error) in print(error)}) )
-        }
         
         let userAndPassword = Driver.combineLatest(self.username.asDriver(onErrorJustReturn: nil),
                                                    self.password.asDriver(onErrorJustReturn: nil)) { ($0,$1)  }
@@ -67,6 +57,10 @@ class LoginViewModel: LoginViewModelInputs, LoginViewModelTypes, LoginViewModelO
     
         self.signin.onNext(user)
     }
+    
+    
+    
+    
     
     
 }

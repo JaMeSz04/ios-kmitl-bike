@@ -35,6 +35,7 @@ class LoginViewController: UIViewController {
             self.viewModel.signin.subscribeOn(MainScheduler.instance).subscribe { user in
                 let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let homeViewController = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+                homeViewController.viewModel.currentUser = user.element!
                 self.present(homeViewController, animated: true, completion: nil)
         })
         

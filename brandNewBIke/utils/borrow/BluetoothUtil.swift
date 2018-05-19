@@ -13,7 +13,7 @@ import RxSwift
 
 public class BluetoothClient: BorrowProtocol, ReturnProtocol {
     
-    func performReturn(bike: BikeResponse) {}
+    func performReturn(bike: Bike) {}
     
     func performConnection() {
         

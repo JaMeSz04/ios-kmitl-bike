@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A515A9D93D6165933FDFFA4035946397"
+               BlueprintIdentifier = "AB9F3CAFFC3DD49690AE77D7716E8642"
                BuildableName = "Pods_brandNewBIke.framework"
                BlueprintName = "Pods-brandNewBIke"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -26,7 +26,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -37,7 +36,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -47,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A515A9D93D6165933FDFFA4035946397"
+            BlueprintIdentifier = "AB9F3CAFFC3DD49690AE77D7716E8642"
             BuildableName = "Pods_brandNewBIke.framework"
             BlueprintName = "Pods-brandNewBIke"
             ReferencedContainer = "container:Pods.xcodeproj">

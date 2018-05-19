@@ -14,15 +14,15 @@ import MapKit
 import QRCodeReader
 import SideMenu
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController{
 
-    @IBOutlet weak var navigationView: UIView!
-    @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var refreshLocationButton: UIButton!
     @IBOutlet weak var refreshButton: UIButton!
     @IBOutlet weak var rideButton: UIButton!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var bottomsheetView: UIView!
+    var navigationViewController: NavigationViewController!
     var viewModel: HomeViewModel = HomeViewModel()
     let regionRadius: CLLocationDistance = 500
     let locationManager: CLLocationManager = CLLocationManager()
@@ -42,13 +42,14 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //self.bulletinManager.backgroundViewStyle = .blurredDark
-        SideMenuManager.default.menuPresentMode = .viewSlideInOut
-        SideMenuManager.default.menuWidth = UIScreen.main.bounds.width * 0.8
+        
+        self.setupSideMenu()
         bottomsheetView.layer.cornerRadius = 10.0
         bottomsheetView.layer.borderColor = UIColor.lightGray.cgColor
         bottomsheetView.layer.borderWidth = 0.5
         self.bindRx()
         self.initLocationService()
+        self.viewModel.fetchSession()
         //bottomsheetView.clipsToBounds = true
         // Do any additional setup after loading the view.
     }
@@ -59,6 +60,11 @@ class HomeViewController: UIViewController {
     }
     
     private func bindRx(){
+        
+        self.menuButton.rx.tap.subscribe{ event in
+            self.present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
+        }.disposed(by: self.disposeBag)
+        
         self.rideButton.rx.tap.subscribe{ event in
             self.bulletinManager.prepare()
             self.bulletinManager.presentBulletin(above: self)

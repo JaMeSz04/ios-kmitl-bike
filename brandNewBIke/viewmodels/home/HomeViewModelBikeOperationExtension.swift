@@ -9,8 +9,6 @@
 import Foundation
 import RxSwift
 
-
-
 extension HomeViewModel {
     
     func borrowBike(bike: Bike) {
@@ -30,7 +28,7 @@ extension HomeViewModel {
         borrowUtil.borrow(bike: bike, planId: 2, location: self.latestLocation, nonce: nonce)
             .subscribe(onSuccess: { (session) in
                 print(session)
-                self.currentSession = session
+                self.currentBike = session.bike
             }).disposed(by: self.disposeBag)
     }
     
@@ -43,7 +41,6 @@ extension HomeViewModel {
         }
     }
     
-    
     func getBikeLocation(){
         Api.getBikeList().observeOn(MainScheduler.instance).subscribe(onSuccess: { (bikeList) in
             self.bikeList.onNext(bikeList)
@@ -54,12 +51,12 @@ extension HomeViewModel {
     }
     
     func validateReturn(code: String){
-        if self.currentSession.bike.barcode == code {
-            let util: ReturnProtocol = self.createUtil(model: self.currentSession.bike.bike_model) as! ReturnProtocol
-            util.returnBike(bike: self.currentSession.bike, location: self.latestLocation).subscribe(onSuccess: { (returnResponse) in
+        if self.currentBike.barcode == code {
+            let util: ReturnProtocol = self.createUtil(model: self.currentBike.bike_model) as! ReturnProtocol
+            util.returnBike(bike: self.currentBike, location: self.latestLocation).subscribe(onSuccess: { (returnResponse) in
                 print(returnResponse)
                 self.bikeOperationStatus.onNext(BikeStatus.CONNECTED_SERVER)
-                util.performReturn(bike: self.currentSession.bike)
+                util.performReturn(bike: self.currentBike)
             }) { (error) in
                 print(error)
                 }.disposed(by: self.disposeBag)

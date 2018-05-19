@@ -24,6 +24,7 @@ enum KMITLBike {
     case borrow(bikeId: String, nonce: Int, location: Location, plan: Int)
     case updateTrackingLocation(location: Location)
     case returnBike(bikeId: String, location: Location, isCancel: Bool)
+    case loadSession(userId: String)
 }
 
 extension KMITLBike: TargetType {
@@ -45,6 +46,8 @@ extension KMITLBike: TargetType {
             return "/api/v1/bikes/update"
         case .returnBike(let bikeId,_,_):
             return "/api/v1/bikes/\(bikeId.URLEscapedString)/return"
+        case .loadSession(let userId):
+            return "/api/v1/users/\(userId.URLEscapedString)/session"
         }
     }
     
@@ -70,22 +73,20 @@ extension KMITLBike: TargetType {
             return .requestJSONEncodable(LoginForm(username: username, password: password))
         case .token(let token):
             return .requestJSONEncodable(TokenForm(token: token))
-        case .bikeList():
-            return .requestPlain
         case .borrow(_, let nonce, let location, let plan):
-            let form = BorrowForm(nonce: nonce, location: location, selectedPlan: plan)
-            print(form)
-            return .requestJSONEncodable(form)
+            return .requestJSONEncodable(BorrowForm(nonce: nonce, location: location, selectedPlan: plan))
         case .updateTrackingLocation(let location):
             return .requestJSONEncodable(location)
         case .returnBike(_, let location, let isCancel):
             return .requestJSONEncodable(ReturnForm(location: location, cancel: isCancel))
+        case .bikeList(), .loadSession(_):
+            return .requestPlain
         }
     }
     
     var headers: [String : String]? {
         switch self {
-        case .bikeList(), .borrow(bikeId: _), .returnBike(bikeId: _, location: _, isCancel: _):
+        case .bikeList(), .borrow(bikeId: _), .returnBike(bikeId: _, location: _, isCancel: _), .loadSession(userId: _):
             return ["Content-Type": "application/json",
                     "Authorization": UserDefaults.standard.string(forKey: StorageKey.TOKEN_KEY)!]
         default:

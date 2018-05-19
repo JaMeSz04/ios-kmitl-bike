@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (4.7.0)
   - BulletinBoard (1.3.0)
+  - FontAwesome.swift (1.3.2)
   - ModelMapper (7.4.1)
   - Moya (11.0.1):
     - Moya/Core (= 11.0.1)
@@ -36,6 +37,7 @@ PODS:
 
 DEPENDENCIES:
   - BulletinBoard
+  - FontAwesome.swift
   - Moya-ModelMapper/RxSwift (= 7.0.0)
   - Moya/RxSwift (~> 11.0)
   - QRCodeReader.swift (~> 8.1.1)
@@ -51,6 +53,7 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - BulletinBoard
+    - FontAwesome.swift
     - ModelMapper
     - Moya
     - Moya-ModelMapper
@@ -68,6 +71,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
   BulletinBoard: 23c9d98cac654fd484d76f2a0655669974e9bd9c
+  FontAwesome.swift: b4e4c8ccbbecb12f9b592bc533ff237af3706667
   ModelMapper: e576b4e32007bf574d0f9e4f533d29c46d29f146
   Moya: 3d594ada51a21cc02b18739ab578a1984f900c8a
   Moya-ModelMapper: 9aa8a99cb664a083b376869d6091c1f20d9f171e
@@ -82,6 +86,6 @@ SPEC CHECKSUMS:
   SwiftyBeaver: 4f74563624b2c1e821c522c54142b5dd5ebb0f30
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 083415508a77c1f43566e3d0c07f2d2585de71f0
+PODFILE CHECKSUM: 70c98787105c4e5f5c90b8747b94922592d02fb4
 
 COCOAPODS: 1.5.0

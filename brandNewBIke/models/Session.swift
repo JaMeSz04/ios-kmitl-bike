@@ -11,7 +11,7 @@ import Foundation
 
 public struct Session: Codable {
     let id : Int
-    let bike : BikeResponse
+    let bike : Bike
     let selected_plan : UsagePlan
     let timestamps : Timestamps
     let duration : Double

@@ -14,8 +14,8 @@ public struct Bike: Codable {
     var bike_name: String
     var barcode: String
     var mac_address: String
-    var latitude: Double
-    var longitude: Double
+    var latitude: Double?
+    var longitude: Double?
     var bike_model: String
     
 }

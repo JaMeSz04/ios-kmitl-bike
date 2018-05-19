@@ -16,6 +16,7 @@ target 'brandNewBIke' do
     pod 'RxBluetoothKit'
     pod 'SideMenu'
     pod 'SwiftyBeaver'
+    pod 'FontAwesome.swift'
   # Pods for brandNewBIke
 
 end

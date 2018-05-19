@@ -38,6 +38,9 @@ class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutput
     public var latestLocation: Location!
     public var isTracking: Bool = false
     public var currentSession: Session!
+    public var userSession: UserSession!
+    public var currentUser: User!
+    public var currentBike: Bike!
     
     init() {
         Locator.requestAuthorizationIfNeeded()
@@ -52,6 +55,8 @@ class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutput
         scannerBikeUpdate = PublishSubject<String>()
         bikeOperationStatus = PublishSubject<BikeStatus>()
         bikeList = PublishSubject<[Bike]>()
+      
+        
         internalBikeList = [Bike]()
         
         currentPage = getRootBottomSheet()
@@ -84,18 +89,33 @@ class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutput
         self.bluetoothUtil = BluetoothClient(subject: self.bikeOperationStatus)
         self.manualUtil = ManualClient(subject: self.bikeOperationStatus)
         self.getBikeLocation()
-
     }
     
     func getBikeAsset(model: String) -> String {
         switch model {
-        case Constants.GIANT_ESCAPE:
-            return "giantEscape"
-        case Constants.LA_BIKE_GREEN:
-            return "LABikeGreen"
-        default:
-            return ""
+            case Constants.GIANT_ESCAPE:
+                return "giantEscape"
+            case Constants.LA_BIKE_GREEN:
+                return "LABikeGreen"
+            default:
+                return ""
         }
+    }
+    
+    public func fetchSession(){
+        Api.getUserSession(userId: String(self.currentUser.id)).observeOn(MainScheduler.instance).subscribe(onSuccess: { (session) in
+            print(session)
+            self.userSession = session
+            if session.resume {
+                self.currentBike = session.bike
+                self.isTracking = session.resume
+                self.latestLocation = session.route_line![session.route_line!.count - 1]
+                if self.isTracking{
+                    self.bikeOperationStatus.onNext(BikeStatus.BORROW_COMPLETED)
+                    self.bikeOperationStatus.onNext(BikeStatus.TRACKING)
+                }
+            }
+        }).disposed(by: self.disposeBag)
     }
     
 }

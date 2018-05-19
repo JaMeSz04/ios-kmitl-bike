@@ -23,7 +23,7 @@ extension HomeViewController: MKMapViewDelegate {
         
         let annotations = bikeList.map { bike -> MKPointAnnotation in
             let annotation = MKPointAnnotation()
-            annotation.coordinate = CLLocationCoordinate2D(latitude: bike.latitude, longitude: bike.longitude)
+            annotation.coordinate = CLLocationCoordinate2D(latitude: bike.latitude!, longitude: bike.longitude!)
             annotation.title = bike.bike_model
             return annotation
         }

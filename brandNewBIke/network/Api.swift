@@ -41,5 +41,11 @@ public class Api {
         }).map(ReturnResponse.self)
     }
     
+    static func getUserSession(userId: String) -> Single<UserSession>{
+        return bikeProvider.rx.request(.loadSession(userId: userId)).do(onSuccess: { (response) in
+            print( String(data: response.data, encoding: .utf8) ?? "")
+        }).map(UserSession.self)
+    }
+    
 }
 
