@@ -60,6 +60,7 @@ class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutput
     public var latestLocation: Location!
     public var isTracking: Bool = false
     public var currentSession: Session!
+    //private var thankyouPage: PageBulletinItem
     
     init() {
         Locator.requestAuthorizationIfNeeded()
@@ -106,6 +107,13 @@ class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutput
         self.bluetoothUtil = BluetoothClient(subject: self.bikeOperationStatus)
         self.manualUtil = ManualClient(subject: self.bikeOperationStatus)
         self.getBikeLocation()
+        
+//        thankyouPage = PageBulletinItem(title: "Thank you for using KMITL Bike")
+//        thankyouPage.descriptionText("You can submit your feedback via KMITL Bike Facebook page!")
+//        thankyouPage.actionButtonTitle("Got it")
+//        thankyouPage.actionHandler{ (item:PageBulletinItem) in
+//
+//        }
     }
     
     
@@ -116,6 +124,7 @@ class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutput
     private func onScannerCompleted(code: String) {
         if self.isTracking {
             self.validateReturn(code: code)
+            print("done")
         } else {
             let bike = self.getBikeFromCode(code: code)
             print("found bike: " + bike.bike_name)
@@ -126,7 +135,14 @@ class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutput
     private func validateReturn(code: String){
         if self.currentSession.bike.barcode == code {
             let util: ReturnProtocol = self.createUtil(model: self.currentSession.bike.bike_model) as! ReturnProtocol
-            util.returnBike(bike: self.currentSession.bike, location: self.latestLocation)
+            util.returnBike(bike: self.currentSession.bike, location: self.latestLocation).subscribe(onSuccess: { (returnResponse) in
+                print(returnResponse)
+                self.bikeOperationStatus.onNext(BikeStatus.CONNECTED_SERVER)
+                util.performReturn(bike: self.currentSession.bike)
+            }) { (error) in
+                print(error)
+            }.disposed(by: self.disposeBag)
+            print("pass")
         } else {
             print("qrcode mismatch!!!!")
         }

@@ -85,7 +85,7 @@ extension KMITLBike: TargetType {
     
     var headers: [String : String]? {
         switch self {
-        case .bikeList(), .borrow(bikeId: _):
+        case .bikeList(), .borrow(bikeId: _), .returnBike(bikeId: _, location: _, isCancel: _):
             return ["Content-Type": "application/json",
                     "Authorization": UserDefaults.standard.string(forKey: StorageKey.TOKEN_KEY)!]
         default:

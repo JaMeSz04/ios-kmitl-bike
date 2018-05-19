@@ -15,6 +15,7 @@ extension HomeViewController: CLLocationManagerDelegate {
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        
         locationManager.requestLocation()
     }
     
@@ -24,7 +25,7 @@ extension HomeViewController: CLLocationManagerDelegate {
         let newLocation = Location(lat: locations[0].coordinate.latitude, long: locations[0].coordinate.longitude)
         if !self.viewModel.isTracking {
             self.viewModel.inputs.refreshBikeLocation.onNext(newLocation)
-        } else {
+        } else if self.viewModel.latestLocation.latitude != newLocation.latitude ||  self.viewModel.latestLocation.longitude != newLocation.longitude {
             self.addPolyLine(begin: CLLocation(latitude: self.viewModel.latestLocation.latitude, longitude: self.viewModel.latestLocation.longitude), end: locations[0])
             self.viewModel.inputs.onLocationUpdate.onNext(newLocation)
         }
@@ -40,7 +41,8 @@ extension HomeViewController: CLLocationManagerDelegate {
         print("dismiss!!!")
         self.bulletinManager.prepare()
         self.bulletinManager.dismissBulletin()
-        
+        //locationManager.allowsBackgroundLocationUpdates = true
+        //locationManager.pausesLocationUpdatesAutomatically = false
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.startUpdatingLocation()
     }

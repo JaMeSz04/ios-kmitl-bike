@@ -36,7 +36,9 @@ public class Api {
     }
     
     static func returnBike(bikeId: String, location: Location, isCancel: Bool) -> Single<ReturnResponse> {
-        return bikeProvider.rx.request(.returnBike(bikeId: bikeId, location: location, isCancel: isCancel)).observeOn(MainScheduler.instance).map(ReturnResponse.self)
+        return bikeProvider.rx.request(.returnBike(bikeId: bikeId, location: location, isCancel: isCancel)).observeOn(MainScheduler.instance).do(onSuccess: { (response) in
+            print( String(data: response.data, encoding: .utf8) ?? "")
+        }).map(ReturnResponse.self)
     }
     
 }

@@ -33,6 +33,7 @@ class HomeViewController: UIViewController {
     lazy var readerVC: QRCodeReaderViewController = {
         let builder = QRCodeReaderViewControllerBuilder {
             $0.reader = QRCodeReader(metadataObjectTypes: [.qr], captureDevicePosition: .back)
+            $0.reader.stopScanningWhenCodeIsFound = true
         }
         return QRCodeReaderViewController(builder: builder)
     }()
@@ -89,7 +90,6 @@ class HomeViewController: UIViewController {
         }).disposed(by: self.disposeBag)
         
     
-
         self.viewModel.outputs.bikeOperationStatus.observeOn(MainScheduler.instance).subscribe(onNext: { (bikeStatus) in
             switch bikeStatus {
             case .BORROW_COMPLETED:

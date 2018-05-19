@@ -10,5 +10,6 @@ import Foundation
 
 
 public struct ReturnResponse: Codable {
-    var overdued: Bool
+    //var overdued: Bool
+    var point: Int
 }

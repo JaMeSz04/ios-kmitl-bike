@@ -16,13 +16,12 @@ protocol ReturnProtocol: BikeOperationProtocol {
 
 extension ReturnProtocol {
 
-    func returnBike(bike: BikeResponse, location: Location) -> Disposable {
+    func returnBike(bike: BikeResponse, location: Location) -> Single<ReturnResponse> {
         self.subject.onNext(.CONNECTING_SERVER)
-        let disposable = Api.returnBike(bikeId: String(bike.id), location: location, isCancel: false).observeOn(MainScheduler.instance).subscribe(onSuccess: { (response) in
-            print("overdued!!")
-            self.subject.onNext(.CONNECTED_SERVER)
-        })
-        self.performReturn(bike: bike)
-        return disposable
+        return Api.returnBike(bikeId: String(bike.id), location: location, isCancel: false).observeOn(MainScheduler.instance)
+            
+        
+        
+        
     }
 }

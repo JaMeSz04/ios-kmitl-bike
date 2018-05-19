@@ -10,8 +10,11 @@ import Foundation
 import RxSwift
 
 public class ManualClient: BorrowProtocol, ReturnProtocol {
+    func performReturn(bike: BikeResponse) {
+        print("perform return!!!!")
+        self.subject.onNext(.RETURN_COMPLETED)
+    }
     
-    func performReturn(bike: BikeResponse) {}
     
     func performConnection() {}
     
