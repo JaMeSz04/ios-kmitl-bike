@@ -10,21 +10,6 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-protocol LoginViewModelInputs {
-    var username : PublishSubject<String?> { get }
-    var password : PublishSubject<String?> { get }
-    var loginPress : PublishSubject<Void> { get }
-}
-
-protocol LoginViewModelOutputs {
-    var signin : PublishSubject<User?> { get }
-}
-
-protocol LoginViewModelTypes {
-    var inputs : LoginViewModelInputs { get }
-    var outputs : LoginViewModelOutputs { get }
-}
-
 class LoginViewModel: LoginViewModelInputs, LoginViewModelTypes, LoginViewModelOutputs {
     
     var disposedBag: DisposeBag = DisposeBag()

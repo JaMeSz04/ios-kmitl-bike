@@ -89,7 +89,6 @@ class HomeViewController: UIViewController {
             self.addMarker(bikeList: bikeList)
         }).disposed(by: self.disposeBag)
         
-    
         self.viewModel.outputs.bikeOperationStatus.observeOn(MainScheduler.instance).subscribe(onNext: { (bikeStatus) in
             switch bikeStatus {
             case .BORROW_COMPLETED:
@@ -98,6 +97,11 @@ class HomeViewController: UIViewController {
             case .RETURN_COMPLETED:
                 self.rideButton.setTitle("RIDE", for: UIControlState.normal)
                 self.stopTracking()
+                self.bulletinManager.prepare()
+                let newPage = self.viewModel.loadReturnSuccessPage()
+                self.bulletinManager.push(item: newPage)
+                self.bulletinManager.presentBulletin(above: self)
+                self.viewModel.isTracking = false
                 break
             case .TRACKING:
                 print("tracking start!!!")
