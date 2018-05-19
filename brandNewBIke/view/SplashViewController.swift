@@ -21,7 +21,7 @@ class SplashViewController: UIViewController {
         self.viewModel.outputs.tokenValidate.observeOn(MainScheduler.instance).subscribe{ user in
             let value = user.element!
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            if value == nil {
+            if value != nil {
                 let homeViewController = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
                 homeViewController.viewModel.currentUser = value
                 self.present(homeViewController, animated: true, completion: nil)
@@ -29,7 +29,7 @@ class SplashViewController: UIViewController {
                 let loginViewController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
                 self.present(loginViewController, animated: true, completion: nil)
             }
-        }
+        }.disposed(by: self.disposeBag)
         // Do any additional setup after loading the view.
     }
 

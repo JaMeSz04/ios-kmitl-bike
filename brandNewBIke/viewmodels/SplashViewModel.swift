@@ -17,6 +17,7 @@ class SplashViewModel: SplashViewModelTypes, SplashViewModelInput, SplashViewMod
     let disposedBag = DisposeBag()
     init(){
         tokenValidate = PublishSubject<User?>()
+        self.validateToken()
     }
     
     private func validateToken(){
