@@ -14,6 +14,7 @@ extension HomeViewController: CLLocationManagerDelegate {
     func initLocationService(){
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
+        
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         
         locationManager.requestLocation()
@@ -37,13 +38,24 @@ extension HomeViewController: CLLocationManagerDelegate {
         print(error)
     }
     
+    // 1. user enter region
+    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        print("enter region")
+    }
+    
+    // 2. user exit region
+    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+        print("exit region")
+    }
+    
     func startTracking(){
         print("dismiss!!!")
         self.bulletinManager.prepare()
         self.bulletinManager.dismissBulletin()
         //locationManager.allowsBackgroundLocationUpdates = true
         //locationManager.pausesLocationUpdatesAutomatically = false
-        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
     }
     

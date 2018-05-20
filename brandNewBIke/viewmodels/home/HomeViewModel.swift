@@ -38,7 +38,6 @@ class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutput
     public var latestLocation: Location!
     public var isTracking: Bool = false
     public var currentSession: Session!
-    public var userSession: UserSession!
     public var currentUser: User!
     public var currentBike: Bike!
     
@@ -105,10 +104,11 @@ class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutput
     public func fetchSession(){
         Api.getUserSession(userId: String(self.currentUser.id)).observeOn(MainScheduler.instance).subscribe(onSuccess: { (session) in
             print(session)
-            self.userSession = session
-            if session.resume {
+            self.currentSession = session
+            if session.resume! {
                 self.currentBike = session.bike
-                self.isTracking = session.resume
+                self.isTracking = session.resume!
+                
                 self.latestLocation = session.route_line![session.route_line!.count - 1]
                 if self.isTracking{
                     self.bikeOperationStatus.onNext(BikeStatus.BORROW_COMPLETED)
@@ -116,6 +116,15 @@ class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutput
                 }
             }
         }).disposed(by: self.disposeBag)
+    }
+    
+    func getBikeLocation(){
+        Api.getBikeList().observeOn(MainScheduler.instance).subscribe(onSuccess: { (bikeList) in
+            self.bikeList.onNext(bikeList)
+            self.internalBikeList = bikeList
+        }) { (error) in
+            print(error)
+            }.disposed(by: self.disposeBag)
     }
     
 }

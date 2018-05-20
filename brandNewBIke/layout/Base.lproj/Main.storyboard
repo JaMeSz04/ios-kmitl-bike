@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -189,6 +190,79 @@
             </objects>
             <point key="canvasLocation" x="1087" y="145"/>
         </scene>
+        <!--Histories-->
+        <scene sceneID="d3d-0B-CMT">
+            <objects>
+                <tableViewController storyboardIdentifier="ProfileTableViewController" title="Histories" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lOk-Ee-YTx" customClass="ProfileTableViewController" customModule="brandNewBIke" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="M6v-Fd-FD3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileCell" rowHeight="83" id="oFD-kp-wCE" customClass="ProfileTableViewCell" customModule="brandNewBIke" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="83"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oFD-kp-wCE" id="n8o-aS-7Dg">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="82.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bicycleIcon" translatesAutoresizingMaskIntoConstraints="NO" id="sCr-lg-cSn">
+                                            <rect key="frame" x="16" y="16" width="50" height="49.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="CPc-HG-Upk"/>
+                                                <constraint firstAttribute="width" constant="50" id="wKz-tU-sHI"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2/2/2018 14:22" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIs-Lq-dEf">
+                                            <rect key="frame" x="82" y="50.5" width="85.5" height="14.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="54 minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ee-DN-p3i">
+                                            <rect key="frame" x="286" y="48" width="73" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giant Escape 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWH-ii-yHZ">
+                                            <rect key="frame" x="82" y="22" width="144" height="26.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="dIs-Lq-dEf" firstAttribute="top" secondItem="gWH-ii-yHZ" secondAttribute="bottom" constant="2" id="2pP-ym-JAt"/>
+                                        <constraint firstItem="gWH-ii-yHZ" firstAttribute="leading" secondItem="sCr-lg-cSn" secondAttribute="trailing" constant="16" id="I6f-yY-l5U"/>
+                                        <constraint firstItem="sCr-lg-cSn" firstAttribute="top" secondItem="n8o-aS-7Dg" secondAttribute="top" constant="16" id="Usu-Mu-GT6"/>
+                                        <constraint firstAttribute="trailing" secondItem="4ee-DN-p3i" secondAttribute="trailing" constant="16" id="es8-o9-jS1"/>
+                                        <constraint firstItem="dIs-Lq-dEf" firstAttribute="leading" secondItem="sCr-lg-cSn" secondAttribute="trailing" constant="16" id="rkf-HY-5kP"/>
+                                        <constraint firstItem="gWH-ii-yHZ" firstAttribute="top" secondItem="n8o-aS-7Dg" secondAttribute="topMargin" constant="11" id="sF8-i2-k9B"/>
+                                        <constraint firstAttribute="bottom" secondItem="4ee-DN-p3i" secondAttribute="bottom" constant="17.5" id="sLA-dk-bYP"/>
+                                        <constraint firstItem="sCr-lg-cSn" firstAttribute="leading" secondItem="n8o-aS-7Dg" secondAttribute="leading" constant="16" id="ybV-X9-GVb"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="bikeModel" destination="gWH-ii-yHZ" id="SG8-NT-TX6"/>
+                                    <outlet property="dateTime" destination="dIs-Lq-dEf" id="oWU-mZ-Oni"/>
+                                    <outlet property="duration" destination="4ee-DN-p3i" id="rdC-nu-eWs"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="lOk-Ee-YTx" id="u9y-CZ-qtz"/>
+                            <outlet property="delegate" destination="lOk-Ee-YTx" id="RJh-SX-IyJ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Histories" largeTitleDisplayMode="always" id="zeb-hc-gcB"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ObF-EZ-D17" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="170" y="-603"/>
+        </scene>
         <!--Navigation View Controller-->
         <scene sceneID="eO4-DX-DCk">
             <objects>
@@ -237,11 +311,6 @@
                                 <state key="normal" title="Histories">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <action selector="menuHomeButton:" destination="zhT-yy-Gdk" eventType="touchUpInside" id="6ml-Gp-Ku9"/>
-                                    <action selector="onHomeTap:" destination="zhT-yy-Gdk" eventType="touchUpInside" id="5Sa-Ob-O2V"/>
-                                    <action selector="onPressHome:" destination="Q8w-O1-0du" eventType="touchUpInside" id="opG-95-T0z"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rFY-L8-BaD">
                                 <rect key="frame" x="16" y="338" width="359" height="50"/>
@@ -299,7 +368,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="qcJ-vZ-Ub9"/>
                     <connections>
-                        <outlet property="homeButton" destination="uIP-Mb-pIt" id="Ojm-Q3-jls"/>
+                        <outlet property="historyButton" destination="uIP-Mb-pIt" id="JYz-RL-4Cs"/>
                         <outlet property="logoutButton" destination="WGA-To-Hn1" id="7Rs-1f-5mE"/>
                         <outlet property="nameLabel" destination="nS6-Gu-r7v" id="lgd-Qk-jUH"/>
                         <outlet property="reportButton" destination="rFY-L8-BaD" id="Ytr-yl-cYp"/>
@@ -308,24 +377,8 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8W1-wK-oZh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="zhT-yy-Gdk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1086" y="-613"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="2f9-Xb-yoy">
-            <objects>
-                <viewController id="dJ8-gf-Rjx" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="mwa-N6-cQq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="hoq-D4-rev"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fbi-fQ-0FO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1972" y="-610"/>
         </scene>
         <!--Scanner View Controller-->
         <scene sceneID="tzu-gW-T2j">
@@ -344,6 +397,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bicycleIcon" width="96" height="96"/>
         <image name="hamburgerMenuIcon" width="25" height="25"/>
         <image name="reloadIcon" width="25" height="25"/>
         <image name="scannerIcon" width="25" height="25"/>

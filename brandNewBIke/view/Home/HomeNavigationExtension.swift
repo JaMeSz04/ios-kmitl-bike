@@ -29,7 +29,12 @@ extension HomeViewController: NavigationDelegate {
     }
     
     func onHomePress() {
- 
+        self.dismiss(animated: true, completion: nil)
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let profileViewController = storyBoard.instantiateViewController(withIdentifier: "ProfileTableViewController") as! ProfileTableViewController
+        profileViewController.viewModel.userId = self.viewModel.currentUser.id
+        
+        self.present(profileViewController, animated: true, completion: nil)
     }
     
     func onReportPress() {
@@ -37,10 +42,11 @@ extension HomeViewController: NavigationDelegate {
     }
     
     func onTermsAndConditionPress() {
-        self.dismiss(animated: true, completion: nil)
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let termViewController = storyBoard.instantiateViewController(withIdentifier: "TermsAndConditionsViewController") as! TermsAndConditionViewController
-        self.present(termViewController, animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
+//        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        let termViewController = storyBoard.instantiateViewController(withIdentifier: "TermsAndConditionsViewController") as! TermsAndConditionViewController
+//        self.present(termViewController, animated: true, completion: nil)
+        UIApplication.shared.open(URL(string: "http://161.246.94.246:1995/api/v1/info/terms_conditions")!, options: [:])
         
         
     }

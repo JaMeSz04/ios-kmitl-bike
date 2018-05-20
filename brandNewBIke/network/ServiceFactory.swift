@@ -25,6 +25,7 @@ enum KMITLBike {
     case updateTrackingLocation(location: Location)
     case returnBike(bikeId: String, location: Location, isCancel: Bool)
     case loadSession(userId: String)
+    case loadHistories(userId: String)
 }
 
 extension KMITLBike: TargetType {
@@ -48,7 +49,10 @@ extension KMITLBike: TargetType {
             return "/api/v1/bikes/\(bikeId.URLEscapedString)/return"
         case .loadSession(let userId):
             return "/api/v1/users/\(userId.URLEscapedString)/session"
+        case .loadHistories(let userId):
+            return "/api/v1/users/\(userId.URLEscapedString)/histories/list"
         }
+        
     }
     
     var method: Moya.Method {
@@ -79,14 +83,14 @@ extension KMITLBike: TargetType {
             return .requestJSONEncodable(location)
         case .returnBike(_, let location, let isCancel):
             return .requestJSONEncodable(ReturnForm(location: location, cancel: isCancel))
-        case .bikeList(), .loadSession(_):
+        case .bikeList(), .loadSession(_), .loadHistories(_):
             return .requestPlain
         }
     }
     
     var headers: [String : String]? {
         switch self {
-        case .bikeList(), .borrow(bikeId: _), .returnBike(bikeId: _, location: _, isCancel: _), .loadSession(userId: _):
+        case .bikeList(), .borrow(bikeId: _), .returnBike(bikeId: _, location: _, isCancel: _), .loadSession(userId: _), .loadHistories(userId: _):
             return ["Content-Type": "application/json",
                     "Authorization": UserDefaults.standard.string(forKey: StorageKey.TOKEN_KEY)!]
         default:

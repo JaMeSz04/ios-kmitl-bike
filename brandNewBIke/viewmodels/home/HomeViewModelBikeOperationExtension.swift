@@ -29,6 +29,7 @@ extension HomeViewModel {
             .subscribe(onSuccess: { (session) in
                 print(session)
                 self.currentBike = session.bike
+                self.currentSession = session
             }).disposed(by: self.disposeBag)
     }
     
@@ -41,20 +42,14 @@ extension HomeViewModel {
         }
     }
     
-    func getBikeLocation(){
-        Api.getBikeList().observeOn(MainScheduler.instance).subscribe(onSuccess: { (bikeList) in
-            self.bikeList.onNext(bikeList)
-            self.internalBikeList = bikeList
-        }) { (error) in
-            print(error)
-            }.disposed(by: self.disposeBag)
-    }
     
     func validateReturn(code: String){
         if self.currentBike.barcode == code {
             self.bikeOperationStatus.onNext(BikeStatus.RETURNING_DEVICE)
             let util: ReturnProtocol = self.createUtil(model: self.currentBike.bike_model) as! ReturnProtocol
             util.returnBike(bike: self.currentBike, location: self.latestLocation).observeOn(MainScheduler.instance).subscribe(onSuccess: { (returnResponse) in
+                self.currentSession = nil
+                self.currentBike = nil
                 print(returnResponse)
             })
             

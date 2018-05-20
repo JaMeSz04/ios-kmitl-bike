@@ -54,7 +54,6 @@ class LoginViewModel: LoginViewModelInputs, LoginViewModelTypes, LoginViewModelO
     
     private func onLogin(user: User){
         localStorage.set(user.token, forKey: StorageKey.TOKEN_KEY)
-    
         self.signin.onNext(user)
     }
     

@@ -41,10 +41,16 @@ public class Api {
         }).map(ReturnResponse.self)
     }
     
-    static func getUserSession(userId: String) -> Single<UserSession>{
+    static func getUserSession(userId: String) -> Single<Session>{
         return bikeProvider.rx.request(.loadSession(userId: userId)).do(onSuccess: { (response) in
             print( String(data: response.data, encoding: .utf8) ?? "")
-        }).map(UserSession.self)
+        }).map(Session.self)
+    }
+    
+    static func getHistories(userId: String) -> Single<[Session]>{
+        return bikeProvider.rx.request(.loadHistories(userId: userId)).do(onSuccess: { (response) in
+            print( String(data: response.data, encoding: .utf8) ?? "")
+        }).map([Session].self)
     }
     
 }

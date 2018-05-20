@@ -19,7 +19,8 @@ class NavigationViewController: UIViewController {
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var termsButton: UIButton!
     @IBOutlet weak var reportButton: UIButton!
-    @IBOutlet weak var homeButton: UIButton!
+    @IBOutlet weak var historyButton: UIButton!
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var subnameLabel: UILabel!
     
@@ -30,7 +31,7 @@ class NavigationViewController: UIViewController {
         super.viewDidLoad()
         self.nameLabel.text = self.name
         self.subnameLabel.text = self.subname
-        self.homeButton.setImage(UIImage.fontAwesomeIcon(name: .home, textColor: UIColor.darkGray, size: CGSize(width: 40, height: 40)), for: .normal)
+        self.historyButton.setImage(UIImage.fontAwesomeIcon(name: .home, textColor: UIColor.darkGray, size: CGSize(width: 40, height: 40)), for: .normal)
         self.reportButton.setImage(UIImage.fontAwesomeIcon(name: .bug, textColor: UIColor.darkGray, size: CGSize(width: 40, height: 40)), for: .normal)
         self.termsButton.setImage(UIImage.fontAwesomeIcon(name: .file, textColor: UIColor.darkGray, size: CGSize(width: 40, height: 40)), for: .normal)
         self.logoutButton.setImage(UIImage.fontAwesomeIcon(name: .signOut, textColor: UIColor.darkGray, size: CGSize(width: 40, height: 40)), for: .normal)
@@ -49,7 +50,7 @@ class NavigationViewController: UIViewController {
     }
     
     private func bindRx(){
-        homeButton.rx.tap.observeOn(MainScheduler.instance).subscribe{ event in
+        historyButton.rx.tap.observeOn(MainScheduler.instance).subscribe{ event in
             self.rootDelegate.onHomePress()
         }.disposed(by: self.disposeBag)
         

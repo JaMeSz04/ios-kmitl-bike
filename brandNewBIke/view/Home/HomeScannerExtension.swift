@@ -11,7 +11,8 @@ import QRCodeReader
 
 extension HomeViewController: QRCodeReaderViewControllerDelegate {
     func openScanner(){
-        self.bulletinManager.dismissBulletin()
+        let manager = self.getBulletinManager()
+        manager.dismissBulletin()
         self.readerVC.modalPresentationStyle = .formSheet
         self.readerVC.delegate = self
         
@@ -25,8 +26,7 @@ extension HomeViewController: QRCodeReaderViewControllerDelegate {
         reader.stopScanning()
         reader.dismiss(animated: true, completion: nil)
         self.viewModel.inputs.scannerBikeUpdate.onNext(result.value)
-        reader.stopScanning()
-        reader.dismiss(animated: true, completion: nil)
+        
 
     }
     

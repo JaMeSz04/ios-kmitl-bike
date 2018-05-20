@@ -30,6 +30,12 @@ class HomeViewController: UIViewController{
     lazy var bulletinManager : BulletinManager = {
         return BulletinManager(rootItem : viewModel.getCurrentPage())
     }()
+    lazy var returnBulletinManager : BulletinManager = {
+        return BulletinManager(rootItem : viewModel.loadTrackingPage())
+    }()
+    lazy var statusBulletinManager : BulletinManager = {
+        return BulletinManager(rootItem : viewModel.loadReturnSuccessPage())
+    }()
     lazy var readerVC: QRCodeReaderViewController = {
         let builder = QRCodeReaderViewControllerBuilder {
             $0.reader = QRCodeReader(metadataObjectTypes: [.qr], captureDevicePosition: .back)
@@ -42,7 +48,10 @@ class HomeViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         //self.bulletinManager.backgroundViewStyle = .blurredDark
-        
+        self.mapView.delegate = self
+        self.mapView.showsCompass = false
+        self.mapView.showsUserLocation = true
+        //self.mapView.userTrackingMode = true
         self.setupSideMenu()
         bottomsheetView.layer.cornerRadius = 10.0
         bottomsheetView.layer.borderColor = UIColor.lightGray.cgColor
@@ -50,8 +59,15 @@ class HomeViewController: UIViewController{
         self.bindRx()
         self.initLocationService()
         self.viewModel.fetchSession()
+        self.setupData()
         //bottomsheetView.clipsToBounds = true
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if CLLocationManager.authorizationStatus() == .denied {
+            print("Location services were previously denied. Please enable location services for this app in Settings.")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,19 +82,25 @@ class HomeViewController: UIViewController{
         }.disposed(by: self.disposeBag)
         
         self.rideButton.rx.tap.subscribe{ event in
-            self.bulletinManager.prepare()
-            self.bulletinManager.presentBulletin(above: self)
+            let manager = self.getBulletinManager()
+            manager.prepare()
+            manager.presentBulletin(above: self)
         }.disposed(by: self.disposeBag)
        
         self.refreshLocationButton.rx.tap.subscribe{ event in
-            
+            self.locationManager.requestLocation()
         }.disposed(by: self.disposeBag)
+        
+        self.refreshButton.rx.tap.subscribe{ event in
+            self.viewModel.getBikeLocation()
+            }.disposed(by: self.disposeBag)
         
         self.viewModel.outputs.bottomSheetItem.subscribeOn(MainScheduler.instance)
             .subscribe(onNext: { (item) in
-                self.bulletinManager.prepare()
-                self.bulletinManager.push(item: item)
-                self.bulletinManager.presentBulletin(above: self)
+                let manager = self.getBulletinManager()
+                manager.prepare()
+                manager.push(item: item)
+                manager.presentBulletin(above: self)
                 print("Presented")
                 
             }, onError: { (error) in
@@ -92,6 +114,7 @@ class HomeViewController: UIViewController{
         
         self.viewModel.outputs.bikeList.subscribe(onNext: { (bikeList) in
             print("incoming bikeList")
+            self.clearMarkers()
             self.addMarker(bikeList: bikeList)
         }).disposed(by: self.disposeBag)
         
@@ -105,10 +128,9 @@ class HomeViewController: UIViewController{
             case .RETURN_COMPLETED:
                 self.rideButton.setTitle("RIDE", for: UIControlState.normal)
                 self.stopTracking()
-                self.bulletinManager.prepare()
-                let newPage = self.viewModel.loadReturnSuccessPage()
-                self.bulletinManager.push(item: newPage)
-                self.bulletinManager.presentBulletin(above: self)
+                self.statusBulletinManager.prepare()
+                self.statusBulletinManager.push(item: self.viewModel.loadReturnSuccessPage())
+                self.statusBulletinManager.presentBulletin(above: self)
                 self.viewModel.isTracking = false
                 self.viewModel.getBikeLocation()
                 break
@@ -122,6 +144,16 @@ class HomeViewController: UIViewController{
         }).disposed(by: self.disposeBag)
         
     }
+    
+    func getBulletinManager() -> BulletinManager {
+        if self.viewModel.isTracking{
+            return self.returnBulletinManager
+        } else {
+            return self.bulletinManager
+        }
+    }
+    
+    
 }
 
 

@@ -20,7 +20,7 @@ public class ManualClient: BorrowProtocol, ReturnProtocol {
         print("perform return!!!!")
         self.subject.onNext(.CONNECTING_SERVER)
         return Api.returnBike(bikeId: String(bike.id), location: location, isCancel: false).flatMap({ (returnResponse) -> Single<ReturnResponse> in
-            self.subject.onNext(BikeStatus.BORROW_COMPLETED)
+            self.subject.onNext(BikeStatus.RETURN_COMPLETED)
             return Single.just(returnResponse)
         })
         

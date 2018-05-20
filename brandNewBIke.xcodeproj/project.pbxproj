@@ -27,6 +27,10 @@
 		E9550EE32089E62D009A7A5B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9550EE22089E62D009A7A5B /* Location.swift */; };
 		E9550EE7208AD47E009A7A5B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9550EE6208AD47E009A7A5B /* Constants.swift */; };
 		E9550EE9208AFF36009A7A5B /* BulletinFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9550EE8208AFF36009A7A5B /* BulletinFactory.swift */; };
+		E95C6B3120B1E78700CAE370 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95C6B3020B1E78700CAE370 /* ProfileTableViewController.swift */; };
+		E95C6B3420B1E7B500CAE370 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95C6B3320B1E7B500CAE370 /* ProfileTableViewCell.swift */; };
+		E95C6B3620B1ECEC00CAE370 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95C6B3520B1ECEC00CAE370 /* ProfileViewModel.swift */; };
+		E95C6B3820B1ED3400CAE370 /* ProfileProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95C6B3720B1ED3400CAE370 /* ProfileProtocols.swift */; };
 		E97F550220B020A700A493E1 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97F550120B020A700A493E1 /* NavigationViewController.swift */; };
 		E97F550520B0332100A493E1 /* HomeViewModelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97F550420B0332100A493E1 /* HomeViewModelProtocols.swift */; };
 		E97F550720B0335100A493E1 /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97F550620B0335100A493E1 /* LoginProtocols.swift */; };
@@ -35,7 +39,6 @@
 		E97F550E20B0460F00A493E1 /* HomeViewModelBikeOperationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97F550D20B0460F00A493E1 /* HomeViewModelBikeOperationExtension.swift */; };
 		E97F551320B06E3100A493E1 /* NavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97F551220B06E3100A493E1 /* NavigationDelegate.swift */; };
 		E97F551520B06EFC00A493E1 /* HomeNavigationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97F551420B06EFC00A493E1 /* HomeNavigationExtension.swift */; };
-		E97F551720B07BAD00A493E1 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97F551620B07BAD00A493E1 /* UserSession.swift */; };
 		E97F551920B09C7400A493E1 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97F551820B09C7400A493E1 /* SplashViewModel.swift */; };
 		E97F551B20B09CA300A493E1 /* SplashProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97F551A20B09CA300A493E1 /* SplashProtocols.swift */; };
 		E97F551F20B09F9E00A493E1 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97F551E20B09F9E00A493E1 /* SplashViewController.swift */; };
@@ -87,6 +90,10 @@
 		E9550EE22089E62D009A7A5B /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		E9550EE6208AD47E009A7A5B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E9550EE8208AFF36009A7A5B /* BulletinFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletinFactory.swift; sourceTree = "<group>"; };
+		E95C6B3020B1E78700CAE370 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		E95C6B3320B1E7B500CAE370 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		E95C6B3520B1ECEC00CAE370 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		E95C6B3720B1ED3400CAE370 /* ProfileProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileProtocols.swift; sourceTree = "<group>"; };
 		E97F550120B020A700A493E1 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		E97F550420B0332100A493E1 /* HomeViewModelProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelProtocols.swift; sourceTree = "<group>"; };
 		E97F550620B0335100A493E1 /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
@@ -95,7 +102,6 @@
 		E97F550D20B0460F00A493E1 /* HomeViewModelBikeOperationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelBikeOperationExtension.swift; sourceTree = "<group>"; };
 		E97F551220B06E3100A493E1 /* NavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDelegate.swift; sourceTree = "<group>"; };
 		E97F551420B06EFC00A493E1 /* HomeNavigationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationExtension.swift; sourceTree = "<group>"; };
-		E97F551620B07BAD00A493E1 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		E97F551820B09C7400A493E1 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		E97F551A20B09CA300A493E1 /* SplashProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashProtocols.swift; sourceTree = "<group>"; };
 		E97F551E20B09F9E00A493E1 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -191,12 +197,22 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
+		E95C6B3220B1E7A100CAE370 /* profile */ = {
+			isa = PBXGroup;
+			children = (
+				E95C6B3020B1E78700CAE370 /* ProfileTableViewController.swift */,
+				E95C6B3320B1E7B500CAE370 /* ProfileTableViewCell.swift */,
+			);
+			path = profile;
+			sourceTree = "<group>";
+		};
 		E97F550320B0330200A493E1 /* protocol */ = {
 			isa = PBXGroup;
 			children = (
 				E97F550420B0332100A493E1 /* HomeViewModelProtocols.swift */,
 				E97F550620B0335100A493E1 /* LoginProtocols.swift */,
 				E97F551A20B09CA300A493E1 /* SplashProtocols.swift */,
+				E95C6B3720B1ED3400CAE370 /* ProfileProtocols.swift */,
 			);
 			path = protocol;
 			sourceTree = "<group>";
@@ -316,7 +332,6 @@
 				E9C0BA3F20A76ED4002F628F /* BikeResponse.swift */,
 				E929B40220A8AB1300C7D8E4 /* ReturnForm.swift */,
 				E929B40420A8AC6A00C7D8E4 /* ReturnResponse.swift */,
-				E97F551620B07BAD00A493E1 /* UserSession.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -324,6 +339,7 @@
 		E9B9D7A7208663B8002AFE3A /* view */ = {
 			isa = PBXGroup;
 			children = (
+				E95C6B3220B1E7A100CAE370 /* profile */,
 				E97F550F20B0643A00A493E1 /* navigation */,
 				E9C80A9820A759420086B200 /* Home */,
 				E91D441B20A17F3A00928C5F /* common */,
@@ -340,6 +356,7 @@
 				E97F550320B0330200A493E1 /* protocol */,
 				E9B9D7AD20866625002AFE3A /* LoginViewModel.swift */,
 				E97F551820B09C7400A493E1 /* SplashViewModel.swift */,
+				E95C6B3520B1ECEC00CAE370 /* ProfileViewModel.swift */,
 			);
 			path = viewmodels;
 			sourceTree = "<group>";
@@ -508,10 +525,12 @@
 				E9550EC620866AFA009A7A5B /* ServiceFactory.swift in Sources */,
 				E9550EE9208AFF36009A7A5B /* BulletinFactory.swift in Sources */,
 				E9B9D7AA20866458002AFE3A /* LoginForm.swift in Sources */,
-				E97F551720B07BAD00A493E1 /* UserSession.swift in Sources */,
+				E95C6B3420B1E7B500CAE370 /* ProfileTableViewCell.swift in Sources */,
 				E97F551F20B09F9E00A493E1 /* SplashViewController.swift in Sources */,
 				E9B9D7AC208664B1002AFE3A /* MockFactoroy.swift in Sources */,
 				E9B9D7AE20866625002AFE3A /* LoginViewModel.swift in Sources */,
+				E95C6B3820B1ED3400CAE370 /* ProfileProtocols.swift in Sources */,
+				E95C6B3620B1ECEC00CAE370 /* ProfileViewModel.swift in Sources */,
 				E97F551B20B09CA300A493E1 /* SplashProtocols.swift in Sources */,
 				E9C0BA4020A76ED4002F628F /* BikeResponse.swift in Sources */,
 				E9550EDB2089A22F009A7A5B /* StorageKey.swift in Sources */,
@@ -524,6 +543,7 @@
 				E91D441E20A17F6700928C5F /* NavigationMenuItem.swift in Sources */,
 				E987534E208F243500C30DAD /* BikeOperation.swift in Sources */,
 				E97F550C20B0455A00A493E1 /* HomeViewModelBottomSheetExtension.swift in Sources */,
+				E95C6B3120B1E78700CAE370 /* ProfileTableViewController.swift in Sources */,
 				E9550EE7208AD47E009A7A5B /* Constants.swift in Sources */,
 				E9550ED32088B69F009A7A5B /* SessionStore.swift in Sources */,
 				E929B40520A8AC6A00C7D8E4 /* ReturnResponse.swift in Sources */,

@@ -10,11 +10,15 @@ import Foundation
 
 
 public struct Session: Codable {
-    let id : Int
-    let bike : Bike
-    let selected_plan : UsagePlan
-    let timestamps : Timestamps
-    let duration : Double
-    let distance : String
-    let route_line : [Location]
+    let id : Int?
+    let bike : Bike?
+    let selected_plan : UsagePlan?
+    let timestamps : Timestamps?
+    let duration : Double?
+    let distance : String?
+    let route_line : [Location]?
+    let resume : Bool?
+    
+
+    
 }
