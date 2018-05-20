@@ -10,20 +10,8 @@ import Foundation
 import RxSwift
 
 protocol BorrowProtocol: BikeOperationProtocol {
-    func performBorrow(operation: BikeOperation)
+    func performBorrow(bikeName: String)
     func performConnection()
+    func borrow(bike: Bike, planId: Int, location: Location, nonce: Int) -> Single<Session>
 }
 
-
-extension BorrowProtocol {
-
-    func borrow(bike: Bike, planId: Int, location: Location, nonce: Int) -> Single<Session> {
-        self.subject.onNext(.CONNECTED_SERVER)
-        return Api.borrowBike(id: String(bike.id), nonce: nonce, location: location, planId: planId).observeOn(MainScheduler.instance).flatMap({ (bikeOperation) -> Single<Session> in
-            print(bikeOperation)
-            self.subject.onNext(.CONNECTED_SERVER)
-            self.performBorrow(operation: bikeOperation)
-            return Single.just(bikeOperation.session)
-        })
-    }
-}

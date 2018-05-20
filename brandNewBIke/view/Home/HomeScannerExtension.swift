@@ -25,9 +25,9 @@ extension HomeViewController: QRCodeReaderViewControllerDelegate {
         reader.stopScanning()
         reader.dismiss(animated: true, completion: nil)
         self.viewModel.inputs.scannerBikeUpdate.onNext(result.value)
-    
         reader.stopScanning()
         reader.dismiss(animated: true, completion: nil)
+
     }
     
     func readerDidCancel(_ reader: QRCodeReaderViewController) {

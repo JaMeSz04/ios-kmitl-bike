@@ -52,15 +52,12 @@ extension HomeViewModel {
     
     func validateReturn(code: String){
         if self.currentBike.barcode == code {
+            self.bikeOperationStatus.onNext(BikeStatus.RETURNING_DEVICE)
             let util: ReturnProtocol = self.createUtil(model: self.currentBike.bike_model) as! ReturnProtocol
-            util.returnBike(bike: self.currentBike, location: self.latestLocation).subscribe(onSuccess: { (returnResponse) in
+            util.returnBike(bike: self.currentBike, location: self.latestLocation).observeOn(MainScheduler.instance).subscribe(onSuccess: { (returnResponse) in
                 print(returnResponse)
-                self.bikeOperationStatus.onNext(BikeStatus.CONNECTED_SERVER)
-                util.performReturn(bike: self.currentBike)
-            }) { (error) in
-                print(error)
-                }.disposed(by: self.disposeBag)
-            print("pass")
+            })
+            
         } else {
             print("qrcode mismatch!!!!")
         }

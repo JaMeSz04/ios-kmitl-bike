@@ -11,6 +11,7 @@ import Foundation
 
 extension HomeViewModel {
     func onScannerCompleted(code: String) {
+        
         if self.isTracking {
             self.validateReturn(code: code)
             print("done")

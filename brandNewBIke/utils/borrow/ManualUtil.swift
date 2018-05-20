@@ -12,9 +12,32 @@ import RxSwift
 public class ManualClient: BorrowProtocol, ReturnProtocol {
 
     
-    func performReturn(bike: Bike) {
+    func performBorrow(bikeName: String) {
+        
+    }
+    
+    func returnBike(bike: Bike, location: Location) -> Single<ReturnResponse> {
         print("perform return!!!!")
-        self.subject.onNext(.RETURN_COMPLETED)
+        self.subject.onNext(.CONNECTING_SERVER)
+        return Api.returnBike(bikeId: String(bike.id), location: location, isCancel: false).flatMap({ (returnResponse) -> Single<ReturnResponse> in
+            self.subject.onNext(BikeStatus.BORROW_COMPLETED)
+            return Single.just(returnResponse)
+        })
+        
+    }
+    
+    func borrow(bike: Bike, planId: Int, location: Location, nonce: Int) -> Single<Session> {
+        print("Perform borrowwww!!!ed")
+        return Api.borrowBike(id: String(bike.id), nonce: nonce, location: location, planId: planId).observeOn(MainScheduler.instance).flatMap { (operation) -> Single<Session> in
+            self.subject.onNext(BikeStatus.BORROW_COMPLETED)
+            return Single.just(operation.session)
+        }
+        
+    }
+    
+
+    func performReturn(bike: Bike) {
+       
     }
     
     
@@ -27,12 +50,7 @@ public class ManualClient: BorrowProtocol, ReturnProtocol {
     
     var subject: PublishSubject<BikeStatus>
 
-    public func performBorrow(operation: BikeOperation) {
-        print("Perform borrowwww!!!ed")
-        self.subject.onNext(BikeStatus.BORROW_COMPLETED)
-       
-    }
-    
+
     
 
 }
