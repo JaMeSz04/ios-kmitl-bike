@@ -29,7 +29,7 @@ extension HomeViewController: NavigationDelegate {
     }
     
     func onHomePress() {
-        dismiss(animated: true, completion: nil)
+ 
     }
     
     func onReportPress() {
@@ -37,11 +37,16 @@ extension HomeViewController: NavigationDelegate {
     }
     
     func onTermsAndConditionPress() {
-        print("terms")
+        self.dismiss(animated: true, completion: nil)
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let termViewController = storyBoard.instantiateViewController(withIdentifier: "TermsAndConditionsViewController") as! TermsAndConditionViewController
+        self.present(termViewController, animated: true, completion: nil)
+        
+        
     }
     
     func onLogoutPress() {
-        print("logout")
+        self.dismiss(animated: true, completion: nil)
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let loginViewController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         self.present(loginViewController, animated: true, completion: nil)

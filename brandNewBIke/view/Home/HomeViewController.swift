@@ -100,6 +100,7 @@ class HomeViewController: UIViewController{
             switch bikeStatus {
             case .BORROW_COMPLETED:
                 self.rideButton.setTitle("RETURN", for: UIControlState.normal)
+                self.clearMarkers()
                 break
             case .RETURN_COMPLETED:
                 self.rideButton.setTitle("RIDE", for: UIControlState.normal)

@@ -37,6 +37,10 @@ extension HomeViewController: MKMapViewDelegate {
         self.mapView.add(polyLine)
     }
     
+    func clearMarkers(){
+        self.mapView.removeAnnotations(self.mapView.annotations)
+    }
+    
     func centerMapOnLocation(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
                                                                   regionRadius, regionRadius)
