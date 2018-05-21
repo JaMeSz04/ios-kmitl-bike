@@ -45,7 +45,7 @@ extension HomeViewModel {
     public func getRootBottomSheet() -> PageBulletinItem {
         let rootItem = PageBulletinItem(title: "Get ready to scan")
         rootItem.descriptionText = "Point your camera to QRCode sign on the bike"
-        rootItem.image = UIImage(named: "qrIcon")
+        rootItem.image = resizeImage(image: UIImage(named: "qrIcon")!, targetSize: CGSize(width: 600.0, height: 400.0))
         rootItem.actionButtonTitle = "Scan"
         rootItem.actionHandler = { (item:PageBulletinItem) in
             self.instructionAction.onNext(item)
@@ -85,6 +85,8 @@ extension HomeViewModel {
             item.manager?.dismissBulletin()
             item.manager? = BulletinManager(rootItem : self.getRootBottomSheet())
         }
+        
+        thankyouPage.image = resizeImage(image: UIImage(named: "feedbackIcon")!, targetSize: CGSize(width: 600.0, height: 400.0))
         thankyouPage.interfaceFactory.tintColor = .black
         thankyouPage.actionHandler = { (item:PageBulletinItem) in
             item.manager?.dismissBulletin()

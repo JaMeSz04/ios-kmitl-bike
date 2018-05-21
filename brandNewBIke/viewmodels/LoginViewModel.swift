@@ -37,7 +37,7 @@ class LoginViewModel: LoginViewModelInputs, LoginViewModelTypes, LoginViewModelO
         
         let userAndPassword = Driver.combineLatest(self.username.asDriver(onErrorJustReturn: nil),
                                                    self.password.asDriver(onErrorJustReturn: nil)) { ($0,$1)  }
-        self.disposedBag.insert(self.loginPress.withLatestFrom(userAndPassword).flatMapLatest { (arg) -> Single<User> in
+        self.loginPress.withLatestFrom(userAndPassword).flatMapLatest { (arg) -> Single<User> in
             let (user, password) = arg
             return Api.login(username: user!, password: password!)
             }
@@ -45,9 +45,9 @@ class LoginViewModel: LoginViewModelInputs, LoginViewModelTypes, LoginViewModelO
                 onNext: { (user) in
                     self.onLogin(user: user)
             }, onError: { (error) in
-                print(error)
-            })
-        )
+                ErrorFactory.displayError(errorMessage: "Enable to Login")
+            }).disposed(by: self.disposedBag)
+        
         
         
     }
@@ -55,6 +55,10 @@ class LoginViewModel: LoginViewModelInputs, LoginViewModelTypes, LoginViewModelO
     private func onLogin(user: User){
         localStorage.set(user.token, forKey: StorageKey.TOKEN_KEY)
         self.signin.onNext(user)
+    }
+    
+    public func clear(){
+        localStorage.removeObject(forKey: StorageKey.TOKEN_KEY)
     }
     
     

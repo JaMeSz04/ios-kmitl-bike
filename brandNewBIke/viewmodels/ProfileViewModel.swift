@@ -28,11 +28,10 @@ class ProfileViewModel: ProfileViewModelTypes, ProfileViewModelInput, ProfileVie
             } else {
                 return Single.just(userSessions)
             }
-        }).subscribe(onSuccess: { (userSessions) in
-            print(userSessions)
-            self.onHistoriesLoad.onNext(userSessions)
+        }).subscribe(onSuccess: { (sessions) in
+            self.onHistoriesLoad.onNext(sessions)
         }) { (error) in
-            print(error)
+            ErrorFactory.displayError(errorMessage: "Error get profile histories")
         }.disposed(by: self.disposeBag)
     }
 }

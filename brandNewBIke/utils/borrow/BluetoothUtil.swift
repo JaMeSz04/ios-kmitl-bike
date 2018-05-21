@@ -13,8 +13,6 @@ import RxSwift
 
 public class BluetoothClient: BorrowProtocol, ReturnProtocol {
     
-    
-    
     func performBorrow(operation: BikeOperation) {}
     
     func performReturn(bike: Bike) {}
@@ -62,7 +60,7 @@ public class BluetoothClient: BorrowProtocol, ReturnProtocol {
                 self.characteristic = characteristic
                 print("white success!!!")
             }, onError: { (error) in
-                print(error)
+                ErrorFactory.displayError(errorMessage: "Error on write command BORROW")
             }).disposed(by: self.disposeBag)
         } else {
         self.scanFor(bikeName: bikeName).observeOn(MainScheduler.instance   ).subscribe(onNext: { (scannedPheriperal) in
@@ -81,7 +79,7 @@ public class BluetoothClient: BorrowProtocol, ReturnProtocol {
                 self.characteristic = characteristic
                 print("white success!!!")
             }, onError: { (error) in
-                print(error)
+                ErrorFactory.displayError(errorMessage: "Error on write command RETURN")
             }).disposed(by: self.disposeBag)
         } else {
             self.scanFor(bikeName: bike.bike_name).observeOn(MainScheduler.instance).subscribe(onNext: { (scannedPheriperal) in
@@ -89,7 +87,7 @@ public class BluetoothClient: BorrowProtocol, ReturnProtocol {
                 self.subject.onNext(BikeStatus.FOUND_DEVICE)
                 self.initCharacteristic(peripheral: scannedPheriperal.peripheral, action: "RETURN")
             }, onError: { error in
-                print(error)
+                ErrorFactory.displayError(errorMessage: "Error on write command RETURN")
             }).disposed(by: self.disposeBag)
         }
         
@@ -127,7 +125,7 @@ public class BluetoothClient: BorrowProtocol, ReturnProtocol {
                     self.characteristic = characteristic
                     print("white success!!!")
                 }, onError: { (error) in
-                    print(error)
+                    ErrorFactory.displayError(errorMessage: "Error init BORROW/RETURN command (charasteristic) at action " + action)
                 }).disposed(by: self.disposeBag)
             }).disposed(by: self.disposeBag)
     }
@@ -157,7 +155,7 @@ public class BluetoothClient: BorrowProtocol, ReturnProtocol {
                 self.subject.onNext(.RETURN_COMPLETED)
                 self.returnSubject.onNext(returnResponse)
             }) { (error) in
-                print(error)
+                ErrorFactory.displayError(errorMessage: "Error connection to server to return")
                 }.disposed(by: self.disposeBag)
         } else {
             Api.borrowBike(id: String(self.bikeId), nonce: Int(nonce!)!, location: self.location, planId: self.planId).observeOn(MainScheduler.instance).subscribe(onSuccess: { (bikeOperation) in
@@ -166,7 +164,7 @@ public class BluetoothClient: BorrowProtocol, ReturnProtocol {
                 print(bikeOperation.message)
                 self.deviceBorrow(message: bikeOperation.message)
             }) { (error) in
-                print(error)
+                ErrorFactory.displayError(errorMessage: "Error connection to server to borrow")
                 }.disposed(by: self.disposeBag)
         }
         
@@ -178,7 +176,7 @@ public class BluetoothClient: BorrowProtocol, ReturnProtocol {
             print("write success")
             self.subject.onNext(BikeStatus.BORROW_COMPLETED)
         }, onError: { (error) in
-            print(error)
+            ErrorFactory.displayError(errorMessage: "Error bluetooth write encrypted emssage")
         }).disposed(by: self.disposeBag)
     }
     

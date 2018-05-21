@@ -23,7 +23,8 @@ class SplashViewController: UIViewController {
             if value != nil {
                 let homeViewController = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
                 homeViewController.viewModel.currentUser = value
-                self.present(homeViewController, animated: true, completion: nil)
+                let navController = UINavigationController(rootViewController: homeViewController)
+                self.present(navController, animated: true, completion: nil)
             } else {
                 let loginViewController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
                 self.present(loginViewController, animated: true, completion: nil)

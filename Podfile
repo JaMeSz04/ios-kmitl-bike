@@ -17,6 +17,7 @@ target 'brandNewBIke' do
     pod 'SideMenu'
     pod 'SwiftyBeaver'
     pod 'FontAwesome.swift'
+    pod 'SwiftMessages'
   # Pods for brandNewBIke
 
 end

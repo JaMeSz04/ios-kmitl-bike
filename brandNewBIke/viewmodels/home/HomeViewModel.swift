@@ -10,6 +10,8 @@ import Foundation
 import BulletinBoard
 import RxSwift
 import SwiftLocation
+import MapKit
+import SwiftMessages
 
 
 
@@ -40,6 +42,7 @@ class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutput
     public var currentSession: Session!
     public var currentUser: User!
     public var currentBike: Bike!
+    public var locations: [CLLocationCoordinate2D]
     
     init() {
         Locator.requestAuthorizationIfNeeded()
@@ -54,6 +57,7 @@ class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutput
         scannerBikeUpdate = PublishSubject<String>()
         bikeOperationStatus = PublishSubject<BikeStatus>()
         bikeList = PublishSubject<[Bike]>()
+        locations = [CLLocationCoordinate2D]()
       
         
         internalBikeList = [Bike]()
@@ -62,10 +66,6 @@ class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutput
 
         bottomSheetPageRequest.observeOn(MainScheduler.instance).subscribe(onNext: { () in
             self.bottomSheetItem.onNext(self.getBottomSheet())
-        }, onError: { (error) in
-            print(error)
-        }, onCompleted: {
-            
         }).disposed(by: self.disposeBag)
         
         refreshBikeLocation.observeOn(MainScheduler.instance).subscribe(onNext: { (location) in
@@ -119,12 +119,12 @@ class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutput
     }
     
     func getBikeLocation(){
-        Api.getBikeList().observeOn(MainScheduler.instance).subscribe(onSuccess: { (bikeList) in
-            self.bikeList.onNext(bikeList)
-            self.internalBikeList = bikeList
+        Api.getBikeList().observeOn(MainScheduler.instance).subscribe(onSuccess: { (bikes) in
+            self.bikeList.onNext(bikes)
+            self.internalBikeList = bikes
         }) { (error) in
-            print(error)
-            }.disposed(by: self.disposeBag)
+            ErrorFactory.displayError(errorMessage: "Could not get bike list")
+        }.disposed(by: self.disposeBag)
     }
     
 }

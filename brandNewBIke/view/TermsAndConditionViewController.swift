@@ -10,7 +10,7 @@ import UIKit
 import WebKit
 class TermsAndConditionViewController: UIViewController {
 
-   
+ 
     @IBOutlet weak var uiView: UIView!
     var webView: WKWebView!
     
@@ -23,6 +23,12 @@ class TermsAndConditionViewController: UIViewController {
         let myRequest = URLRequest(url: myURL!)
         webView.load(myRequest)
         webView.allowsBackForwardNavigationGestures = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = false
+        self.navigationController?.title = "Terms and Conditions"
     }
     
 

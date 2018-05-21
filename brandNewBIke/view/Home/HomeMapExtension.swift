@@ -12,18 +12,26 @@ import MapKit
 
 extension HomeViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        if annotation.coordinate.latitude == self.viewModel.latestLocation.latitude && annotation.coordinate.longitude == self.viewModel.latestLocation.longitude{
+        if annotation is MKUserLocation {
             return nil
         }
-        let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "")
+        if self.viewModel.isTracking {
+            return MKAnnotationView(annotation: annotation, reuseIdentifier: "poly pin")
+        }
+        let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "bike pin")
         annotationView.image = UIImage(named: "bikeLocationIcon")
         annotationView.transform = CGAffineTransform(scaleX: 2.2, y: 2.2)
         return annotationView
     }
     
+    
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        if (overlay is MKPolyline){
+            return MKPolylineRenderer(overlay: overlay)
+        }
         let circleRenderer = MKCircleRenderer(overlay: overlay)
-        circleRenderer.strokeColor = UIColor.black
+        circleRenderer.strokeColor = UIColor.darkGray
+        circleRenderer.fillColor = UIColor(red: CGFloat(0.2), green: CGFloat(0.2), blue: CGFloat(0.2), alpha: CGFloat(0.1))
         circleRenderer.lineWidth = 1.0
         return circleRenderer
     }

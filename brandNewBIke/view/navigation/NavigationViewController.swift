@@ -31,7 +31,7 @@ class NavigationViewController: UIViewController {
         super.viewDidLoad()
         self.nameLabel.text = self.name
         self.subnameLabel.text = self.subname
-        self.historyButton.setImage(UIImage.fontAwesomeIcon(name: .home, textColor: UIColor.darkGray, size: CGSize(width: 40, height: 40)), for: .normal)
+        self.historyButton.setImage(UIImage.fontAwesomeIcon(name: .history, textColor: UIColor.darkGray, size: CGSize(width: 40, height: 40)), for: .normal)
         self.reportButton.setImage(UIImage.fontAwesomeIcon(name: .bug, textColor: UIColor.darkGray, size: CGSize(width: 40, height: 40)), for: .normal)
         self.termsButton.setImage(UIImage.fontAwesomeIcon(name: .file, textColor: UIColor.darkGray, size: CGSize(width: 40, height: 40)), for: .normal)
         self.logoutButton.setImage(UIImage.fontAwesomeIcon(name: .signOut, textColor: UIColor.darkGray, size: CGSize(width: 40, height: 40)), for: .normal)

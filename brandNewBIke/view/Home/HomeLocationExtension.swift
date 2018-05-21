@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 import MapKit
+import UserNotifications
+import SwiftMessages
 
 extension HomeViewController: CLLocationManagerDelegate {
     func initLocationService(){
@@ -35,7 +37,7 @@ extension HomeViewController: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error)
+        ErrorFactory.displayError(errorMessage: "Error on fetch location")
     }
     
     // 1. user enter region
@@ -46,6 +48,9 @@ extension HomeViewController: CLLocationManagerDelegate {
     // 2. user exit region
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
         print("exit region")
+        UNUserNotificationCenter.current().add(NotificationFactory.createGeofencingNotification()) { (error) in
+            print("ERROR GEOFENCING NOTIFICATION")
+        }
     }
     
     func startTracking(){

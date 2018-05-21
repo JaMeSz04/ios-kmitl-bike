@@ -15,11 +15,11 @@ extension HomeViewController: NavigationDelegate {
         SideMenuManager.default.menuPresentMode = .viewSlideInOut
         SideMenuManager.default.menuWidth = UIScreen.main.bounds.width * 0.8
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        navigationViewController = storyboard.instantiateViewController(withIdentifier: "NavigationController") as! NavigationViewController
-        navigationViewController.rootDelegate = self
-        navigationViewController.name =  self.viewModel.currentUser.first_name + " " + self.viewModel.currentUser.last_name
-        navigationViewController.subname = self.viewModel.currentUser.email
-        let navigationMenu = UISideMenuNavigationController(rootViewController: navigationViewController)
+        sideBarNavigationController = storyboard.instantiateViewController(withIdentifier: "NavigationController") as! NavigationViewController
+        sideBarNavigationController.rootDelegate = self
+        sideBarNavigationController.name =  self.viewModel.currentUser.first_name + " " + self.viewModel.currentUser.last_name
+        sideBarNavigationController.subname = self.viewModel.currentUser.email
+        let navigationMenu = UISideMenuNavigationController(rootViewController: sideBarNavigationController)
         navigationMenu.isNavigationBarHidden = true
         
         SideMenuManager.default.menuLeftNavigationController = navigationMenu
@@ -33,8 +33,7 @@ extension HomeViewController: NavigationDelegate {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let profileViewController = storyBoard.instantiateViewController(withIdentifier: "ProfileTableViewController") as! ProfileTableViewController
         profileViewController.viewModel.userId = self.viewModel.currentUser.id
-        
-        self.present(profileViewController, animated: true, completion: nil)
+        self.navigationController?.pushViewController(profileViewController, animated: true)
     }
     
     func onReportPress() {
@@ -42,11 +41,14 @@ extension HomeViewController: NavigationDelegate {
     }
     
     func onTermsAndConditionPress() {
-//        self.dismiss(animated: true, completion: nil)
-//        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//        let termViewController = storyBoard.instantiateViewController(withIdentifier: "TermsAndConditionsViewController") as! TermsAndConditionViewController
-//        self.present(termViewController, animated: true, completion: nil)
-        UIApplication.shared.open(URL(string: "http://161.246.94.246:1995/api/v1/info/terms_conditions")!, options: [:])
+        self.dismiss(animated: true, completion: nil)
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let termViewController = storyBoard.instantiateViewController(withIdentifier: "TermsAndConditionsViewController") as! TermsAndConditionViewController
+        self.navigationController?.pushViewController(termViewController, animated: true)
+        
+        
+
+        //UIApplication.shared.open(URL(string: "http://161.246.94.246:1995/api/v1/info/terms_conditions")!, options: [:])
         
         
     }
@@ -55,6 +57,7 @@ extension HomeViewController: NavigationDelegate {
         self.dismiss(animated: true, completion: nil)
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let loginViewController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        loginViewController.viewModel.clear()
         self.present(loginViewController, animated: true, completion: nil)
     }
     

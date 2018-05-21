@@ -17,11 +17,23 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
-    private let viewModel = LoginViewModel()
+    public let viewModel = LoginViewModel()
     private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.usernameField.layer.cornerRadius = 15.0
+        self.usernameField.layer.borderColor = UIColor.lightGray.cgColor
+        self.usernameField.layer.borderWidth = 0.5
+        self.passwordField.layer.cornerRadius = 15.0
+        self.passwordField.layer.borderColor = UIColor.lightGray.cgColor
+        self.passwordField.layer.borderWidth = 0.5
+        self.loginButton.layer.cornerRadius = 15.0
+        self.loginButton.layer.borderColor = UIColor.lightGray.cgColor
+        self.loginButton.layer.borderWidth = 0.5
+        self.loginButton.backgroundColor = UIColor.black
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
+        self.view.addGestureRecognizer(tapGesture)
         bindRx()
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -43,6 +55,11 @@ class LoginViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
+        usernameField.resignFirstResponder()
+        passwordField.resignFirstResponder()
     }
 
 }

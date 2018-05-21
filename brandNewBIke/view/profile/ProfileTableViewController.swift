@@ -37,7 +37,7 @@ class ProfileTableViewController: UITableViewController {
                 return result
             })
             self.borrowDuration = userSessions.map({ (userSession:Session) -> String in
-                return String((userSession.duration)! / 60) + " minutes"
+                return String(Int((userSession.duration)! / 60)) + " minutes"
             })
             self.refreshControl?.endRefreshing()
             self.tableView.reloadData()
@@ -45,6 +45,13 @@ class ProfileTableViewController: UITableViewController {
         }).disposed(by: self.disposeBag)
      
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = false
+        self.navigationController?.title = "Histories"
+    }
+    
     @objc func reloadData(){
         
         self.viewModel.fetchData()

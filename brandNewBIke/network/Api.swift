@@ -14,7 +14,7 @@ public class Api {
     static let bikeProvider = MoyaProvider<KMITLBike>()
     
     public static func login(username: String, password: String) -> Single<User> {
-        return bikeProvider.rx.request(.login(username: username, password: password)).observeOn(MainScheduler.instance).map(User.self)
+        return bikeProvider.rx.request(.login(username: username, password: password)).timeout(5.0, scheduler: MainScheduler.instance).observeOn(MainScheduler.instance).map(User.self)
     }
     
     public static func getUserFromToken(token: String) -> Single<User> {

@@ -27,10 +27,10 @@ enum KMITLBike {
     case loadSession(userId: String)
     case loadHistories(userId: String)
 }
-
+//"http://161.246.94.246:1995"
 extension KMITLBike: TargetType {
     var baseURL: URL {
-        return URL(string: "http://161.246.94.246:1995")!
+        return URL(string: "http://192.168.95.73")!
     }
     
     var path: String {
