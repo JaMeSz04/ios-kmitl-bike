@@ -23,8 +23,13 @@ extension HomeViewModel {
         page.descriptionText = bike.bike_model
         page.actionButtonTitle = "Borrow"
         page.actionHandler = { (item:PageBulletinItem) in
-            item.manager?.displayActivityIndicator()
-            self.borrowBike(bike: bike)
+            if (self.currentBluetoothState == "avaliable") {
+                item.manager?.displayActivityIndicator()
+                self.borrowBike(bike: bike)
+            } else {
+                ErrorFactory.displayError(errorMessage: "Please enable or reset your bluetooth!!!")
+                item.manager?.dismissBulletin()
+            }
         }
         page.alternativeButtonTitle = "Re scan"
         page.alternativeHandler = { (item:PageBulletinItem) in
@@ -50,7 +55,8 @@ extension HomeViewModel {
         rootItem.actionHandler = { (item:PageBulletinItem) in
             self.instructionAction.onNext(item)
         }
-        rootItem.interfaceFactory.tintColor = .black
+        rootItem.interfaceFactory.tintColor = UIColor(hexString: Constants.KMITL_PRIMARY_COLOR)
+        
         rootItem.isDismissable = true
         
         return rootItem
@@ -87,7 +93,7 @@ extension HomeViewModel {
         }
         
         thankyouPage.image = resizeImage(image: UIImage(named: "feedbackIcon")!, targetSize: CGSize(width: 600.0, height: 400.0))
-        thankyouPage.interfaceFactory.tintColor = .black
+        thankyouPage.interfaceFactory.tintColor = UIColor(hexString: Constants.KMITL_PRIMARY_COLOR)
         thankyouPage.actionHandler = { (item:PageBulletinItem) in
             item.manager?.dismissBulletin()
             UIApplication.shared.open(URL(string: "https://www.facebook.com/kmitlgreencampus/")!, options: [:])
@@ -115,14 +121,49 @@ extension HomeViewModel {
         let img = self.getBikeAsset(model: self.currentBike.bike_model)
         page.image = resizeImage(image: UIImage(named: img)!, targetSize: CGSize(width: 600.0, height: 400.0))
         page.actionHandler = { (item:PageBulletinItem) in
-            self.instructionAction.onNext(item)
+            if self.currentBluetoothState == "avaliable"{
+                self.instructionAction.onNext(item)
+            } else {
+                ErrorFactory.displayError(errorMessage: "Please enable or reset your bluetooth!!!")
+                item.manager?.dismissBulletin()
+            }
         }
         page.isDismissable = true
-        page.interfaceFactory.tintColor = .black
+        page.interfaceFactory.tintColor = UIColor(hexString: Constants.KMITL_PRIMARY_COLOR)
+            
         page.alternativeButtonTitle = "cancel"
         page.alternativeHandler = { (item:PageBulletinItem) in
             item.manager?.dismissBulletin()
         }
         return page
+    }
+}
+
+extension UIColor {
+    convenience init(hexString: String, alpha: CGFloat = 1.0) {
+        let hexString: String = hexString.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        let scanner = Scanner(string: hexString)
+        if (hexString.hasPrefix("#")) {
+            scanner.scanLocation = 1
+        }
+        var color: UInt32 = 0
+        scanner.scanHexInt32(&color)
+        let mask = 0x000000FF
+        let r = Int(color >> 16) & mask
+        let g = Int(color >> 8) & mask
+        let b = Int(color) & mask
+        let red   = CGFloat(r) / 255.0
+        let green = CGFloat(g) / 255.0
+        let blue  = CGFloat(b) / 255.0
+        self.init(red:red, green:green, blue:blue, alpha:alpha)
+    }
+    func toHexString() -> String {
+        var r:CGFloat = 0
+        var g:CGFloat = 0
+        var b:CGFloat = 0
+        var a:CGFloat = 0
+        getRed(&r, green: &g, blue: &b, alpha: &a)
+        let rgb:Int = (Int)(r*255)<<16 | (Int)(g*255)<<8 | (Int)(b*255)<<0
+        return String(format:"#%06x", rgb)
     }
 }

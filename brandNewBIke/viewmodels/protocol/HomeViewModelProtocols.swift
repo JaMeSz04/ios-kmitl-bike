@@ -16,6 +16,7 @@ protocol HomeViewModelInputs {
     var refreshBikeLocation: PublishSubject<Location> { get }
     var scannerBikeUpdate: PublishSubject<String> { get }
     var onLocationUpdate: PublishSubject<Location> { get }
+    var bluetoothStateUpdate: PublishSubject<String> { get }
 }
 
 protocol HomeViewModelOutputs {

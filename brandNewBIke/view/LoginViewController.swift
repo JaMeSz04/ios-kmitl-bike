@@ -43,14 +43,14 @@ class LoginViewController: UIViewController {
         self.usernameField.rx.text.bind(to: self.viewModel.inputs.username).disposed(by: self.disposeBag)
         self.passwordField.rx.text.bind(to: self.viewModel.inputs.password).disposed(by: self.disposeBag)
         self.loginButton.rx.tap.bind(to:self.viewModel.inputs.loginPress).disposed(by: self.disposeBag)
-        self.disposeBag.insert(
-            self.viewModel.signin.subscribeOn(MainScheduler.instance).subscribe { user in
-                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let homeViewController = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-                homeViewController.viewModel.currentUser = user.element!
-                self.present(homeViewController, animated: true, completion: nil)
-        })
-        
+       
+        self.viewModel.signin.subscribeOn(MainScheduler.instance).subscribe { (user) in
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let homeViewController = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+            homeViewController.viewModel.currentUser = user.element!
+            self.present(homeViewController, animated: true, completion: nil)
+        }.disposed(by: self.disposeBag)
+    
     }
 
     override func didReceiveMemoryWarning() {

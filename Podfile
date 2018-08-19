@@ -18,6 +18,7 @@ target 'brandNewBIke' do
     pod 'SwiftyBeaver'
     pod 'FontAwesome.swift'
     pod 'SwiftMessages'
+    pod 'PAPermissions'
   # Pods for brandNewBIke
 
 end

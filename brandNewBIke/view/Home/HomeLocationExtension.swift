@@ -65,6 +65,7 @@ extension HomeViewController: CLLocationManagerDelegate {
     }
     
     func stopTracking(){
+        
         locationManager.stopUpdatingLocation()
     }
 }

@@ -14,6 +14,8 @@ import MapKit
 import QRCodeReader
 import SideMenu
 import UserNotifications
+import CoreBluetooth
+
 
 class HomeViewController: UIViewController{
 
@@ -24,6 +26,7 @@ class HomeViewController: UIViewController{
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var bottomsheetView: UIView!
     @IBOutlet weak var buttomsheetBlurView: UIVisualEffectView!
+    var centralManager: CBCentralManager!
     var sideBarNavigationController: NavigationViewController!
     var viewModel: HomeViewModel = HomeViewModel()
     let regionRadius: CLLocationDistance = 500
@@ -55,6 +58,12 @@ class HomeViewController: UIViewController{
                 print("por mung die e sus")
             }
         })
+        centralManager = CBCentralManager(delegate: self, queue: nil)
+        
+        
+        
+     
+        
         self.mapView.delegate = self
         self.mapView.showsCompass = false
         self.mapView.showsUserLocation = true
@@ -67,10 +76,14 @@ class HomeViewController: UIViewController{
         self.initLocationService()
         self.viewModel.fetchSession()
         self.setupData()
+   
 
         //bottomsheetView.clipsToBounds = true
         // Do any additional setup after loading the view.
     }
+    
+  
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
@@ -144,13 +157,15 @@ class HomeViewController: UIViewController{
                 break
             case .RETURN_COMPLETED:
                 self.rideButton.setTitle("RIDE", for: UIControlState.normal)
+                self.returnBulletinManager.prepare()
                 self.returnBulletinManager.dismissBulletin()
                 self.stopTracking()
                 self.statusBulletinManager.prepare()
-                self.statusBulletinManager.push(item: self.viewModel.loadReturnSuccessPage())
+                //self.statusBulletinManager.push(item: self.viewModel.loadReturnSuccessPage())
                 self.statusBulletinManager.presentBulletin(above: self)
                 self.viewModel.isTracking = false
                 self.viewModel.getBikeLocation()
+          
                 break
             case .TRACKING:
                 print("tracking start!!!")

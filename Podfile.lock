@@ -18,6 +18,7 @@ PODS:
   - Moya/RxSwift (11.0.1):
     - Moya/Core
     - RxSwift (~> 4.0)
+  - PAPermissions (0.9.10)
   - QRCodeReader.swift (8.1.1)
   - Result (3.2.4)
   - RxBluetoothKit (5.0.0):
@@ -41,6 +42,7 @@ DEPENDENCIES:
   - FontAwesome.swift
   - Moya-ModelMapper/RxSwift (= 7.0.0)
   - Moya/RxSwift (~> 11.0)
+  - PAPermissions
   - QRCodeReader.swift (~> 8.1.1)
   - RxBluetoothKit
   - RxCocoa
@@ -59,6 +61,7 @@ SPEC REPOS:
     - ModelMapper
     - Moya
     - Moya-ModelMapper
+    - PAPermissions
     - QRCodeReader.swift
     - Result
     - RxBluetoothKit
@@ -78,6 +81,7 @@ SPEC CHECKSUMS:
   ModelMapper: e576b4e32007bf574d0f9e4f533d29c46d29f146
   Moya: 3d594ada51a21cc02b18739ab578a1984f900c8a
   Moya-ModelMapper: 9aa8a99cb664a083b376869d6091c1f20d9f171e
+  PAPermissions: 8f68bbf68f7f50b55ecaf3f3f2959b97fb756767
   QRCodeReader.swift: b164a681887de276d405ff02bce854d82cd6360b
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   RxBluetoothKit: 29fe5032554aac71c9eeec1f249f4f44205cf988
@@ -90,6 +94,6 @@ SPEC CHECKSUMS:
   SwiftyBeaver: 4f74563624b2c1e821c522c54142b5dd5ebb0f30
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 278fa49debe45b8ac1530012bf0c8e4056e7a3f2
+PODFILE CHECKSUM: ad9ab5eb9dbb8e79fee6b9287885d58a894fd6b6
 
 COCOAPODS: 1.5.0

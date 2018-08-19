@@ -44,6 +44,7 @@ extension HomeViewModel {
     
     
     func validateReturn(code: String){
+        
         if self.currentBike.barcode == code {
             self.bikeOperationStatus.onNext(BikeStatus.RETURNING_DEVICE)
             let util: ReturnProtocol = self.createUtil(model: self.currentBike.bike_model) as! ReturnProtocol

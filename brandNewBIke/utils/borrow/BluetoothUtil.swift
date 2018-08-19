@@ -63,10 +63,10 @@ public class BluetoothClient: BorrowProtocol, ReturnProtocol {
                 ErrorFactory.displayError(errorMessage: "Error on write command BORROW")
             }).disposed(by: self.disposeBag)
         } else {
-        self.scanFor(bikeName: bikeName).observeOn(MainScheduler.instance   ).subscribe(onNext: { (scannedPheriperal) in
-            self.subject.onNext(BikeStatus.FOUND_DEVICE)
-            self.initCharacteristic(peripheral: scannedPheriperal.peripheral, action: "BORROW")
-        }).disposed(by: self.disposeBag)
+            self.scanFor(bikeName: bikeName).observeOn(MainScheduler.instance   ).subscribe(onNext: { (scannedPheriperal) in
+                self.subject.onNext(BikeStatus.FOUND_DEVICE)
+                self.initCharacteristic(peripheral: scannedPheriperal.peripheral, action: "BORROW")
+            }).disposed(by: self.disposeBag)
         }
         
     }
@@ -142,7 +142,7 @@ public class BluetoothClient: BorrowProtocol, ReturnProtocol {
         case "RETURN", "RETURNED":
             self.connectToServer(nonce: nil)
             break
-
+            
         default:
             print("error si ai sus")
         }

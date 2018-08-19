@@ -32,6 +32,7 @@ class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutput
     var bikeList: PublishSubject<[Bike]>
     var bikeOperationStatus: PublishSubject<BikeStatus>
     let bulletinFactory: BulletinFactory = BulletinFactory()
+    let bluetoothStateUpdate: PublishSubject<String>
     
     var internalBikeList:[Bike]
     var currentPage: PageBulletinItem!
@@ -43,6 +44,7 @@ class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutput
     public var currentUser: User!
     public var currentBike: Bike!
     public var locations: [CLLocationCoordinate2D]
+    public var currentBluetoothState = "avaliable"
     
     init() {
         Locator.requestAuthorizationIfNeeded()
@@ -56,10 +58,10 @@ class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutput
         instructionAction = PublishSubject<PageBulletinItem>()
         scannerBikeUpdate = PublishSubject<String>()
         bikeOperationStatus = PublishSubject<BikeStatus>()
+        bluetoothStateUpdate = PublishSubject<String>()
         bikeList = PublishSubject<[Bike]>()
         locations = [CLLocationCoordinate2D]()
       
-        
         internalBikeList = [Bike]()
         
         currentPage = getRootBottomSheet()
@@ -75,6 +77,10 @@ class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutput
         scannerBikeUpdate.observeOn(MainScheduler.instance).subscribe{ code in
             self.onScannerCompleted(code: code.element!)
         }.disposed(by: self.disposeBag)
+        
+        bluetoothStateUpdate.observeOn(MainScheduler.instance).subscribe{ state in
+            self.currentBluetoothState = state.element!
+        }
         
         onLocationUpdate.subscribe(onNext: { (location) in
             print("location updated tracking")
@@ -108,7 +114,7 @@ class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutput
             if session.resume! {
                 self.currentBike = session.bike
                 self.isTracking = session.resume!
-                
+                print(self.currentBike)
                 self.latestLocation = session.route_line![session.route_line!.count - 1]
                 if self.isTracking{
                     self.bikeOperationStatus.onNext(BikeStatus.BORROW_COMPLETED)
