@@ -38,7 +38,7 @@ public class BluetoothClient: BorrowProtocol, ReturnProtocol {
         self.subject = PublishSubject<BikeStatus>()
         self.singleSubject = PublishSubject<Session>()
         self.returnSubject = PublishSubject<ReturnResponse>()
-        self.subject.dispose()
+   
     }
     
     func borrow(bike: Bike, planId: Int, location: Location, nonce: Int) -> PrimitiveSequence<SingleTrait, Session> {

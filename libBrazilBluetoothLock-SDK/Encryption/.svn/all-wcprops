@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 213
+/svn/repository/!svn/ver/83012/jimi/app/shenzhen/mibike/trunk/ios/sdk/et100/%E5%B7%B4%E8%A5%BF%E5%8D%95%E8%BD%A6%E9%94%81demo/BrazilBluetoothLock-Demo/BrazilBluetoothLock-Demo/libBrazilBluetoothLock-SDK/Encryption
+END
+JMAES128.h
+K 25
+svn:wc:ra_dav:version-url
+V 224
+/svn/repository/!svn/ver/83012/jimi/app/shenzhen/mibike/trunk/ios/sdk/et100/%E5%B7%B4%E8%A5%BF%E5%8D%95%E8%BD%A6%E9%94%81demo/BrazilBluetoothLock-Demo/BrazilBluetoothLock-Demo/libBrazilBluetoothLock-SDK/Encryption/JMAES128.h
+END
+JMAES128.m
+K 25
+svn:wc:ra_dav:version-url
+V 224
+/svn/repository/!svn/ver/83012/jimi/app/shenzhen/mibike/trunk/ios/sdk/et100/%E5%B7%B4%E8%A5%BF%E5%8D%95%E8%BD%A6%E9%94%81demo/BrazilBluetoothLock-Demo/BrazilBluetoothLock-Demo/libBrazilBluetoothLock-SDK/Encryption/JMAES128.m
+END
+aes.c
+K 25
+svn:wc:ra_dav:version-url
+V 219
+/svn/repository/!svn/ver/83012/jimi/app/shenzhen/mibike/trunk/ios/sdk/et100/%E5%B7%B4%E8%A5%BF%E5%8D%95%E8%BD%A6%E9%94%81demo/BrazilBluetoothLock-Demo/BrazilBluetoothLock-Demo/libBrazilBluetoothLock-SDK/Encryption/aes.c
+END
+aes.h
+K 25
+svn:wc:ra_dav:version-url
+V 219
+/svn/repository/!svn/ver/83012/jimi/app/shenzhen/mibike/trunk/ios/sdk/et100/%E5%B7%B4%E8%A5%BF%E5%8D%95%E8%BD%A6%E9%94%81demo/BrazilBluetoothLock-Demo/BrazilBluetoothLock-Demo/libBrazilBluetoothLock-SDK/Encryption/aes.h
+END

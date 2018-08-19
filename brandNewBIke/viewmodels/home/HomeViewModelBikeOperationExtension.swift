@@ -13,7 +13,9 @@ extension HomeViewModel {
     
     func borrowBike(bike: Bike) {
         print("borrow " + bike.bike_name)
-        let borrowUtil = self.createUtil(model: bike.bike_model) as! BorrowProtocol
+        //let borrowUtil = self.createUtil(model: bike.bike_model) as! BorrowProtocol
+        let borrowUtil = mBikeUtil.shared
+        borrowUtil.setSubject(bikeOperationStatus: self.bikeOperationStatus)
         let nonce = Int(Double(NSDate.timeIntervalSinceReferenceDate) / 1000)
         self.bikeOperationStatus.subscribe(onNext: { bikeStatus in
             switch bikeStatus {
@@ -47,7 +49,8 @@ extension HomeViewModel {
         
         if self.currentBike.barcode == code {
             self.bikeOperationStatus.onNext(BikeStatus.RETURNING_DEVICE)
-            let util: ReturnProtocol = self.createUtil(model: self.currentBike.bike_model) as! ReturnProtocol
+            let util = mBikeUtil.shared
+            util.setSubject(bikeOperationStatus: self.bikeOperationStatus)
             util.returnBike(bike: self.currentBike, location: self.latestLocation).observeOn(MainScheduler.instance).subscribe(onSuccess: { (returnResponse) in
                 self.currentSession = nil
                 self.currentBike = nil

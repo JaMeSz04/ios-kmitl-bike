@@ -34,6 +34,14 @@
 		E95C6B3A20B285F100CAE370 /* NotificationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95C6B3920B285F100CAE370 /* NotificationFactory.swift */; };
 		E95C6B3C20B2A52E00CAE370 /* TermsAndConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95C6B3B20B2A52E00CAE370 /* TermsAndConditionViewController.swift */; };
 		E95C6B3E20B2CAC000CAE370 /* ErrorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95C6B3D20B2CAC000CAE370 /* ErrorFactory.swift */; };
+		E96DA3CE2129639400DEB2D5 /* HomeCentralManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96DA3CD2129639400DEB2D5 /* HomeCentralManagerDelegate.swift */; };
+		E96DA3D2212963C700DEB2D5 /* mBluetoothUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = E96DA3D1212963C700DEB2D5 /* mBluetoothUtil.m */; };
+		E96DA3E42129641700DEB2D5 /* aes.c in Sources */ = {isa = PBXBuildFile; fileRef = E96DA3D52129641700DEB2D5 /* aes.c */; };
+		E96DA3E52129641700DEB2D5 /* JMAES128.m in Sources */ = {isa = PBXBuildFile; fileRef = E96DA3D62129641700DEB2D5 /* JMAES128.m */; };
+		E96DA3E62129641700DEB2D5 /* JMDataConversionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E96DA3DD2129641700DEB2D5 /* JMDataConversionTool.m */; };
+		E96DA3E72129641700DEB2D5 /* JMBluetoothModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E96DA3E12129641700DEB2D5 /* JMBluetoothModel.m */; };
+		E96DA3E82129641700DEB2D5 /* JMBluetoothManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E96DA3E32129641700DEB2D5 /* JMBluetoothManager.m */; };
+		E96DA3EB212966B900DEB2D5 /* mBikeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96DA3EA212966B900DEB2D5 /* mBikeUtil.swift */; };
 		E97F550220B020A700A493E1 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97F550120B020A700A493E1 /* NavigationViewController.swift */; };
 		E97F550520B0332100A493E1 /* HomeViewModelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97F550420B0332100A493E1 /* HomeViewModelProtocols.swift */; };
 		E97F550720B0335100A493E1 /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97F550620B0335100A493E1 /* LoginProtocols.swift */; };
@@ -100,6 +108,23 @@
 		E95C6B3920B285F100CAE370 /* NotificationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationFactory.swift; sourceTree = "<group>"; };
 		E95C6B3B20B2A52E00CAE370 /* TermsAndConditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsAndConditionViewController.swift; sourceTree = "<group>"; };
 		E95C6B3D20B2CAC000CAE370 /* ErrorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorFactory.swift; sourceTree = "<group>"; };
+		E96DA3CD2129639400DEB2D5 /* HomeCentralManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCentralManagerDelegate.swift; sourceTree = "<group>"; };
+		E96DA3D0212963C700DEB2D5 /* brandNewBIke-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "brandNewBIke-Bridging-Header.h"; sourceTree = "<group>"; };
+		E96DA3D1212963C700DEB2D5 /* mBluetoothUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mBluetoothUtil.m; sourceTree = "<group>"; };
+		E96DA3D52129641700DEB2D5 /* aes.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aes.c; sourceTree = "<group>"; };
+		E96DA3D62129641700DEB2D5 /* JMAES128.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMAES128.m; sourceTree = "<group>"; };
+		E96DA3D72129641700DEB2D5 /* aes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aes.h; sourceTree = "<group>"; };
+		E96DA3D82129641700DEB2D5 /* JMAES128.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMAES128.h; sourceTree = "<group>"; };
+		E96DA3DA2129641700DEB2D5 /* JMBluetoothLockOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMBluetoothLockOption.h; sourceTree = "<group>"; };
+		E96DA3DC2129641700DEB2D5 /* JMDataConversionTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMDataConversionTool.h; sourceTree = "<group>"; };
+		E96DA3DD2129641700DEB2D5 /* JMDataConversionTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMDataConversionTool.m; sourceTree = "<group>"; };
+		E96DA3DE2129641700DEB2D5 /* JMBluetoothManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMBluetoothManager.h; sourceTree = "<group>"; };
+		E96DA3DF2129641700DEB2D5 /* JMBluetoothTooth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMBluetoothTooth.h; sourceTree = "<group>"; };
+		E96DA3E12129641700DEB2D5 /* JMBluetoothModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMBluetoothModel.m; sourceTree = "<group>"; };
+		E96DA3E22129641700DEB2D5 /* JMBluetoothModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMBluetoothModel.h; sourceTree = "<group>"; };
+		E96DA3E32129641700DEB2D5 /* JMBluetoothManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMBluetoothManager.m; sourceTree = "<group>"; };
+		E96DA3E92129661C00DEB2D5 /* mBluetoothUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mBluetoothUtil.h; sourceTree = "<group>"; };
+		E96DA3EA212966B900DEB2D5 /* mBikeUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mBikeUtil.swift; sourceTree = "<group>"; };
 		E97F550120B020A700A493E1 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		E97F550420B0332100A493E1 /* HomeViewModelProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelProtocols.swift; sourceTree = "<group>"; };
 		E97F550620B0335100A493E1 /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
@@ -214,6 +239,67 @@
 			path = profile;
 			sourceTree = "<group>";
 		};
+		E96DA3CF212963AD00DEB2D5 /* c-wrapper */ = {
+			isa = PBXGroup;
+			children = (
+				E96DA3D1212963C700DEB2D5 /* mBluetoothUtil.m */,
+				E96DA3D0212963C700DEB2D5 /* brandNewBIke-Bridging-Header.h */,
+				E96DA3E92129661C00DEB2D5 /* mBluetoothUtil.h */,
+			);
+			path = "c-wrapper";
+			sourceTree = "<group>";
+		};
+		E96DA3D32129641700DEB2D5 /* libBrazilBluetoothLock-SDK */ = {
+			isa = PBXGroup;
+			children = (
+				E96DA3D42129641700DEB2D5 /* Encryption */,
+				E96DA3D92129641700DEB2D5 /* Tools */,
+				E96DA3DB2129641700DEB2D5 /* DataConver */,
+				E96DA3DE2129641700DEB2D5 /* JMBluetoothManager.h */,
+				E96DA3DF2129641700DEB2D5 /* JMBluetoothTooth.h */,
+				E96DA3E02129641700DEB2D5 /* Bluetooth */,
+				E96DA3E32129641700DEB2D5 /* JMBluetoothManager.m */,
+			);
+			path = "libBrazilBluetoothLock-SDK";
+			sourceTree = "<group>";
+		};
+		E96DA3D42129641700DEB2D5 /* Encryption */ = {
+			isa = PBXGroup;
+			children = (
+				E96DA3D52129641700DEB2D5 /* aes.c */,
+				E96DA3D62129641700DEB2D5 /* JMAES128.m */,
+				E96DA3D72129641700DEB2D5 /* aes.h */,
+				E96DA3D82129641700DEB2D5 /* JMAES128.h */,
+			);
+			path = Encryption;
+			sourceTree = "<group>";
+		};
+		E96DA3D92129641700DEB2D5 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				E96DA3DA2129641700DEB2D5 /* JMBluetoothLockOption.h */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		E96DA3DB2129641700DEB2D5 /* DataConver */ = {
+			isa = PBXGroup;
+			children = (
+				E96DA3DC2129641700DEB2D5 /* JMDataConversionTool.h */,
+				E96DA3DD2129641700DEB2D5 /* JMDataConversionTool.m */,
+			);
+			path = DataConver;
+			sourceTree = "<group>";
+		};
+		E96DA3E02129641700DEB2D5 /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				E96DA3E12129641700DEB2D5 /* JMBluetoothModel.m */,
+				E96DA3E22129641700DEB2D5 /* JMBluetoothModel.h */,
+			);
+			path = Bluetooth;
+			sourceTree = "<group>";
+		};
 		E97F550320B0330200A493E1 /* protocol */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +344,7 @@
 		E9B9D784208662F7002AFE3A = {
 			isa = PBXGroup;
 			children = (
+				E96DA3D32129641700DEB2D5 /* libBrazilBluetoothLock-SDK */,
 				E9B9D78F208662F7002AFE3A /* brandNewBIke */,
 				E9B9D78E208662F7002AFE3A /* Products */,
 				BB7A9594245B317191C26659 /* Pods */,
@@ -310,6 +397,7 @@
 		E9B9D7A52086639F002AFE3A /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				E96DA3CF212963AD00DEB2D5 /* c-wrapper */,
 				E929B40620A8AD0A00C7D8E4 /* return */,
 				E9875348208F116900C30DAD /* borrow */,
 				E9B9D7AB208664B1002AFE3A /* MockFactoroy.swift */,
@@ -318,6 +406,7 @@
 				E9C80A8D20A4B25A0086B200 /* ImageResizer.swift */,
 				E9C80A9120A723000086B200 /* NetworkLogger.swift */,
 				E929B40920A8B2AB00C7D8E4 /* BikeOperationProtocol.swift */,
+				E96DA3EA212966B900DEB2D5 /* mBikeUtil.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -373,6 +462,7 @@
 		E9C80A9820A759420086B200 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				E96DA3CD2129639400DEB2D5 /* HomeCentralManagerDelegate.swift */,
 				E9550EDC2089B094009A7A5B /* HomeViewController.swift */,
 				E9C80A9920A759BE0086B200 /* HomeMapExtension.swift */,
 				E9C80A9B20A75A460086B200 /* HomeScannerExtension.swift */,
@@ -416,6 +506,7 @@
 				TargetAttributes = {
 					E9B9D78C208662F7002AFE3A = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -466,6 +557,7 @@
 				"${BUILT_PRODUCTS_DIR}/ModelMapper/Mapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya-ModelMapper/Moya_ModelMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/PAPermissions/PAPermissions.framework",
 				"${BUILT_PRODUCTS_DIR}/QRCodeReader.swift/QRCodeReader.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxBluetoothKit/RxBluetoothKit.framework",
@@ -486,6 +578,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya_ModelMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PAPermissions.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCodeReader.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBluetoothKit.framework",
@@ -531,17 +624,21 @@
 				E987534C208F204300C30DAD /* ManualUtil.swift in Sources */,
 				E97F550520B0332100A493E1 /* HomeViewModelProtocols.swift in Sources */,
 				E97F551520B06EFC00A493E1 /* HomeNavigationExtension.swift in Sources */,
+				E96DA3E82129641700DEB2D5 /* JMBluetoothManager.m in Sources */,
 				E929B40820A8AD2200C7D8E4 /* ReturnProtocol.swift in Sources */,
+				E96DA3E62129641700DEB2D5 /* JMDataConversionTool.m in Sources */,
 				E9550ED8208998EA009A7A5B /* Api.swift in Sources */,
 				E9550EC620866AFA009A7A5B /* ServiceFactory.swift in Sources */,
 				E9550EE9208AFF36009A7A5B /* BulletinFactory.swift in Sources */,
 				E95C6B3A20B285F100CAE370 /* NotificationFactory.swift in Sources */,
 				E9B9D7AA20866458002AFE3A /* LoginForm.swift in Sources */,
 				E95C6B3420B1E7B500CAE370 /* ProfileTableViewCell.swift in Sources */,
+				E96DA3D2212963C700DEB2D5 /* mBluetoothUtil.m in Sources */,
 				E97F551F20B09F9E00A493E1 /* SplashViewController.swift in Sources */,
 				E9B9D7AC208664B1002AFE3A /* MockFactoroy.swift in Sources */,
 				E9B9D7AE20866625002AFE3A /* LoginViewModel.swift in Sources */,
 				E95C6B3820B1ED3400CAE370 /* ProfileProtocols.swift in Sources */,
+				E96DA3E42129641700DEB2D5 /* aes.c in Sources */,
 				E95C6B3620B1ECEC00CAE370 /* ProfileViewModel.swift in Sources */,
 				E97F551B20B09CA300A493E1 /* SplashProtocols.swift in Sources */,
 				E9C0BA4020A76ED4002F628F /* BikeResponse.swift in Sources */,
@@ -550,6 +647,7 @@
 				E9C0BA3E20A76883002F628F /* Timestamps.swift in Sources */,
 				E9550EE32089E62D009A7A5B /* Location.swift in Sources */,
 				E9C80A9A20A759BE0086B200 /* HomeMapExtension.swift in Sources */,
+				E96DA3E72129641700DEB2D5 /* JMBluetoothModel.m in Sources */,
 				E9875350208F248900C30DAD /* Session.swift in Sources */,
 				E97F550A20B0452000A493E1 /* HomeViewModelScannerExtension.swift in Sources */,
 				E91D441E20A17F6700928C5F /* NavigationMenuItem.swift in Sources */,
@@ -560,18 +658,21 @@
 				E9550ED32088B69F009A7A5B /* SessionStore.swift in Sources */,
 				E929B40520A8AC6A00C7D8E4 /* ReturnResponse.swift in Sources */,
 				E9550EDD2089B094009A7A5B /* HomeViewController.swift in Sources */,
+				E96DA3EB212966B900DEB2D5 /* mBikeUtil.swift in Sources */,
 				E9ABB066208C820500370501 /* BikeList.swift in Sources */,
 				E9C80A9C20A75A460086B200 /* HomeScannerExtension.swift in Sources */,
 				E97F550E20B0460F00A493E1 /* HomeViewModelBikeOperationExtension.swift in Sources */,
 				E9ABB064208C80EC00370501 /* Bike.swift in Sources */,
 				E95C6B3C20B2A52E00CAE370 /* TermsAndConditionViewController.swift in Sources */,
 				E9C80A8E20A4B25A0086B200 /* ImageResizer.swift in Sources */,
+				E96DA3E52129641700DEB2D5 /* JMAES128.m in Sources */,
 				E9550EE12089E16A009A7A5B /* HomeViewModel.swift in Sources */,
 				E929B40A20A8B2AB00C7D8E4 /* BikeOperationProtocol.swift in Sources */,
 				E97F551320B06E3100A493E1 /* NavigationDelegate.swift in Sources */,
 				E97F550220B020A700A493E1 /* NavigationViewController.swift in Sources */,
 				E9C80A9E20A75AA60086B200 /* HomeLocationExtension.swift in Sources */,
 				E9550ECD20867937009A7A5B /* User.swift in Sources */,
+				E96DA3CE2129639400DEB2D5 /* HomeCentralManagerDelegate.swift in Sources */,
 				E929B40320A8AB1300C7D8E4 /* ReturnForm.swift in Sources */,
 				E97F550720B0335100A493E1 /* LoginProtocols.swift in Sources */,
 				E97F551920B09C7400A493E1 /* SplashViewModel.swift in Sources */,
@@ -713,12 +814,16 @@
 			baseConfigurationReference = 7F6BE9B0A5D5FA177EBDD7D1 /* Pods-brandNewBIke.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = JX5K63M5J9;
 				INFOPLIST_FILE = brandNewBIke/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kmitl.brandNewBIke;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "brandNewBIke/utils/c-wrapper/brandNewBIke-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -729,12 +834,15 @@
 			baseConfigurationReference = B177B7A56E412A0C32A99C0C /* Pods-brandNewBIke.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = JX5K63M5J9;
 				INFOPLIST_FILE = brandNewBIke/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kmitl.brandNewBIke;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "brandNewBIke/utils/c-wrapper/brandNewBIke-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
