@@ -25,7 +25,7 @@
     [kJMBluetoothManager JMBluetoothStartConnectionWithWidthDeviceMacAddress:@"" ConnectBlock:^(JMOperationResult result, CBPeripheral * _Nonnull peripheral, NSError * _Nullable error) {
         
         if (error == nil){
-            [mBikeUtil.shared onConnected];
+            
         }else{
             [mBikeUtil.shared onErrorWithWhereError:@"connection"];
             [kJMBluetoothManager JMDisconnect];
@@ -35,7 +35,8 @@
     kJMBluetoothManager.jmBluetoothGetTokenWithBlock = ^(NSString * _Nonnull token, NSError * _Nonnull error) {
         
         if (error == nil){
-            
+            printf("mai error duay na ");
+            [mBikeUtil.shared onConnected];
         }else{
            [kJMBluetoothManager JMDisconnect];
            [mBikeUtil.shared onErrorWithWhereError:@"token"];
