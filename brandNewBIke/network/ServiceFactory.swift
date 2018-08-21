@@ -19,6 +19,7 @@ private extension String {
 
 enum KMITLBike {
     case login(username: String, password: String)
+    case register(username: String, firstName: String, lastName: String, email: String, phoneno: String, Gender:Int)
     case token(token: String)
     case bikeList()
     case borrow(bikeId: String, nonce: Int, location: Location, plan: Int)
@@ -37,6 +38,8 @@ extension KMITLBike: TargetType {
         switch self {
         case .login(_,_):
             return "/api/v1/accounts/login"
+        case .register(_,_,_,_,_,_):
+            return "/api/v1/accounts/register"
         case .token(_):
             return "/api/v1/accounts/access_token"
         case .bikeList():
@@ -57,7 +60,7 @@ extension KMITLBike: TargetType {
     
     var method: Moya.Method {
         switch self {
-        case .login(_,_), .token(_), .borrow(_), .updateTrackingLocation(_), .returnBike(_,_,_):
+        case .login(_,_), .token(_), .borrow(_), .updateTrackingLocation(_), .returnBike(_,_,_), .register(_,_,_,_,_,_):
             return .post
         default:
             return .get
@@ -75,6 +78,8 @@ extension KMITLBike: TargetType {
         switch self {
         case .login(let username, let password):
             return .requestJSONEncodable(LoginForm(username: username, password: password))
+        case .register(let username, let firstName, let lastName, let email, let phoneno, let gender):
+            return .requestJSONEncodable(RegisterForm(username: username, firstName: firstName, lastName: lastName, email: email, phoneNo: phoneno, gender: gender))
         case .token(let token):
             return .requestJSONEncodable(TokenForm(token: token))
         case .borrow(_, let nonce, let location, let plan):

@@ -39,17 +39,15 @@ class LoginViewModel: LoginViewModelInputs, LoginViewModelTypes, LoginViewModelO
                                                    self.password.asDriver(onErrorJustReturn: nil)) { ($0,$1)  }
         self.loginPress.withLatestFrom(userAndPassword).flatMapLatest { (arg) -> Single<User> in
             let (user, password) = arg
-            return Api.login(username: user!, password: password!)
+            return Api.login(username: user!, password: "123456") //in real auth system... use password
             }
             .subscribe(
                 onNext: { (user) in
                     self.onLogin(user: user)
             }, onError: { (error) in
                 print(error)
-                ErrorFactory.displayError(errorMessage: "Enable to Login")
+                ErrorFactory.displayError(errorMessage: "Unable to Login")
             }).disposed(by: self.disposedBag)
-        
-        
         
     }
     

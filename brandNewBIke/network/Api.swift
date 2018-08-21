@@ -17,6 +17,10 @@ public class Api {
         return bikeProvider.rx.request(.login(username: username, password: password)).timeout(5.0, scheduler: MainScheduler.instance).observeOn(MainScheduler.instance).map(User.self)
     }
     
+    public static func register(username: String, firstName: String, lastName: String, email: String, phoneno: String, gender: Int) -> Single<RegisterResponse> {
+        return bikeProvider.rx.request(.register(username: username, firstName: firstName, lastName: lastName, email: email, phoneno: phoneno, Gender: gender)).timeout(5.0, scheduler: MainScheduler.instance).observeOn(MainScheduler.instance).map(RegisterResponse.self)
+    }
+    
     public static func getUserFromToken(token: String) -> Single<User> {
         return bikeProvider.rx.request(.token(token: token)).observeOn(MainScheduler.instance).map(User.self)
     }

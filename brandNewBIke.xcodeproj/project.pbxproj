@@ -42,6 +42,11 @@
 		E96DA3E72129641700DEB2D5 /* JMBluetoothModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E96DA3E12129641700DEB2D5 /* JMBluetoothModel.m */; };
 		E96DA3E82129641700DEB2D5 /* JMBluetoothManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E96DA3E32129641700DEB2D5 /* JMBluetoothManager.m */; };
 		E96DA3EB212966B900DEB2D5 /* mBikeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96DA3EA212966B900DEB2D5 /* mBikeUtil.swift */; };
+		E96DA3EF212C032700DEB2D5 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96DA3EE212C032700DEB2D5 /* RegisterViewController.swift */; };
+		E96DA3F1212C050700DEB2D5 /* RegisterForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96DA3F0212C050700DEB2D5 /* RegisterForm.swift */; };
+		E96DA3F5212C05D300DEB2D5 /* RegisterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96DA3F4212C05D300DEB2D5 /* RegisterProtocol.swift */; };
+		E96DA3F7212C083500DEB2D5 /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96DA3F6212C083500DEB2D5 /* RegisterResponse.swift */; };
+		E96DA3F9212C09C700DEB2D5 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96DA3F8212C09C700DEB2D5 /* RegisterViewModel.swift */; };
 		E97F550220B020A700A493E1 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97F550120B020A700A493E1 /* NavigationViewController.swift */; };
 		E97F550520B0332100A493E1 /* HomeViewModelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97F550420B0332100A493E1 /* HomeViewModelProtocols.swift */; };
 		E97F550720B0335100A493E1 /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97F550620B0335100A493E1 /* LoginProtocols.swift */; };
@@ -125,6 +130,11 @@
 		E96DA3E32129641700DEB2D5 /* JMBluetoothManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMBluetoothManager.m; sourceTree = "<group>"; };
 		E96DA3E92129661C00DEB2D5 /* mBluetoothUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mBluetoothUtil.h; sourceTree = "<group>"; };
 		E96DA3EA212966B900DEB2D5 /* mBikeUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mBikeUtil.swift; sourceTree = "<group>"; };
+		E96DA3EE212C032700DEB2D5 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = brandNewBIke/view/RegisterViewController.swift; sourceTree = SOURCE_ROOT; };
+		E96DA3F0212C050700DEB2D5 /* RegisterForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterForm.swift; sourceTree = "<group>"; };
+		E96DA3F4212C05D300DEB2D5 /* RegisterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProtocol.swift; sourceTree = "<group>"; };
+		E96DA3F6212C083500DEB2D5 /* RegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
+		E96DA3F8212C09C700DEB2D5 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		E97F550120B020A700A493E1 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		E97F550420B0332100A493E1 /* HomeViewModelProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelProtocols.swift; sourceTree = "<group>"; };
 		E97F550620B0335100A493E1 /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
@@ -307,6 +317,7 @@
 				E97F550620B0335100A493E1 /* LoginProtocols.swift */,
 				E97F551A20B09CA300A493E1 /* SplashProtocols.swift */,
 				E95C6B3720B1ED3400CAE370 /* ProfileProtocols.swift */,
+				E96DA3F4212C05D300DEB2D5 /* RegisterProtocol.swift */,
 			);
 			path = protocol;
 			sourceTree = "<group>";
@@ -429,6 +440,8 @@
 				E9C0BA3F20A76ED4002F628F /* BikeResponse.swift */,
 				E929B40220A8AB1300C7D8E4 /* ReturnForm.swift */,
 				E929B40420A8AC6A00C7D8E4 /* ReturnResponse.swift */,
+				E96DA3F0212C050700DEB2D5 /* RegisterForm.swift */,
+				E96DA3F6212C083500DEB2D5 /* RegisterResponse.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -441,6 +454,7 @@
 				E9C80A9820A759420086B200 /* Home */,
 				E91D441B20A17F3A00928C5F /* common */,
 				61EA8D9661CE0FC8760E7355 /* LoginViewController.swift */,
+				E96DA3EE212C032700DEB2D5 /* RegisterViewController.swift */,
 				E97F551E20B09F9E00A493E1 /* SplashViewController.swift */,
 				E95C6B3B20B2A52E00CAE370 /* TermsAndConditionViewController.swift */,
 			);
@@ -455,6 +469,7 @@
 				E9B9D7AD20866625002AFE3A /* LoginViewModel.swift */,
 				E97F551820B09C7400A493E1 /* SplashViewModel.swift */,
 				E95C6B3520B1ECEC00CAE370 /* ProfileViewModel.swift */,
+				E96DA3F8212C09C700DEB2D5 /* RegisterViewModel.swift */,
 			);
 			path = viewmodels;
 			sourceTree = "<group>";
@@ -629,6 +644,7 @@
 				E96DA3E62129641700DEB2D5 /* JMDataConversionTool.m in Sources */,
 				E9550ED8208998EA009A7A5B /* Api.swift in Sources */,
 				E9550EC620866AFA009A7A5B /* ServiceFactory.swift in Sources */,
+				E96DA3F5212C05D300DEB2D5 /* RegisterProtocol.swift in Sources */,
 				E9550EE9208AFF36009A7A5B /* BulletinFactory.swift in Sources */,
 				E95C6B3A20B285F100CAE370 /* NotificationFactory.swift in Sources */,
 				E9B9D7AA20866458002AFE3A /* LoginForm.swift in Sources */,
@@ -642,6 +658,7 @@
 				E95C6B3620B1ECEC00CAE370 /* ProfileViewModel.swift in Sources */,
 				E97F551B20B09CA300A493E1 /* SplashProtocols.swift in Sources */,
 				E9C0BA4020A76ED4002F628F /* BikeResponse.swift in Sources */,
+				E96DA3F9212C09C700DEB2D5 /* RegisterViewModel.swift in Sources */,
 				E9550EDB2089A22F009A7A5B /* StorageKey.swift in Sources */,
 				E9ABB062208C7F9100370501 /* BluetoothUtil.swift in Sources */,
 				E9C0BA3E20A76883002F628F /* Timestamps.swift in Sources */,
@@ -653,10 +670,12 @@
 				E91D441E20A17F6700928C5F /* NavigationMenuItem.swift in Sources */,
 				E987534E208F243500C30DAD /* BikeOperation.swift in Sources */,
 				E97F550C20B0455A00A493E1 /* HomeViewModelBottomSheetExtension.swift in Sources */,
+				E96DA3F7212C083500DEB2D5 /* RegisterResponse.swift in Sources */,
 				E95C6B3120B1E78700CAE370 /* ProfileTableViewController.swift in Sources */,
 				E9550EE7208AD47E009A7A5B /* Constants.swift in Sources */,
 				E9550ED32088B69F009A7A5B /* SessionStore.swift in Sources */,
 				E929B40520A8AC6A00C7D8E4 /* ReturnResponse.swift in Sources */,
+				E96DA3EF212C032700DEB2D5 /* RegisterViewController.swift in Sources */,
 				E9550EDD2089B094009A7A5B /* HomeViewController.swift in Sources */,
 				E96DA3EB212966B900DEB2D5 /* mBikeUtil.swift in Sources */,
 				E9ABB066208C820500370501 /* BikeList.swift in Sources */,
@@ -670,6 +689,7 @@
 				E929B40A20A8B2AB00C7D8E4 /* BikeOperationProtocol.swift in Sources */,
 				E97F551320B06E3100A493E1 /* NavigationDelegate.swift in Sources */,
 				E97F550220B020A700A493E1 /* NavigationViewController.swift in Sources */,
+				E96DA3F1212C050700DEB2D5 /* RegisterForm.swift in Sources */,
 				E9C80A9E20A75AA60086B200 /* HomeLocationExtension.swift in Sources */,
 				E9550ECD20867937009A7A5B /* User.swift in Sources */,
 				E96DA3CE2129639400DEB2D5 /* HomeCentralManagerDelegate.swift in Sources */,
