@@ -77,6 +77,20 @@ import RxSwift
         print("disconnected")
     }
     
+    @objc public func onError(whereError: String){
+        let message:String = { () -> String in
+            switch whereError {
+            case "connection":
+                return "Connection failed"
+            case "unlock":
+                return "Unlock failed"
+            default:
+                return "Unexpected failure"
+            }
+        }()
+        ErrorFactory.displayError(errorMessage: "Borrow failed : " + message)
+    }
+    
 
     func returnBike(bike: Bike, location: Location) -> Single<ReturnResponse> {
         self.location = location
@@ -87,10 +101,8 @@ import RxSwift
                 observer(.success(returnResponse.element!))
             }
         }
-        
     }
  
-    
     private func connectToServer(nonce: Int?){
         self.subject.onNext(BikeStatus.CONNECTING_SERVER)
         if nonce == nil {
@@ -105,7 +117,8 @@ import RxSwift
                 self.subject.onNext(BikeStatus.CONNECTED_SERVER)
                 self.singleSubject.onNext(bikeOperation.session)
                 print(bikeOperation.message)
-                mBluetoothUtil.connect(self.bikeMac)
+                let macAddr = "0102" + self.bikeMac.replacingOccurrences(of: ":", with: "", options: .literal, range: nil)
+                mBluetoothUtil.connect(macAddr)
             }) { (error) in
                 ErrorFactory.displayError(errorMessage: "Error connection to server to borrow")
                 }.disposed(by: self.disposeBag)

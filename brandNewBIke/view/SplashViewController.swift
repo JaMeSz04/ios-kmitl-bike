@@ -15,8 +15,7 @@ class SplashViewController: UIViewController {
     private let viewModel = SplashViewModel()
     private let disposeBag = DisposeBag()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(_ animated: Bool) {
         self.viewModel.outputs.tokenValidate.observeOn(MainScheduler.instance).subscribe{ user in
             let value = user.element!
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -29,7 +28,14 @@ class SplashViewController: UIViewController {
                 let loginViewController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
                 self.present(loginViewController, animated: true, completion: nil)
             }
-        }.disposed(by: self.disposeBag)
+            }.disposed(by: self.disposeBag)
+        
+        self.viewModel.validateToken()
+    }
+    
+    override func viewDidLoad() {
+        print("hehe")
+        super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 

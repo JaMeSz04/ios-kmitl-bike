@@ -68,6 +68,15 @@
                                     <constraint firstAttribute="height" constant="150" id="vM7-Wv-aIa"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sds-8b-hme">
+                                <rect key="frame" x="32" y="536" width="311" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="3mq-9V-BCJ"/>
+                                </constraints>
+                                <state key="normal" title="REGISTER">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -75,12 +84,15 @@
                             <constraint firstItem="LK6-kd-HwA" firstAttribute="top" secondItem="inf-2u-Iap" secondAttribute="bottom" constant="32" id="9Ou-Oy-raV"/>
                             <constraint firstItem="0Ju-5I-vwP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="CAh-mQ-Nxx"/>
                             <constraint firstItem="b47-b0-wxR" firstAttribute="top" secondItem="LK6-kd-HwA" secondAttribute="bottom" constant="16" id="ELv-Mi-EnH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Sds-8b-hme" secondAttribute="trailing" constant="32" id="GZF-Xc-dVi"/>
                             <constraint firstItem="inf-2u-Iap" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="120" id="Gz4-8p-FRx"/>
                             <constraint firstItem="inf-2u-Iap" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="LOx-dC-faP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LK6-kd-HwA" secondAttribute="trailing" constant="32" id="NCr-lF-UCv"/>
                             <constraint firstItem="0Ju-5I-vwP" firstAttribute="top" secondItem="b47-b0-wxR" secondAttribute="bottom" constant="32" id="VwJ-iM-y13"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="b47-b0-wxR" secondAttribute="trailing" constant="32" id="aYz-V8-IN1"/>
                             <constraint firstItem="LK6-kd-HwA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="oLh-h6-akE"/>
+                            <constraint firstItem="Sds-8b-hme" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="t6e-yy-joD"/>
+                            <constraint firstItem="Sds-8b-hme" firstAttribute="top" secondItem="0Ju-5I-vwP" secondAttribute="bottom" constant="16" id="tdn-aC-N10"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0Ju-5I-vwP" secondAttribute="trailing" constant="32" id="viG-ai-27Y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -88,6 +100,7 @@
                     <connections>
                         <outlet property="loginButton" destination="0Ju-5I-vwP" id="2xW-VI-65U"/>
                         <outlet property="passwordField" destination="b47-b0-wxR" id="b6i-3W-R8Y"/>
+                        <outlet property="registerButton" destination="Sds-8b-hme" id="ukH-KR-2j5"/>
                         <outlet property="usernameField" destination="LK6-kd-HwA" id="2xj-J5-FDm"/>
                     </connections>
                 </viewController>

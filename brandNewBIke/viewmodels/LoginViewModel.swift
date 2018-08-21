@@ -45,6 +45,7 @@ class LoginViewModel: LoginViewModelInputs, LoginViewModelTypes, LoginViewModelO
                 onNext: { (user) in
                     self.onLogin(user: user)
             }, onError: { (error) in
+                print(error)
                 ErrorFactory.displayError(errorMessage: "Enable to Login")
             }).disposed(by: self.disposedBag)
         

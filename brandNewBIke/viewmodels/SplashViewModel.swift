@@ -17,10 +17,9 @@ class SplashViewModel: SplashViewModelTypes, SplashViewModelInput, SplashViewMod
     let disposedBag = DisposeBag()
     init(){
         tokenValidate = PublishSubject<User?>()
-        self.validateToken()
     }
     
-    private func validateToken(){
+    public func validateToken(){
         if let token = localStorage.string(forKey: StorageKey.TOKEN_KEY) {
             self.disposedBag.insert(
                 Api.getUserFromToken(token: token).timeout(8, scheduler: MainScheduler.instance)
@@ -29,6 +28,8 @@ class SplashViewModel: SplashViewModelTypes, SplashViewModelInput, SplashViewMod
                     }, onError: { (error) in
                         self.tokenValidate.onNext(nil)
                 }))
+        } else {
+            self.tokenValidate.onNext(nil)
         }
         
     }

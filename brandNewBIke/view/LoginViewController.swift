@@ -17,6 +17,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var registerButton: UIButton!
     public let viewModel = LoginViewModel()
     private let disposeBag = DisposeBag()
     
@@ -32,6 +33,10 @@ class LoginViewController: UIViewController {
         self.loginButton.layer.borderColor = UIColor.lightGray.cgColor
         self.loginButton.layer.borderWidth = 0.5
         self.loginButton.backgroundColor = UIColor.black
+        self.registerButton.layer.cornerRadius = 15.0
+        self.registerButton.layer.borderColor = UIColor.lightGray.cgColor
+        self.registerButton.layer.borderWidth = 0.5
+        self.registerButton.backgroundColor = UIColor.black
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
         self.view.addGestureRecognizer(tapGesture)
         bindRx()

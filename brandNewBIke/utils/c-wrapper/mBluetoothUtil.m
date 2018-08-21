@@ -13,14 +13,13 @@
 #import "brandNewBIke-Swift.h"
 
 
-
 @implementation mBluetoothUtil
 
 + (void)connect:(NSString*) macAddress{
     
     //1.赋值设备名称
+    //kJMBluetoothManager.jmDeviceMacAddress = @"0102C4A82808285E";
     kJMBluetoothManager.jmDeviceMacAddress = macAddress;
-    
     //2.开始扫描外设, 执行连接
    
     [kJMBluetoothManager JMBluetoothStartConnectionWithWidthDeviceMacAddress:@"" ConnectBlock:^(JMOperationResult result, CBPeripheral * _Nonnull peripheral, NSError * _Nullable error) {
@@ -28,6 +27,7 @@
         if (error == nil){
             [mBikeUtil.shared onConnected];
         }else{
+            [mBikeUtil.shared onErrorWithWhereError:@"connection"];
             [kJMBluetoothManager JMDisconnect];
         }
     }];
@@ -38,6 +38,7 @@
             
         }else{
            [kJMBluetoothManager JMDisconnect];
+           [mBikeUtil.shared onErrorWithWhereError:@"token"];
         }
     };
 }
@@ -51,6 +52,7 @@
             [mBikeUtil.shared onUnlocked];
         }else{
             [kJMBluetoothManager JMDisconnect];
+            [mBikeUtil.shared onErrorWithWhereError:@"unlock"];
         }
         
     }];
